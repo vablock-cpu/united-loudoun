@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Issue — What's at Stake for Loudoun County</title>
+  <meta name="description" content="What Dominion Energy is proposing for Loudoun County: 185-foot industrial towers through residential neighborhoods. The precedent affects every community in the county. Here's the full picture — and the underground alternative that works." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:  #152744; --navy2: #1b3660;
+      --teal:  #1a6b5e; --teal2: #22856e;
+      --gold:  #c9970a; --gold2: #f0b429;
+      --red:   #b91c1c; --red2:  #dc2626;
+      --off:   #f8f7f4; --gray:  #64748b; --light: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; line-height: 1.6; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--navy); border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; padding: 0 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .logo { font-weight: 900; font-size: 1.15rem; color: #fff; text-decoration: none; }
+    .logo span { color: var(--gold2); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { color: rgba(255,255,255,.82); text-decoration: none; font-size: .875rem; font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--gold2); }
+    nav a.active { color: var(--gold2); font-weight: 700; }
+    .btn-nav { background: var(--gold); color: var(--navy) !important; padding: 8px 18px; border-radius: 6px; font-weight: 700 !important; }
+    .btn-nav:hover { background: var(--gold2) !important; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero { background: var(--navy); padding: 64px 0 56px; color: #fff; }
+    .breadcrumb { font-size: .78rem; color: rgba(255,255,255,.45); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
+    .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold2); }
+    .sec-tag {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      padding: 4px 13px; border-radius: 4px; font-size: .72rem;
+      font-weight: 800; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 18px;
+    }
+    .sec-tag.red { background: var(--red2); color: #fff; }
+    .page-hero h1 {
+      font-family: 'Merriweather', serif; font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900; line-height: 1.15; margin-bottom: 16px;
+    }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.75); max-width: 660px; line-height: 1.7; }
+    .page-hero-nav {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px;
+    }
+    .page-hero-nav a {
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.8); text-decoration: none; padding: 6px 14px;
+      border-radius: 20px; font-size: .78rem; font-weight: 600; transition: all .2s;
+    }
+    .page-hero-nav a:hover { background: rgba(255,255,255,.18); color: #fff; }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 72px 0; }
+    .section-sm { padding: 48px 0; }
+    h2.section-h {
+      font-family: 'Merriweather', serif; font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--navy); font-weight: 900; margin-bottom: 12px; line-height: 1.25;
+    }
+    h2.section-h em { color: var(--red2); font-style: italic; }
+    .intro-text { font-size: 1rem; color: #475569; max-width: 720px; margin-bottom: 36px; line-height: 1.7; }
+
+    /* ─── STATS TRIO ─── */
+    .stats-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+    .stat-card {
+      background: var(--navy); border-radius: 12px; padding: 28px 22px; text-align: center; color: #fff;
+    }
+    .stat-card .num { font-size: 2.8rem; font-weight: 900; color: var(--gold2); line-height: 1; }
+    .stat-card .unit { font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.6); margin-top: 4px; }
+    .stat-card .desc { font-size: .8rem; color: rgba(255,255,255,.55); margin-top: 8px; line-height: 1.5; }
+    .stat-card .compare { font-size: .72rem; color: var(--gold); font-weight: 800; text-transform: uppercase; letter-spacing: .06em; margin-top: 8px; }
+
+    /* ─── TWO COL ─── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .two-col-eq { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+
+    /* ─── CALLOUT BOX ─── */
+    .callout {
+      border-radius: 10px; padding: 20px 24px; margin-top: 20px;
+    }
+    .callout.gold { background: #fef9e7; border-left: 4px solid var(--gold); }
+    .callout.red { background: #fef2f2; border-left: 4px solid var(--red2); }
+    .callout.teal { background: #f0faf7; border-left: 4px solid var(--teal); }
+    .callout.navy { background: var(--navy); color: #fff; border-left: 4px solid var(--gold2); }
+    .callout p { font-size: .9rem; line-height: 1.65; }
+    .callout.navy p { color: rgba(255,255,255,.85); }
+    .callout strong { color: inherit; }
+    .callout.gold strong { color: #7a5f00; }
+    .callout.red strong { color: var(--red); }
+    .callout.teal strong { color: var(--teal); }
+
+    /* ─── PHOTO CAPTION ─── */
+    .photo-block { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+    .photo-block img { width: 100%; }
+    .photo-cap { background: var(--navy); color: rgba(255,255,255,.75); font-size: .78rem; padding: 11px 16px; }
+
+    /* ─── STATUE COMPARISON ─── */
+    .statue-section { background: var(--off); }
+    .statue-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center; }
+    .statue-img { text-align: center; }
+    .statue-img img { max-height: 480px; width: auto; margin: 0 auto; }
+    .impact-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .impact-list li {
+      display: flex; gap: 14px; align-items: start;
+      background: #fff; border: 1px solid var(--light); border-radius: 10px; padding: 16px 18px;
+    }
+    .impact-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .impact-list h4 { font-size: .9rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .impact-list p { font-size: .82rem; color: #475569; line-height: 1.55; }
+
+    /* ─── COMMUNITY OPPOSITION ─── */
+    .opposition-section { background: var(--navy); color: #fff; }
+    .opp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+    .opp-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px; padding: 24px;
+    }
+    .opp-num { font-size: 2.2rem; font-weight: 900; color: var(--gold2); line-height: 1; margin-bottom: 6px; }
+    .opp-card h4 { font-size: .88rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .opp-card p { font-size: .8rem; color: rgba(255,255,255,.6); line-height: 1.55; }
+    .endorsements { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
+    .endorse-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px; padding: 18px 20px;
+    }
+    .endorse-card h4 { font-size: .88rem; font-weight: 800; color: var(--gold2); margin-bottom: 6px; }
+    .endorse-card p { font-size: .8rem; color: rgba(255,255,255,.65); line-height: 1.5; }
+
+    /* ─── CHINO HILLS ─── */
+    .chino-section { background: #fff; }
+    .chino-quote {
+      background: var(--navy); border-radius: 12px; padding: 28px 32px; margin-bottom: 36px; text-align: center;
+    }
+    .chino-quote blockquote {
+      font-family: 'Merriweather', serif; font-size: 1.4rem; font-style: italic;
+      color: var(--gold2); font-weight: 700; line-height: 1.5;
+    }
+    .chino-quote cite { font-size: .82rem; color: rgba(255,255,255,.6); display: block; margin-top: 10px; }
+    .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .photo-grid-item { border-radius: 10px; overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,.12); }
+    .photo-grid-item img { width: 100%; height: 200px; object-fit: cover; }
+    .photo-grid-item .cap { background: var(--navy); color: rgba(255,255,255,.7); font-size: .72rem; padding: 9px 12px; }
+    .chino-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    .chino-card { background: var(--off); border-radius: 10px; padding: 22px; }
+    .chino-card h4 { font-size: .9rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .chino-card p { font-size: .82rem; color: #475569; line-height: 1.6; }
+
+    /* ─── LEGISLATION ─── */
+    .leg-section { background: var(--off); }
+    .leg-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
+    .leg-card { background: #fff; border: 1px solid var(--light); border-radius: 10px; padding: 22px 24px; }
+    .leg-card h4 { font-size: .92rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .leg-card p { font-size: .83rem; color: #475569; line-height: 1.6; margin-bottom: 8px; }
+    .leg-card .note { font-size: .75rem; color: var(--teal); font-weight: 700; }
+
+    /* ─── PATH FORWARD ─── */
+    .path-section { background: var(--navy); color: #fff; padding: 72px 0; }
+    .path-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+    .path-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px; padding: 24px 26px; display: flex; gap: 16px;
+    }
+    .path-num {
+      width: 32px; height: 32px; border-radius: 50%; background: var(--gold);
+      color: var(--navy); font-weight: 900; font-size: .85rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .path-card h3 { font-size: .93rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .path-card p { font-size: .82rem; color: rgba(255,255,255,.65); line-height: 1.55; }
+    .path-tagline {
+      margin-top: 28px; text-align: center; font-size: 1rem; color: rgba(255,255,255,.7);
+      font-style: italic; max-width: 640px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ─── CTA ─── */
+    .cta-strip { background: var(--teal); padding: 64px 0; text-align: center; }
+    .cta-strip h2 { font-family: 'Merriweather', serif; font-size: 2rem; color: #fff; font-weight: 900; margin-bottom: 12px; }
+    .cta-strip p { color: rgba(255,255,255,.8); max-width: 520px; margin: 0 auto 28px; }
+    .btn-gold {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-weight: 800; padding: 14px 32px; border-radius: 8px; text-decoration: none; margin: 6px;
+    }
+    .btn-gold:hover { background: var(--gold2); }
+    .btn-white {
+      display: inline-block; background: rgba(255,255,255,.15); border: 2px solid rgba(255,255,255,.4); color: #fff;
+      font-weight: 700; padding: 12px 28px; border-radius: 8px; text-decoration: none; margin: 6px;
+    }
+    .btn-white:hover { background: rgba(255,255,255,.25); }
+
+    /* ─── FOOTER ─── */
+    footer { background: #0d1a2d; color: rgba(255,255,255,.5); padding: 44px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 28px; }
+    .footer-brand .logo { font-size: 1rem; display: inline-block; margin-bottom: 10px; }
+    .footer-brand p { font-size: .8rem; line-height: 1.65; }
+    .footer-col h4 { font-size: .72rem; font-weight: 800; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .82rem; }
+    .footer-col a:hover { color: var(--gold2); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; text-align: center; font-size: .75rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .two-col, .two-col-eq, .statue-inner { grid-template-columns: 1fr; }
+      .stats-trio, .opp-grid, .chino-cards, .photo-grid { grid-template-columns: 1fr 1fr; }
+      .endorsements, .leg-grid, .path-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      nav { display: none; }
+      nav.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); padding: 16px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,.1); z-index: 300; }
+      .hamburger { display: block; }
+      .stats-trio, .opp-grid, .chino-cards, .photo-grid, .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span>United</span>Loudoun</a>
+    <nav id="nav-menu">
+      <a href="the-issue.html" class="active">The Issue</a>
+      <a href="the-truth.html">The Truth</a>
+      <a href="press.html">Press</a>
+      <a href="take-action.html" class="btn-nav">Take Action</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>The Issue</span></div>
+    <span class="sec-tag">The Full Picture</span>
+    <h1>What Dominion Wants to Build — and What It Means for Loudoun County</h1>
+    <p>Industrial-scale transmission towers in a residential neighborhood. Less than 50 feet from front doors. Running past schools and parks. The route started with Loudoun Valley Estates — but the precedent it sets affects every residential neighborhood in the county. A smaller tax base and lower housing comps from this corridor affect every Loudoun taxpayer, not just the homeowners closest to the lines.</p>
+    <div class="page-hero-nav">
+      <a href="#the-proposal">The Proposal</a>
+      <a href="#at-stake">What's at Stake</a>
+      <a href="#community">Community Opposition</a>
+      <a href="#chino-hills">Chino Hills Precedent</a>
+      <a href="#legislation">Legislation</a>
+      <a href="#path-forward">The Path Forward</a>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROPOSAL -->
+<section class="section" id="the-proposal">
+  <div class="container">
+    <span class="sec-tag">What's Being Proposed</span>
+    <h2 class="section-h">An 8.3-Mile Industrial Corridor Through <em>Our Neighborhoods</em></h2>
+    <p class="intro-text">Dominion Energy is seeking approval from the State Corporation Commission to build a new high-voltage transmission line called "Golden to Mars" — named after two substations. The line would cut through residential Loudoun County — including Loudoun Valley Estates I and II — past multiple schools and parks, and run within feet of hundreds of homes.</p>
+
+    <div class="stats-trio">
+      <div class="stat-card">
+        <div class="num">185</div>
+        <div class="unit">feet tall</div>
+        <div class="desc">An 18-story industrial structure — taller than most office buildings — placed in residential neighborhoods.</div>
+        <div class="compare">Taller than the Statue of Liberty</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">&lt;50</div>
+        <div class="unit">feet from homes</div>
+        <div class="desc">The distance from the tower base to some front doors is three car lengths. This is not a setback — this is a neighbor.</div>
+        <div class="compare">About 3 car lengths</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">8.3</div>
+        <div class="unit">miles long</div>
+        <div class="desc">A 150-foot wide industrial corridor cutting through neighborhoods, schools, parks, and open space.</div>
+        <div class="compare">13,000+ homes within 2 miles</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="photo-block">
+          <img src="Chino Hills Pictures/ChinoHills_Monopole_Residential_StreetView_07.jpg"
+               alt="185-ft transmission tower looming over suburban street in Chino Hills, CA — same tower planned for Loudoun Valley" />
+          <div class="photo-cap">Actual photo from Chino Hills, CA — the same 185-ft tower Dominion wants in Loudoun Valley</div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:14px;">Why This Is Happening Now</h3>
+        <p style="color:#475569; margin-bottom:16px; line-height:1.7;">PJM Interconnection, the regional grid operator, approved the Golden to Mars project in December 2023. Dominion then filed for a Certificate of Public Convenience and Necessity (CPCN) from the Virginia State Corporation Commission. The SCC hearing concluded after 11+ days of testimony — and a ruling is expected any day.</p>
+        <p style="color:#475569; margin-bottom:16px; line-height:1.7;">What the SCC decides will stand for generations. Once towers are built in a residential neighborhood, they stay. There is no undo button.</p>
+        <div class="callout gold">
+          <p><strong>The SCC record shows</strong> that Dominion knew about the need for this line as early as 2022 — but filed its application in a way that left no time to properly study underground alternatives. SCC Staff called this out directly: Dominion "effectively ensured that its overhead routes are the only viable options."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S AT STAKE -->
+<section class="statue-section section" id="at-stake">
+  <div class="container">
+    <span class="sec-tag red">What's at Stake</span>
+    <h2 class="section-h">This Is Not a Minor Inconvenience. This Is Permanent.</h2>
+    <p class="intro-text">Once built, transmission towers are not moved. The impacts to health, property values, and quality of life are not temporary nuisances — they are generational burdens placed entirely on homeowners who had no say in the decision.</p>
+
+    <div class="statue-inner">
+      <div class="statue-img">
+        <img src="Pictures/Statue 185.png" alt="Height comparison: 185-ft Dominion tower vs Statue of Liberty (151 ft) vs typical 2-story home (25-30 ft)" />
+      </div>
+      <div>
+        <ul class="impact-list">
+          <li>
+            <div class="impact-icon">📏</div>
+            <div>
+              <h4>18-Story Industrial Structure at Your Property Line</h4>
+              <p>At 185 feet, these towers are taller than the Statue of Liberty (151 ft) and taller than most downtown office buildings. The visual and psychological impact on adjacent homes is permanent and irreversible.</p>
+            </div>
+          </li>
+          <li>
+            <div class="impact-icon">⚡</div>
+            <div>
+              <h4>Electromagnetic Fields Near Schools and Homes</h4>
+              <p>500kV transmission lines generate electromagnetic fields strong enough to light a fluorescent bulb held underneath — without touching anything. The lines would run past multiple schools and within feet of hundreds of homes. The community deserves answers about long-term health impacts.</p>
+            </div>
+          </li>
+          <li>
+            <div class="impact-icon">🏡</div>
+            <div>
+              <h4>$2.8 Billion in Property Values at Risk</h4>
+              <p>The assessed value of property within half a mile of the proposed corridor is $2.8 billion. A smaller tax base and lower housing comps affect every Loudoun taxpayer, not just the homeowners closest to the lines. Community signs throughout the neighborhood estimate $100,000+ in potential losses per household.</p>
+            </div>
+          </li>
+          <li>
+            <div class="impact-icon">🌳</div>
+            <div>
+              <h4>150-Foot Right-of-Way Through Parks and Open Space</h4>
+              <p>Dominion's overhead route requires 150 ft of new right-of-way for the full 8.3 miles. Trees removed. Sight lines destroyed. Parks altered. The underground alternative requires only an 8-foot wide trench — installed and restored.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="callout teal" style="margin-top:20px;">
+          <p><strong>The assessed value at risk within half a mile:</strong> $2.8 billion. This is not a small-neighborhood problem — it is a countywide economic issue that affects everyone from homeowners to schools funded by property taxes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;">
+      <div class="two-col-eq">
+        <div class="photo-block">
+          <img src="Chino Hills Pictures/ChinoHills_Monopole_ParkContext_ChildScale_22.jpg"
+               alt="Mother and child in a park under a 185-ft transmission tower in Chino Hills, CA" />
+          <div class="photo-cap">A mother and child in a Chino Hills park, beneath the same tower Dominion is planning for Loudoun</div>
+        </div>
+        <div>
+          <h3 style="font-size:1.1rem; font-weight:800; color:var(--navy); margin-bottom:14px;">Dominion's Visual Claims Don't Match Reality</h3>
+          <p style="color:#475569; line-height:1.7; margin-bottom:14px;">When Dominion presented visual simulations to the Board of Supervisors in January 2025, the photos were taken in summer — at peak foliage, when trees provide maximum screening. The actual view from homes in winter — when leaves are down and towers are fully exposed — is dramatically different.</p>
+          <p style="color:#475569; line-height:1.7; margin-bottom:14px;">The photos from Chino Hills, California — where the same 185-foot towers were actually built — tell the real story. A California PUC commissioner who visited the site responded simply: <em>"Oh my God, what have we done."</em></p>
+          <div class="callout red">
+            <p>SCC visual simulations of the Loudoun routes show towers dominating sight lines from homes. The difference between what was presented to the Board and what will actually appear from a kitchen window is significant.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY OPPOSITION -->
+<section class="opposition-section section" id="community">
+  <div class="container">
+    <span class="sec-tag">Community Opposition</span>
+    <h2 class="section-h" style="color:#fff;">Unprecedented Turnout. Loudoun Residents Are United.</h2>
+    <p style="color:rgba(255,255,255,.72); max-width:680px; margin-bottom:0; line-height:1.7;">The response to this project extends far beyond the immediately affected neighborhood. Loudoun County residents, elected officials at every level, and even the City of Chino Hills, California have joined the fight. The SCC record reflects one of the largest community participation filings in a Virginia utility case.</p>
+    <div class="opp-grid">
+      <div class="opp-card">
+        <div class="opp-num">1,300+</div>
+        <h4>Written Testimonies</h4>
+        <p>Submitted directly to the SCC — among the largest community response filings in the case's history.</p>
+      </div>
+      <div class="opp-card">
+        <div class="opp-num">1,800+</div>
+        <h4>Public Hearing Attendees</h4>
+        <p>Attended Ashburn public hearings. Overflow crowds. Standing room only. Hundreds turned away.</p>
+      </div>
+      <div class="opp-card">
+        <div class="opp-num">600</div>
+        <h4>Households Registered</h4>
+        <p>For telephonic comment — in addition to thousands who showed up in person at hearings.</p>
+      </div>
+    </div>
+    <div class="endorsements">
+      <div class="endorse-card">
+        <h4>Loudoun County Board of Supervisors</h4>
+        <p>January 2025 resolution called for burying lines within 500 ft of homes and schools. County engineers confirmed it IS technically feasible.</p>
+      </div>
+      <div class="endorse-card">
+        <h4>Loudoun County Public Schools</h4>
+        <p>The School Board took a formal position against Dominion's overhead routing — an extremely rare step for any school board on a utility matter.</p>
+      </div>
+      <div class="endorse-card">
+        <h4>Sen. Srinivasan &amp; Del. Singh (D-Loudoun)</h4>
+        <p>Sponsored SB 827 and HB 1487, which passed both chambers bipartisan and directly name Golden-to-Mars as the target project.</p>
+      </div>
+      <div class="endorse-card">
+        <h4>City of Chino Hills, California</h4>
+        <p>Formally wrote to the Virginia SCC supporting LVE's position — the only U.S. city that successfully forced underground 500kV lines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHINO HILLS -->
+<section class="chino-section section" id="chino-hills">
+  <div class="container">
+    <span class="sec-tag">The Precedent That Matters</span>
+    <h2 class="section-h">Chino Hills, California Fought Back — and <em>Won</em></h2>
+    <p class="intro-text">The same utility playbook. The same "underground is not feasible" claim. The same 185-foot towers next to homes and parks. Chino Hills residents fought back, took it to appeal — and the towers came down. This is what success looks like.</p>
+
+    <div class="chino-quote">
+      <blockquote>"Oh my God, what have we done."</blockquote>
+      <cite>— California Public Utilities Commission Commissioner, upon visiting and seeing 185-ft towers installed next to homes in Chino Hills</cite>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-grid-item">
+        <img src="Chino Hills Pictures/ChinoHills_Monopole_Residential_BackyardContext_19.jpg"
+             alt="Officials looking up at 185-ft tower from a residential backyard in Chino Hills, CA" />
+        <div class="cap">Officials see the towers from a backyard — "Oh my God, what have we done"</div>
+      </div>
+      <div class="photo-grid-item">
+        <img src="Chino Hills Pictures/ChinoHills_Monopole_Residential_RemovalSequence_23.jpg"
+             alt="Going! Going! Gone! — Chino Hills tower removal after winning appeal" />
+        <div class="cap">Going! Going! GONE! — Chino Hills won on appeal, the towers came down</div>
+      </div>
+      <div class="photo-grid-item">
+        <img src="Chino Hills Pictures/ChinoHills_Monopole_CommunityProtest_500kV_24.jpg"
+             alt="Chino Hills community protest against 500kV overhead lines" />
+        <div class="cap">Same community fight, same claims — Chino Hills residents won</div>
+      </div>
+    </div>
+
+    <div class="chino-cards">
+      <div class="chino-card">
+        <h4>Same "Not Feasible" Claim</h4>
+        <p>The utility told Chino Hills that undergrounding 500kV was impossible. Independent engineers disagreed. The towers came down and underground was built. <strong>The same claim is being made in Loudoun. The same is false.</strong></p>
+      </div>
+      <div class="chino-card">
+        <h4>Underground Built Successfully</h4>
+        <p>Despite every infeasibility claim, the underground alternative was built safely, reliably, and on time. Chino Hills is the only U.S. city with operating underground 500kV — and they formally wrote to the Virginia SCC to support LVE's position.</p>
+      </div>
+      <div class="chino-card">
+        <h4>The Regulator Learned a Hard Lesson</h4>
+        <p>The utility started building immediately after approval, betting no one would make them remove towers. They were wrong. The California PUC reversed course — and ordered the utility to build underground at their own expense.</p>
+      </div>
+    </div>
+
+    <div class="callout navy" style="margin-top:28px;">
+      <p>The question is not <em>whether</em> underground can be done. Chino Hills proved it can. The only question is whether our Board and SCC will demand it — before Dominion breaks ground and the leverage is lost.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LEGISLATION -->
+<section class="leg-section section" id="legislation">
+  <div class="container">
+    <span class="sec-tag">The Law Is Changing</span>
+    <h2 class="section-h">Virginia's General Assembly Acted — Golden-to-Mars Is the Target</h2>
+    <p class="intro-text">SB 827 and HB 1487 passed both chambers of the Virginia General Assembly on a bipartisan basis in March 2026. The legislation was written specifically in response to the Golden-to-Mars situation. It creates a pilot program for underground installation — and the Board's formal support is a statutory prerequisite.</p>
+
+    <div class="callout gold" style="margin-bottom:28px;">
+      <p><strong>The bill specifically describes</strong> a "500 kV and 230 kV line, approximately 8.3 miles long, pending final CPCN approval as of February 1, 2026." That is Golden-to-Mars — by name and description.</p>
+    </div>
+
+    <div class="leg-grid">
+      <div class="leg-card">
+        <h4>Up to 4 Pilot Projects</h4>
+        <p>The SCC may approve up to 4 qualifying underground pilot projects. Golden-to-Mars is eligible as the specifically-described project. The SCC must consider the legislation's intent in its ruling.</p>
+        <div class="note">The session has concluded — decisive legislative intent the SCC must weigh.</div>
+      </div>
+      <div class="leg-card">
+        <h4>Board Resolution = Statutory Prerequisite</h4>
+        <p>The bill requires local government support to unlock pilot program eligibility. <strong>Board inaction forecloses the underground pathway.</strong> A resolution supporting the program is required — not symbolic.</p>
+        <div class="note">The Board has not yet passed this resolution.</div>
+      </div>
+      <div class="leg-card">
+        <h4>Feasibility Already Established in the Record</h4>
+        <p>The bill requires showing technical feasibility. Loudoun County's own independent engineering has already established this in the SCC evidentiary record. The work is done — the Board just needs to act.</p>
+        <div class="note">County engineers confirmed underground within 500 ft of homes IS feasible.</div>
+      </div>
+      <div class="leg-card">
+        <h4>Cost Structure Is Manageable</h4>
+        <p>The pilot program includes a cost-sharing structure with a residential levy cap. The massive difference in long-term community benefit — versus the permanent harm of overhead towers — makes this a straightforward calculation.</p>
+        <div class="note">$0.99/month residential levy cap.</div>
+      </div>
+    </div>
+
+    <div class="callout red" style="margin-top:24px;">
+      <p><strong>The Virginia Mercury called this a nationally-watched precedent.</strong> If Virginia's SCC approves overhead lines through residential neighborhoods for data center load — after the legislature specifically directed underground — it will be a landmark decision that affects utility fights across the country.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PATH FORWARD -->
+<section class="path-section" id="path-forward">
+  <div class="container">
+    <span class="sec-tag">The Path Forward</span>
+    <h2 class="section-h" style="color:#fff; margin-bottom:10px;">There Is Another Way. Underground Works.</h2>
+    <p style="color:rgba(255,255,255,.72); max-width:640px; line-height:1.7; margin-bottom:0;">We support growth. We support reliability. We are asking leaders to manage growth responsibly — not to accept permanent harm because a utility prefers the fastest, cheapest option for its shareholders.</p>
+    <div class="path-grid">
+      <div class="path-card">
+        <div class="path-num">1</div>
+        <div>
+          <h3>Accept All 8 Easements</h3>
+          <p>Accept ALL 8 open space easements from LVE I and II. Zero fiscal impact to the County. Removes the viability barrier for hybrid/underground routes and signals the SCC that alternatives are supported locally.</p>
+        </div>
+      </div>
+      <div class="path-card">
+        <div class="path-num">2</div>
+        <div>
+          <h3>Don't Signal Overhead Is Acceptable</h3>
+          <p>Words matter before the SCC. Any Board statement accepting "any Route 3" becomes evidence in the ruling. Saying it is not a compromise — it is a concession. Your January 2025 resolution said underground. Hold to it.</p>
+        </div>
+      </div>
+      <div class="path-card">
+        <div class="path-num">3</div>
+        <div>
+          <h3>Pass the HB 1487 / SB 827 Resolution</h3>
+          <p>Board support is a statutory prerequisite for underground pilot eligibility. Inaction forecloses the only legislative pathway. Pass the resolution and direct the County Attorney to continue active advocacy.</p>
+        </div>
+      </div>
+      <div class="path-card">
+        <div class="path-num">4</div>
+        <div>
+          <h3>Pace the Load — This Is Not an Emergency</h3>
+          <p>This is voluntary commercial load growth from data centers, not an emergency for homes or hospitals. The SCC record supports sequencing data center interconnections until underground infrastructure is available.</p>
+        </div>
+      </div>
+    </div>
+    <div class="path-tagline">
+      "Do not leave a permanent memorial to this Board in the form of towers that will stand for generations."
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2>Ready to take action?</h2>
+  <p>The SCC ruling is expected any day. Your supervisor needs to hear from you right now.</p>
+  <a href="take-action.html" class="btn-gold">Contact Your Supervisor &rarr;</a>
+  <a href="the-truth.html" class="btn-white">Read the Truth About This Project</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><span style="color:var(--gold2)">United</span>Loudoun</a>
+        <p>Loudoun County residents fighting to keep 185-foot industrial transmission towers out of our neighborhoods — and to set the precedent that underground is the standard, not the exception.</p>
+        <p style="margin-top:10px; font-size:.8rem;"><strong style="color:rgba(255,255,255,.7)">Contact:</strong> <a href="mailto:president@lvehoa.com" style="color:var(--gold2)">president@lvehoa.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="the-issue.html">The Issue</a></li>
+          <li><a href="the-truth.html">The Truth</a></li>
+          <li><a href="press.html">Press Coverage</a></li>
+          <li><a href="take-action.html">Take Action</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>On This Page</h4>
+        <ul>
+          <li><a href="#the-proposal">The Proposal</a></li>
+          <li><a href="#at-stake">What's at Stake</a></li>
+          <li><a href="#community">Community Opposition</a></li>
+          <li><a href="#chino-hills">Chino Hills Precedent</a></li>
+          <li><a href="#legislation">Legislation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 United Loudoun &mdash; unitedloudoun.org &mdash; Because we ALL live here</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('nav-menu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

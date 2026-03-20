@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Press Coverage — United Loudoun</title>
+  <meta name="description" content="News coverage of the Golden to Mars transmission line fight in Loudoun County — from public hearings to legislation to SCC proceedings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:  #152744;
+      --navy2: #1b3660;
+      --teal:  #1a6b5e;
+      --teal2: #22856e;
+      --gold:  #c9970a;
+      --gold2: #f0b429;
+      --red:   #b91c1c;
+      --red2:  #dc2626;
+      --white: #ffffff;
+      --off:   #f8f7f4;
+      --gray:  #64748b;
+      --light: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; line-height: 1.6; }
+
+    /* ─── UTILITY ─── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--navy); border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; padding: 0 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .logo { font-weight: 900; font-size: 1.15rem; color: #fff; text-decoration: none; }
+    .logo span { color: var(--gold2); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { color: rgba(255,255,255,.82); text-decoration: none; font-size: .875rem; font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--gold2); }
+    nav a.active { color: var(--gold2); font-weight: 700; }
+    .btn-nav { background: var(--gold); color: var(--navy) !important; padding: 8px 18px; border-radius: 6px; font-weight: 700; }
+    .btn-nav:hover { background: var(--gold2) !important; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      background: var(--navy);
+      padding: 64px 0 56px;
+      color: #fff;
+    }
+    .page-hero .breadcrumb {
+      font-size: .78rem; color: rgba(255,255,255,.5); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .page-hero .breadcrumb a { color: rgba(255,255,255,.5); text-decoration: none; }
+    .page-hero .breadcrumb a:hover { color: var(--gold2); }
+    .page-hero .breadcrumb span { color: rgba(255,255,255,.3); }
+    .page-hero .section-tag {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      padding: 4px 13px; border-radius: 4px; font-size: .72rem;
+      font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .page-hero h1 {
+      font-family: 'Merriweather', serif; font-size: 2.6rem; font-weight: 900;
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .page-hero p {
+      font-size: 1.1rem; color: rgba(255,255,255,.78); max-width: 640px; line-height: 1.7;
+    }
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 36px; flex-wrap: wrap;
+    }
+    .hero-stat .num {
+      font-size: 2rem; font-weight: 900; color: var(--gold2); line-height: 1;
+    }
+    .hero-stat .lbl {
+      font-size: .78rem; color: rgba(255,255,255,.6); text-transform: uppercase;
+      letter-spacing: .07em; margin-top: 4px;
+    }
+
+    /* ─── FEATURED ARTICLES ─── */
+    .featured-section { padding: 72px 0 40px; background: #fff; }
+    .section-label {
+      font-size: .72rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--gold); margin-bottom: 8px;
+    }
+    .featured-section h2 {
+      font-family: 'Merriweather', serif; font-size: 1.85rem; font-weight: 900;
+      color: var(--navy); margin-bottom: 32px; line-height: 1.3;
+    }
+    .featured-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .featured-card {
+      border: 1.5px solid var(--light); border-radius: 12px; padding: 28px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: box-shadow .2s, border-color .2s;
+      text-decoration: none; color: inherit;
+    }
+    .featured-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.1); border-color: var(--gold); }
+    .featured-card .card-pub {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .pub-badge {
+      font-size: .68rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: .07em; padding: 3px 9px; border-radius: 4px;
+      background: var(--navy); color: #fff;
+    }
+    .pub-badge.loudoun-now  { background: #1a4480; }
+    .pub-badge.loudoun-times { background: #1a5c3e; }
+    .pub-badge.va-mercury   { background: #6b21a8; }
+    .pub-badge.patch        { background: #b91c1c; }
+    .pub-badge.county       { background: #374151; }
+    .pub-badge.facebook     { background: #1877f2; }
+    .card-date { font-size: .75rem; color: var(--gray); font-weight: 600; }
+    .featured-card h3 {
+      font-size: 1.08rem; font-weight: 800; color: var(--navy); line-height: 1.4;
+    }
+    .featured-card p { font-size: .875rem; color: #475569; line-height: 1.6; }
+    .card-link {
+      font-size: .8rem; font-weight: 700; color: var(--teal);
+      display: flex; align-items: center; gap: 4px; margin-top: auto;
+    }
+    .card-link::after { content: '→'; }
+    .new-badge {
+      display: inline-block; background: var(--red2); color: #fff;
+      font-size: .64rem; font-weight: 800; letter-spacing: .07em;
+      text-transform: uppercase; padding: 2px 7px; border-radius: 3px;
+    }
+
+    /* ─── FILTER BAR ─── */
+    .filter-bar {
+      background: var(--off); border-top: 1px solid var(--light);
+      border-bottom: 1px solid var(--light); padding: 16px 0;
+    }
+    .filter-inner {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .filter-label { font-size: .78rem; font-weight: 700; color: var(--gray); margin-right: 6px; }
+    .filter-btn {
+      background: #fff; border: 1.5px solid var(--light); border-radius: 20px;
+      padding: 5px 14px; font-size: .78rem; font-weight: 600; color: #475569;
+      cursor: pointer; transition: all .15s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--navy); border-color: var(--navy); color: #fff;
+    }
+
+    /* ─── ARCHIVE ─── */
+    .archive-section { padding: 48px 0 80px; background: var(--off); }
+    .archive-section h2 {
+      font-family: 'Merriweather', serif; font-size: 1.5rem; color: var(--navy);
+      margin-bottom: 28px;
+    }
+    .year-group { margin-bottom: 48px; }
+    .year-label {
+      font-size: .72rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: .12em; color: var(--gray);
+      padding: 10px 0 10px; margin-bottom: 16px;
+      border-bottom: 2px solid var(--light);
+    }
+    .article-list { display: flex; flex-direction: column; gap: 12px; }
+    .article-row {
+      background: #fff; border: 1px solid var(--light); border-radius: 10px;
+      padding: 18px 22px; display: grid;
+      grid-template-columns: 120px 1fr auto;
+      gap: 20px; align-items: start;
+      text-decoration: none; color: inherit;
+      transition: box-shadow .15s, border-color .15s;
+    }
+    .article-row:hover { box-shadow: 0 3px 12px rgba(0,0,0,.08); border-color: var(--gold); }
+    .article-row .art-date { font-size: .78rem; color: var(--gray); font-weight: 600; padding-top: 2px; }
+    .article-row .art-body {}
+    .article-row .art-title {
+      font-size: .95rem; font-weight: 800; color: var(--navy); line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .article-row .art-desc {
+      font-size: .8rem; color: #475569; line-height: 1.5;
+    }
+    .article-row .art-pub { text-align: right; }
+    .art-link {
+      font-size: .75rem; font-weight: 700; color: var(--teal);
+      text-decoration: none; white-space: nowrap;
+    }
+    .art-link:hover { text-decoration: underline; }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: var(--navy); color: #fff; text-align: center; padding: 56px 24px;
+    }
+    .cta-strip h2 {
+      font-family: 'Merriweather', serif; font-size: 2rem; margin-bottom: 16px;
+    }
+    .cta-strip p { color: rgba(255,255,255,.75); max-width: 540px; margin: 0 auto 28px; font-size: 1rem; }
+    .btn-gold {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-weight: 800; padding: 14px 32px; border-radius: 8px; text-decoration: none;
+      font-size: 1rem; transition: background .2s;
+    }
+    .btn-gold:hover { background: var(--gold2); }
+
+    /* ─── FOOTER ─── */
+    footer { background: #0d1a2d; color: rgba(255,255,255,.55); padding: 40px 0; }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: start;
+      flex-wrap: wrap; gap: 32px;
+    }
+    .footer-brand .logo { font-size: 1rem; }
+    .footer-brand p { font-size: .78rem; margin-top: 8px; max-width: 280px; line-height: 1.6; }
+    .footer-links h4 { font-size: .78rem; font-weight: 800; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a { color: rgba(255,255,255,.55); text-decoration: none; font-size: .82rem; }
+    .footer-links a:hover { color: var(--gold2); }
+    .footer-bottom { margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: .75rem; text-align: center; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .article-row { grid-template-columns: 1fr; gap: 8px; }
+      .article-row .art-pub { text-align: left; }
+      .page-hero h1 { font-size: 2rem; }
+    }
+    @media (max-width: 640px) {
+      nav { display: none; }
+      nav.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--navy); padding: 16px 24px;
+        gap: 16px; border-top: 1px solid rgba(255,255,255,.1); z-index: 300;
+      }
+      .hamburger { display: block; }
+      .hero-stats { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span>United</span>Loudoun</a>
+    <nav id="nav-menu">
+      <a href="the-issue.html">The Issue</a>
+      <a href="the-truth.html">The Truth</a>
+      <a href="press.html" class="active">Press</a>
+      <a href="take-action.html" class="btn-nav">Take Action</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Press Coverage</span>
+    </div>
+    <div class="section-tag">Media Coverage</div>
+    <h1>The Story Is Getting Out</h1>
+    <p>From SCC hearings to the state legislature, the fight over Golden to Mars has been covered by local papers, statewide outlets, and elected officials. Here's every article on the record.</p>
+  </div>
+</section>
+
+<!-- FEATURED — MOST RECENT -->
+<section class="featured-section">
+  <div class="container">
+    <div class="section-label">Most Recent</div>
+    <h2>Latest Coverage — March 2026</h2>
+    <div class="featured-grid">
+
+      <a class="featured-card" href="https://www.loudounnow.com/news/residents-urge-supervisors-to-continue-push-for-underground-power-lines/article_2fdc972f-c862-4946-9da9-3b1e888bb78d.html" target="_blank" rel="noopener">
+        <div class="card-pub">
+          <span class="pub-badge loudoun-now">Loudoun Now</span>
+          <span class="new-badge">New</span>
+          <span class="card-date">March 18, 2026</span>
+        </div>
+        <h3>Residents Urge Supervisors to Continue Push for Underground Power Lines</h3>
+        <p>Loudoun Valley Estates residents appeared before county supervisors to oppose Dominion Energy's planned overhead transmission lines, citing EMF exposure near schools and declining property values. The SCC's three judges are expected to rule by month's end.</p>
+        <span class="card-link">Read article</span>
+      </a>
+
+      <a class="featured-card" href="https://www.loudountimes.com/news/politics_and_government/levels_of_government/county/residents-press-burying-transmission-line-after-legislature-approves-pilot-program/article_73e9a149-8df3-4b5f-8706-691d63377b0c.html" target="_blank" rel="noopener">
+        <div class="card-pub">
+          <span class="pub-badge loudoun-times">Loudoun Times</span>
+          <span class="new-badge">New</span>
+          <span class="card-date">March 19, 2026</span>
+        </div>
+        <h3>Residents Press Burying Transmission Line After Legislature Approves Pilot Program</h3>
+        <p>With Virginia's General Assembly having approved an undergrounding pilot program, residents pressed their supervisors to keep demanding Dominion bury the Golden to Mars line. The SCC will have final say on the route.</p>
+        <span class="card-link">Read article</span>
+      </a>
+
+      <a class="featured-card" href="https://www.loudountimes.com/news/politics_and_government/budget_and_tax/the-2026-general-assembly-is-over-what-does-it-mean-for-loudoun/article_cf353f1c-aabc-4f23-bef8-6af35b89ccd6.html" target="_blank" rel="noopener">
+        <div class="card-pub">
+          <span class="pub-badge loudoun-times">Loudoun Times</span>
+          <span class="new-badge">New</span>
+          <span class="card-date">March 19, 2026</span>
+        </div>
+        <h3>The 2026 General Assembly Is Over. What Does It Mean for Loudoun?</h3>
+        <p>Virginia's session wrapped with several bills relevant to Loudoun County, including the underground pilot program and data center tax exemptions. House and Senate remain at odds on details — governor action ahead.</p>
+        <span class="card-link">Read article</span>
+      </a>
+
+      <a class="featured-card" href="https://www.loudountimes.com/news/politics_and_government/levels_of_government/state/program-to-bury-power-lines-passes-state-legislature/article_b084ee85-6af1-4389-8c49-8d25093822a6.html" target="_blank" rel="noopener">
+        <div class="card-pub">
+          <span class="pub-badge loudoun-times">Loudoun Times</span>
+          <span class="new-badge">New</span>
+          <span class="card-date">March 15, 2026</span>
+        </div>
+        <h3>Program to Bury Power Lines Passes State Legislature</h3>
+        <p>Virginia's General Assembly passed a pilot program on March 14 allowing utilities to bury high-voltage lines where feasible, with localities covering half the added cost. Sen. Srinivasan and Del. Singh — both D-Loudoun — led the legislation specifically referencing Golden to Mars.</p>
+        <span class="card-link">Read article</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <span class="filter-label">Filter by outlet:</span>
+      <button class="filter-btn active" data-filter="all">All Coverage</button>
+      <button class="filter-btn" data-filter="loudoun-now">Loudoun Now</button>
+      <button class="filter-btn" data-filter="loudoun-times">Loudoun Times</button>
+      <button class="filter-btn" data-filter="va-mercury">Virginia Mercury</button>
+      <button class="filter-btn" data-filter="patch">Patch</button>
+      <button class="filter-btn" data-filter="official">Official / Gov</button>
+    </div>
+  </div>
+</div>
+
+<!-- FULL ARCHIVE -->
+<section class="archive-section">
+  <div class="container">
+    <h2>Full Press Archive</h2>
+
+    <!-- 2026 -->
+    <div class="year-group" data-year="2026">
+      <div class="year-label">2026</div>
+      <div class="article-list">
+
+        <a class="article-row" href="https://www.loudounnow.com/news/residents-urge-supervisors-to-continue-push-for-underground-power-lines/article_2fdc972f-c862-4946-9da9-3b1e888bb78d.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Mar 18, 2026</div>
+          <div class="art-body">
+            <div class="art-title">Residents Urge Supervisors to Continue Push for Underground Power Lines</div>
+            <div class="art-desc">Residents cite EMF risks near schools and property value impacts as SCC ruling approaches.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudountimes.com/news/politics_and_government/levels_of_government/county/residents-press-burying-transmission-line-after-legislature-approves-pilot-program/article_73e9a149-8df3-4b5f-8706-691d63377b0c.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
+          <div class="art-date">Mar 19, 2026</div>
+          <div class="art-body">
+            <div class="art-title">Residents Press Burying Transmission Line After Legislature Approves Pilot Program</div>
+            <div class="art-desc">Supervisors urged to hold firm on underground demand as legislature's pilot program adds new weight to community position.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-times">Loudoun Times</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudountimes.com/news/politics_and_government/budget_and_tax/the-2026-general-assembly-is-over-what-does-it-mean-for-loudoun/article_cf353f1c-aabc-4f23-bef8-6af35b89ccd6.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
+          <div class="art-date">Mar 19, 2026</div>
+          <div class="art-body">
+            <div class="art-title">The 2026 General Assembly Is Over — What Does It Mean for Loudoun?</div>
+            <div class="art-desc">Roundup of Loudoun-relevant outcomes: underground pilot program, data center tax disputes, and affordable housing measures.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-times">Loudoun Times</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudountimes.com/news/politics_and_government/levels_of_government/state/program-to-bury-power-lines-passes-state-legislature/article_b084ee85-6af1-4389-8c49-8d25093822a6.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
+          <div class="art-date">Mar 15, 2026</div>
+          <div class="art-body">
+            <div class="art-title">Program to Bury Power Lines Passes State Legislature</div>
+            <div class="art-desc">Del. JJ Singh and Sen. Kannan Srinivasan's legislation passes — pilot program now awaits governor's signature and SCC consideration.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-times">Loudoun Times</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/legislation-for-underground-high-voltage-power-lines-advances/article_1c898c0d-721a-4cd7-b6c5-1fbe0dec687f.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Feb 6, 2026</div>
+          <div class="art-body">
+            <div class="art-title">Legislation for Underground High Voltage Power Lines Advances</div>
+            <div class="art-desc">Del. JJ Singh, Sen. Kannan Srinivasan, and Supervisor Laura TeKrony featured as underground pilot bill moves through General Assembly.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/golden-to-mars-power-line-case-moves-to-scc-judges/article_306ee84e-aec8-461f-a653-add83798931c.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Feb 4, 2026</div>
+          <div class="art-body">
+            <div class="art-title">Golden to Mars Power Line Case Moves to SCC Judges</div>
+            <div class="art-desc">After September 2025 hearings, the case advances to the three-judge SCC panel for deliberation and final ruling.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://virginiamercury.com/2026/01/30/va-delegates-bill-would-limit-where-high-voltage-transmission-lines-can-be-built/" target="_blank" rel="noopener" data-outlet="va-mercury">
+          <div class="art-date">Jan 30, 2026</div>
+          <div class="art-body">
+            <div class="art-title">Va. Delegate's Bill Would Limit Where High-Voltage Transmission Lines Can Be Built</div>
+            <div class="art-desc">Proposed Virginia legislation would restrict high-voltage line placement near residential areas — directly relevant to the Golden to Mars route.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge va-mercury">Virginia Mercury</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudountimes.com/news/environment/next-step-in-golden-to-mars-proceedings-underway-in-richmond/article_5a77e0b4-2ee2-4fde-9771-d2338b13b859.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
+          <div class="art-date">Jan 11, 2026</div>
+          <div class="art-body">
+            <div class="art-title">Next Step in Golden to Mars Proceedings Underway in Richmond</div>
+            <div class="art-desc">Cross-examination phase begins in the Richmond SCC courtroom as expert witnesses face questioning from all parties.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-times">Loudoun Times</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/golden-to-mars-transmission-line-hearing-resumes/article_b15566fc-edd5-487b-bc1a-d0701ab9e1a9.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Jan 11, 2026</div>
+          <div class="art-body">
+            <div class="art-title">Golden to Mars Transmission Line Hearing Resumes</div>
+            <div class="art-desc">SCC hearings resume in January 2026 after the December proceedings; testimony and cross-examination continue.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="year-group" data-year="2025">
+      <div class="year-label">2025</div>
+      <div class="article-list">
+
+        <a class="article-row" href="https://www.loudounnow.com/news/opening-arguments-begin-in-golden-to-mars-transmission-line-case/article_6db7e06f-2de1-4c9a-9ef5-64d958d71ab8.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Dec 18, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Opening Arguments Begin in Golden to Mars Transmission Line Case</div>
+            <div class="art-desc">Initial arguments presented before the SCC as the formal hearing phase of the Golden to Mars case begins.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://virginiamercury.com/2025/12/16/loudoun-residents-take-fight-against-high-voltage-power-lines-for-data-center-alley-to-scc/" target="_blank" rel="noopener" data-outlet="va-mercury">
+          <div class="art-date">Dec 16, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Loudoun Residents Take Fight Against High-Voltage Power Lines for Data Center Alley to SCC</div>
+            <div class="art-desc">Virginia Mercury documents community opposition to transmission infrastructure being built to power data center expansion without community input.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge va-mercury">Virginia Mercury</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/golden-to-mars-power-line-hearing-begins-arguments-deferred/article_e7383909-7b00-4741-9eae-b4d3b104317d.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Dec 18, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Golden to Mars Power Line Hearing Begins; Arguments Deferred</div>
+            <div class="art-desc">The December SCC hearing opens but formal arguments are postponed — setting up the January continuation.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/health-security-environmental-impacts-of-data-centers-raised-during-subramanyam-town-hall/article_93cfbedd-285b-4bc8-9663-c3c485ac86e2.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Dec 7, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Health, Security, Environmental Impacts of Data Centers Raised During Subramanyam Town Hall</div>
+            <div class="art-desc">Constituents raised concerns about data center health, security, and environmental impacts — including power line infrastructure — at Rep. Subramanyam's town hall.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/registration-open-for-final-golden-to-mars-power-line-hearing/article_faf889a7-dbb7-40d6-8db9-7eec836c0c4c.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Nov 29, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Registration Open for Final Golden to Mars Power Line Hearing</div>
+            <div class="art-desc">Loudoun Now announces public registration for the December SCC hearing, urging community participation.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://patch.com/virginia/ashburn/golden-mars-final-public-hearing-approaches-how-residents-can-participate" target="_blank" rel="noopener" data-outlet="patch">
+          <div class="art-date">Nov 25, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Golden to Mars Final Public Hearing Approaches: How Residents Can Participate</div>
+            <div class="art-desc">Patch guides Ashburn residents on how to register for and participate in the upcoming December SCC public hearing.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge patch">Patch</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudountimes.com/news/politics_and_government/levels_of_government/county/registration-open-for-next-golden-to-mars-hearing/article_f6c3f7e8-609a-48d7-bbd3-e70b578219b7.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
+          <div class="art-date">Nov 25, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Registration Open for Next Golden to Mars Hearing</div>
+            <div class="art-desc">Registration procedures for the upcoming SCC hearing, with background from September proceedings.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-times">Loudoun Times</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://patch.com/virginia/ashburn/underground-power-line-route-proposed-loudoun-county-others-golden-mars-case" target="_blank" rel="noopener" data-outlet="patch">
+          <div class="art-date">Oct 18, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Underground Power Line Route Proposed by Loudoun County, Others in Golden to Mars Case</div>
+            <div class="art-desc">Patch reports on the county's proposal for partial underground routing as a viable alternative to Dominion's planned overhead lines.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge patch">Patch</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/community-proposes-underground-option-for-golden-to-mars-power-line/article_ccd816ee-a4fd-4d50-bd95-985233564de0.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Oct 17, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Community Proposes Underground Option for Golden to Mars Power Line</div>
+            <div class="art-desc">A collaborative county-and-community proposal for undergrounding key segments of the transmission line is formally filed with the SCC.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudoun.gov/CivicAlerts.aspx?AID=10186" target="_blank" rel="noopener" data-outlet="official">
+          <div class="art-date">Oct 17, 2025</div>
+          <div class="art-body">
+            <div class="art-title">County Supports Undergrounding of Segments of Golden to Mars Transmission Line</div>
+            <div class="art-desc">Official Loudoun County government statement formally backing partial undergrounding of the proposed Golden to Mars transmission route.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge county">Loudoun County</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudountimes.com/0local-or-not/1local/calls-for-an-underground-transmission-line-option-continue-in-ashburn/article_57e5b81a-56bb-40a9-a002-549ffabfc6ed.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
+          <div class="art-date">Sep 30, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Calls for an Underground Transmission Line Option Continue in Ashburn</div>
+            <div class="art-desc">Following the September SCC hearing, community advocates maintain their call for the underground alternative as the only acceptable outcome.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-times">Loudoun Times</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/hundreds-more-turn-out-for-second-golden-to-mars-power-line-hearing/article_410f1cb0-9032-4341-884d-0e7f315fbe37.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Sep 30, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Hundreds More Turn Out for Second Golden to Mars Power Line Hearing</div>
+            <div class="art-desc">Substantial community turnout at the September SCC public hearing — legislators present, hundreds of residents testify against the overhead route.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MEDIA INQUIRIES CTA -->
+<div class="cta-strip">
+  <h2>Media Inquiries</h2>
+  <p>Are you a journalist covering the Golden to Mars case or Loudoun's fight for underground transmission lines? We can connect you with community spokespeople, data, and background materials.</p>
+  <a href="take-action.html" class="btn-gold">Contact United Loudoun</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><span style="color:var(--gold2)">United</span>Loudoun</a>
+        <p>Loudoun County residents fighting to keep 185-foot industrial transmission towers out of our neighborhoods — and to set the precedent that underground is the standard, not the exception.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="the-issue.html">The Issue</a></li>
+          <li><a href="the-truth.html">The Truth</a></li>
+          <li><a href="press.html">Press Coverage</a></li>
+          <li><a href="take-action.html">Take Action</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Key Links</h4>
+        <ul>
+          <li><a href="https://scc.virginia.gov/" target="_blank" rel="noopener">SCC Case Information</a></li>
+          <li><a href="https://www.loudoun.gov/" target="_blank" rel="noopener">Loudoun County Board</a></li>
+          <li><a href="the-issue.html#legislation">SB 827 / HB 1487</a></li>
+          <li><a href="take-action.html#email">Email Your Supervisor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 United Loudoun &mdash; unitedloudoun.org &mdash; Because we ALL live here
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('nav-menu').classList.toggle('open');
+  });
+
+  // Filter buttons
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const articleRows = document.querySelectorAll('.article-row');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      articleRows.forEach(row => {
+        if (filter === 'all' || row.dataset.outlet === filter) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

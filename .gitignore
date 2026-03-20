@@ -1,0 +1,20 @@
+# Ignore everything
+*
+
+# Allow website files
+!.gitignore
+!index.html
+!the-issue.html
+!the-truth.html
+!take-action.html
+!press.html
+
+# Allow image directories used by the site
+!Pictures/
+!Pictures/**
+!Chino Hills Pictures/
+!Chino Hills Pictures/**
+
+# Allow config
+!.claude/
+!.claude/launch.json
