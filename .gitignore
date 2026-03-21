@@ -17,6 +17,7 @@
 !Chino Hills Pictures/**
 
 # Allow config
+!.vercelignore
 !.claude/
 !.claude/launch.json
 

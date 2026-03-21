@@ -1,0 +1,68 @@
+# Ignore all non-website files
+*.pdf
+*.txt
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.csv
+*.pptx
+*.pptm
+*.mp4
+*.m4a
+*.zip
+*.png.md
+*.tmp
+~$*
+.claude/
+.git/
+.vercel/
+
+# Ignore all working directories
+Aspen to Golden/
+Board of Supervisiors Mtg_1.22.25/
+Board of Supervisors 2.11.26/
+Closing Brief/
+Conservation Easement/
+Dominion Earnings Calls/
+Dominion Meeting at Clubhouse/
+Extension filing/
+Feasibility Study/
+Hearing audio/
+Hearing materials/
+January 2025 Dominion materials downloaded 12.27.25/
+July 2024 Dominion materials downloaded 12.26.25/
+LCPS/
+LVE Position Memo/
+LVEII Property Ownership Study11325/
+Lower routing/
+Minutes/
+Position review materials/
+Rebuttal Testimony/
+SCC Process and Laws/
+Statue of Liberty image/
+Testimony/
+VDOT/
+WhatsApp/
+pjm/
+routes_balanced_15homes/
+
+# Ignore non-website loose files (by extension catch-all above handles most)
+*.md
+*.json
+*.JPG
+*.JPEG
+*.jpg
+*.jpeg
+*.png
+
+# But allow specific website images
+!Pictures/Statue 185.png
+!Pictures/Visit Loudoun Data Centers.jpg
+!Chino Hills Pictures/ChinoHills_Monopole_Residential_StreetView_07.jpg
+!Chino Hills Pictures/ChinoHills_Monopole_ParkContext_ChildScale_22.jpg
+!Chino Hills Pictures/ChinoHills_Monopole_Residential_BackyardContext_19.jpg
+!Chino Hills Pictures/ChinoHills_Monopole_Residential_RemovalSequence_23.jpg
+!Chino Hills Pictures/ChinoHills_Monopole_CommunityProtest_500kV_24.jpg
+!Chino Hills Pictures/ChinoHills_Monopole_Residential_RooflineView_20.jpg
+!Pictures/koran-saines.jpg
