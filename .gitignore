@@ -8,6 +8,7 @@
 !the-truth.html
 !take-action.html
 !press.html
+!missing.html
 
 # Allow image directories used by the site
 !Pictures/
@@ -18,3 +19,5 @@
 # Allow config
 !.claude/
 !.claude/launch.json
+
+.vercel
