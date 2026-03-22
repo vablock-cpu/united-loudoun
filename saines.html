@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where Is Supervisor Saines? — United Loudoun</title>
+  <meta name="description" content="Sterling District Supervisor Koran Saines works for Jeff Bezos at The Washington Post. Bezos owns AWS — the #1 data center customer driving the Golden-to-Mars transmission line. Saines has said nothing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,700;0,900;1,700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:  #152744; --navy2: #1b3660;
+      --teal:  #1a6b5e; --teal2: #22856e;
+      --gold:  #c9970a; --gold2: #f0b429;
+      --red:   #b91c1c; --red2:  #dc2626;
+      --off:   #f8f7f4; --gray:  #64748b; --light: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: var(--off); line-height: 1.6; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--navy); border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; padding: 0 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .logo { font-weight: 900; font-size: 1.15rem; color: #fff; text-decoration: none; }
+    .logo span { color: var(--gold2); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { color: rgba(255,255,255,.82); text-decoration: none; font-size: .875rem; font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--gold2); }
+    .btn-nav { background: var(--gold); color: var(--navy) !important; padding: 8px 18px; border-radius: 6px; font-weight: 700 !important; }
+    .btn-nav:hover { background: var(--gold2) !important; color: var(--navy) !important; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; }
+
+    /* ─── POSTER WRAPPER ─── */
+    .poster-wrap {
+      padding: 48px 24px 64px;
+      display: flex; justify-content: center;
+    }
+    .poster {
+      width: 100%; max-width: 640px;
+      background: #fff;
+      box-shadow: 0 8px 40px rgba(0,0,0,.12);
+      overflow: hidden;
+    }
+
+    /* ─── PHOTOS ROW ─── */
+    .photos-row {
+      display: flex; height: 280px;
+    }
+    .photo-panel {
+      flex: 1; position: relative; overflow: hidden;
+    }
+    .photo-panel img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .photo-divider {
+      width: 4px; background: var(--red2); flex-shrink: 0;
+    }
+    .photo-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(0,0,0,.82); padding: 10px 16px; text-align: center;
+    }
+    .photo-label .name {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 17px; color: #fff; letter-spacing: 3px; text-transform: uppercase;
+    }
+    .photo-label .role {
+      font-size: 11px; color: #aaa; margin-top: 2px;
+    }
+
+    /* ─── RED HEADLINE BAR ─── */
+    .headline-bar {
+      background: var(--red2); padding: 22px 36px; text-align: center;
+    }
+    .headline-main {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 28px; color: #fff; letter-spacing: 2px; text-transform: uppercase;
+    }
+    .headline-chain {
+      font-size: 13px; color: rgba(255,255,255,.8);
+      margin-top: 8px; line-height: 1.6;
+    }
+    .headline-chain strong { color: #fff; }
+
+    /* ─── SECTIONS ─── */
+    .section {
+      padding: 24px 36px;
+    }
+    .section-header {
+      font-family: 'Oswald', sans-serif; font-weight: 600;
+      font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--red2); margin-bottom: 16px;
+    }
+    .quote {
+      padding: 10px 0 10px 18px;
+      border-left: 4px solid var(--red2);
+      margin-bottom: 14px;
+    }
+    .quote:last-child { margin-bottom: 0; }
+    .quote-text {
+      font-size: 15px; font-style: italic; color: #1a1a1a; line-height: 1.5;
+    }
+    .quote-text.big {
+      font-family: 'Merriweather', serif;
+      font-size: 28px; font-weight: 900; font-style: italic; color: #1a1a1a;
+    }
+    .quote-attr {
+      font-size: 11px; color: #888; margin-top: 5px; font-style: normal;
+    }
+
+    /* ─── CONTRAST BAR ─── */
+    .contrast-bar {
+      background: var(--gold2); padding: 14px 36px; text-align: center;
+    }
+    .contrast-text {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 16px; color: var(--navy); letter-spacing: 1px; text-transform: uppercase;
+    }
+
+    /* ─── LIGHT SECTION ─── */
+    .section-light {
+      padding: 24px 36px; background: var(--off);
+    }
+    .section-light .quote { border-left-color: var(--teal); }
+
+    /* ─── AWS SECTION ─── */
+    .aws-section {
+      background: var(--navy); padding: 24px 36px;
+    }
+    .aws-header {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 16px; color: var(--gold2);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
+    }
+    .aws-body {
+      font-size: 14px; color: rgba(255,255,255,.85); line-height: 1.65;
+    }
+    .aws-footer {
+      font-weight: 700; font-size: 14px; color: var(--red2); margin-top: 14px;
+    }
+
+    /* ─── DARK BAR ─── */
+    .dark-bar {
+      background: #0d1a2d; padding: 20px 36px; text-align: center;
+    }
+    .dark-bar-text {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 30px; color: var(--gold2);
+      letter-spacing: 4px; text-transform: uppercase;
+    }
+
+    /* ─── DOTS SECTION ─── */
+    .dots-section {
+      padding: 22px 36px; background: #fafafa;
+    }
+    .dot-row {
+      display: flex; align-items: baseline; gap: 10px;
+      margin-bottom: 8px; font-size: 13.5px; color: #333; line-height: 1.5;
+    }
+    .dot-arrow {
+      color: var(--red2); font-weight: 900; flex-shrink: 0; font-size: 15px;
+    }
+    .dot-row strong { color: #1a1a1a; }
+
+    /* ─── STATEMENT ─── */
+    .statement {
+      padding: 18px 36px; text-align: center;
+    }
+    .statement-text {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 16px; color: #1a1a1a;
+      letter-spacing: 1px; text-transform: uppercase; line-height: 1.4;
+    }
+
+    /* ─── BOTTOM BANNER ─── */
+    .bottom-banner {
+      background: var(--red2); padding: 24px 36px; text-align: center;
+    }
+    .tagline-top {
+      font-family: 'Oswald', sans-serif; font-weight: 600;
+      font-size: 17px; color: rgba(255,255,255,.85); letter-spacing: 1px;
+    }
+    .tagline-big {
+      font-family: 'Merriweather', serif; font-weight: 900;
+      font-size: 34px; color: #fff; margin-top: 4px; line-height: 1.2;
+    }
+
+    /* ─── POSTER FOOTER ─── */
+    .poster-footer {
+      background: #0d1a2d; padding: 16px 36px; text-align: center;
+    }
+    .poster-footer-label {
+      font-family: 'Oswald', sans-serif; font-weight: 600;
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,.5); margin-bottom: 4px;
+    }
+    .poster-footer-url {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 22px; color: var(--gold2); letter-spacing: 2px;
+    }
+    .poster-footer-url a {
+      color: var(--gold2); text-decoration: none;
+    }
+    .poster-footer-url a:hover { text-decoration: underline; }
+
+    /* ─── SITE FOOTER ─── */
+    footer { background: #0d1a2d; color: rgba(255,255,255,.5); padding: 44px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .footer-brand .logo { font-size: 1rem; display: inline-block; margin-bottom: 10px; }
+    .footer-brand p { font-size: .8rem; line-height: 1.65; }
+    .footer-col h4 { font-size: .72rem; font-weight: 800; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .82rem; transition: color .2s; }
+    .footer-col a:hover { color: var(--gold2); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; text-align: center; font-size: .75rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      nav { display: none; }
+      nav.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--navy); padding: 16px 24px;
+        gap: 16px; border-top: 1px solid rgba(255,255,255,.1); z-index: 300;
+      }
+      .hamburger { display: block; }
+      .photos-row { height: 220px; }
+      .headline-main { font-size: 22px; }
+      .quote-text.big { font-size: 22px; }
+      .tagline-big { font-size: 26px; }
+      .dark-bar-text { font-size: 24px; }
+      .section, .section-light, .aws-section, .dots-section, .statement,
+      .headline-bar, .contrast-bar, .bottom-banner, .poster-footer { padding-left: 24px; padding-right: 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span>United</span>Loudoun</a>
+    <nav id="nav-menu">
+      <a href="the-issue.html">The Issue</a>
+      <a href="the-truth.html">The Truth</a>
+      <a href="press.html">Press</a>
+      <a href="take-action.html" class="btn-nav">Take Action</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- POSTER -->
+<div class="poster-wrap">
+  <div class="poster">
+
+    <!-- PHOTOS ROW -->
+    <div class="photos-row">
+      <div class="photo-panel">
+        <img src="Pictures/jeff-bezos.png" alt="Jeff Bezos" onerror="this.parentElement.style.background='var(--navy)'">
+        <div class="photo-label">
+          <div class="name">Jeff Bezos</div>
+          <div class="role">Owner, The Washington Post · Founder, Amazon / AWS</div>
+        </div>
+      </div>
+      <div class="photo-divider"></div>
+      <div class="photo-panel">
+        <img src="Pictures/koran-saines.jpg" alt="Koran Saines" onerror="this.parentElement.style.background='var(--navy)'">
+        <div class="photo-label">
+          <div class="name">Koran Saines</div>
+          <div class="role">Sterling District Supervisor · Washington Post Employee</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADLINE -->
+    <div class="headline-bar">
+      <div class="headline-main">Koran Saines Works for Jeff Bezos.</div>
+      <div class="headline-chain">
+        <strong>Bezos</strong> owns The Washington Post. <strong>Saines</strong> works there.<br>
+        <strong>Bezos</strong> founded Amazon. Amazon owns <strong>AWS</strong> — the #1 data center operator in Loudoun County.<br>
+        <strong>AWS data centers</strong> are driving the demand that requires the Golden-to-Mars transmission line.
+      </div>
+    </div>
+
+    <!-- FEAR-MONGERING QUOTE -->
+    <div class="section">
+      <div class="section-header">When data centers were challenged, Supervisor Saines called it:</div>
+      <div class="quote">
+        <div class="quote-text big">"Fear-mongering."</div>
+        <div class="quote-attr">— Supervisor Saines, accusing his own Board colleagues of fear-mongering for suggesting data centers might leave Loudoun if their by-right approvals were restricted</div>
+      </div>
+    </div>
+
+    <!-- CONTRAST -->
+    <div class="contrast-bar">
+      <div class="contrast-text">But when it's your neighborhood, Saines has nothing to say.</div>
+    </div>
+
+    <!-- SAINES QUOTES -->
+    <div class="section">
+      <div class="quote">
+        <div class="quote-text">"The board has no authority to approve or deny the project."</div>
+        <div class="quote-attr">— Supervisor Saines, Board of Supervisors Meeting, March 17, 2026</div>
+      </div>
+      <div class="quote">
+        <div class="quote-text">"We'll wait patiently, see what happens."</div>
+        <div class="quote-attr">— Supervisor Saines, Board of Supervisors Meeting, March 17, 2026</div>
+      </div>
+    </div>
+
+    <!-- STATEMENT -->
+    <div class="statement">
+      <div class="statement-text">Waiting patiently isn't leadership. And it is not an option.</div>
+    </div>
+
+    <!-- OTHER SUPERVISORS -->
+    <div class="section-light">
+      <div class="section-header">Other supervisors are leading on this issue</div>
+      <div class="quote">
+        <div class="quote-text">"Trusted community partners don't make decisions that could have a huge impact on the community without involving the community."</div>
+        <div class="quote-attr">— Supervisor Briskman (D-Algonkian), on the GW/AWS campus deal</div>
+      </div>
+      <div class="quote">
+        <div class="quote-text">"Voting for data centers is almost political suicide. Loudoun County voters are done with them."</div>
+        <div class="quote-attr">— Supervisor Briskman (D-Algonkian)</div>
+      </div>
+    </div>
+
+    <!-- AWS -->
+    <div class="aws-section">
+      <div class="aws-header">AWS &amp; Dominion refused to work with our community.</div>
+      <div class="aws-body">
+        Loudoun Valley Estates asked AWS to come to the table and help find a solution for the Golden-to-Mars route. AWS wouldn't answer. Our state senator reached out. AWS wouldn't answer.
+      </div>
+      <div class="aws-body" style="margin-top: 10px;">
+        But when Dominion needed support blocking underground alternatives at the SCC — AWS showed up and did it together.
+      </div>
+      <div class="aws-footer">
+        Their owner's employee on the Loudoun County Board of Supervisors? Still silent.
+      </div>
+    </div>
+
+    <!-- WHERE IS SAINES -->
+    <div class="dark-bar">
+      <div class="dark-bar-text">Where is Saines?</div>
+    </div>
+
+    <!-- CONNECT THE DOTS -->
+    <div class="dots-section">
+      <div class="dot-row"><span class="dot-arrow">→</span> <strong>Bezos</strong> owns The Washington Post. Saines works there.</div>
+      <div class="dot-row"><span class="dot-arrow">→</span> <strong>Bezos</strong> founded Amazon. Amazon owns AWS — the #1 data center customer in Loudoun County.</div>
+      <div class="dot-row"><span class="dot-arrow">→</span> <strong>AWS data centers</strong> are driving the electricity demand that requires the Golden-to-Mars transmission line.</div>
+      <div class="dot-row"><span class="dot-arrow">→</span> <strong>That line</strong> puts 185-ft towers through Saines' own district. And he has said nothing.</div>
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="bottom-banner">
+      <div class="tagline-top">Saines is for Sterling and the Data Centers.</div>
+      <div class="tagline-big">Not for us.</div>
+    </div>
+
+    <!-- POSTER FOOTER -->
+    <div class="poster-footer">
+      <div class="poster-footer-label">Have you seen this Supervisor?</div>
+      <div class="poster-footer-url"><a href="https://unitedloudoun.org">unitedloudoun.org</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><span style="color:var(--gold2)">United</span>Loudoun</a>
+        <p>Loudoun County residents fighting to keep 185-foot industrial transmission towers out of our neighborhoods — and to set the precedent that underground is the standard, not the exception. This started with Loudoun Valley Estates. It affects all of Loudoun.</p>
+        <p style="margin-top:10px; font-size:.8rem;"><strong style="color:rgba(255,255,255,.7);">Contact:</strong> <a href="mailto:contact@unitedloudoun.org" style="color:var(--gold2);">contact@unitedloudoun.org</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="the-issue.html">The Issue</a></li>
+          <li><a href="the-truth.html">The Truth</a></li>
+          <li><a href="press.html">Press Coverage</a></li>
+          <li><a href="take-action.html">Take Action</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Key Facts</h4>
+        <ul>
+          <li><a href="the-issue.html">185-ft towers — taller than Statue of Liberty</a></li>
+          <li><a href="the-issue.html">Less than 50 ft from homes</a></li>
+          <li><a href="the-truth.html">It's a data center project</a></li>
+          <li><a href="the-issue.html">Chino Hills proved underground works</a></li>
+          <li><a href="take-action.html">SB 827 / HB 1487 — Board support needed</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 United Loudoun &mdash; unitedloudoun.org &mdash; Because we ALL live here
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('nav-menu').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
