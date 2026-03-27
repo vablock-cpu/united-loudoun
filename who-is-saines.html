@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Who Is Supervisor Saines Here For? — United Loudoun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,700;0,900;1,700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:  #152744; --navy2: #1b3660;
+      --teal:  #1a6b5e; --teal2: #22856e;
+      --gold:  #c9970a; --gold2: #f0b429;
+      --red:   #b91c1c; --red2:  #dc2626;
+      --off:   #f8f7f4; --gray:  #64748b; --light: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: var(--off); line-height: 1.6; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--navy); border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; padding: 0 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .logo { font-weight: 900; font-size: 1.15rem; color: #fff; text-decoration: none; }
+    .logo span { color: var(--gold2); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { color: rgba(255,255,255,.82); text-decoration: none; font-size: .875rem; font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--gold2); }
+    .btn-nav { background: var(--gold); color: var(--navy) !important; padding: 8px 18px; border-radius: 6px; font-weight: 700 !important; }
+    .btn-nav:hover { background: var(--gold2) !important; color: var(--navy) !important; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; }
+
+    /* ─── POSTER WRAPPER ─── */
+    .poster-wrap {
+      padding: 48px 24px 64px;
+      display: flex; justify-content: center;
+    }
+    .poster {
+      width: 100%; max-width: 680px;
+      background: #fff;
+      box-shadow: 0 8px 40px rgba(0,0,0,.15);
+      overflow: hidden;
+    }
+
+    /* ─── HEADLINE BAR ─── */
+    .headline-bar {
+      background: var(--navy); padding: 30px 36px 26px;
+    }
+    .headline-main {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 36px; color: #fff; letter-spacing: 1px; line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .headline-main em {
+      font-style: normal; color: var(--gold2);
+    }
+    .headline-sub {
+      font-size: 13.5px; color: rgba(255,255,255,.72); line-height: 1.6;
+    }
+    .headline-sub strong { color: #fff; }
+
+    /* ─── PHOTO STRIP ─── */
+    .photo-strip {
+      border-top: 4px solid var(--red2);
+      border-bottom: 3px solid var(--navy);
+      background: var(--off);
+      padding: 20px 36px;
+      display: flex; align-items: center; gap: 22px;
+    }
+    .photo-box {
+      width: 96px; height: 116px;
+      flex-shrink: 0; overflow: hidden;
+      border: 2px solid var(--light);
+    }
+    .photo-box img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top;
+    }
+    .photo-info { font-family: 'Inter', sans-serif; }
+    .photo-name {
+      font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 2px;
+    }
+    .photo-role {
+      font-size: 11px; color: var(--gray);
+    }
+    .photo-note {
+      font-size: 12px; color: #666; margin-top: 8px; line-height: 1.5; font-style: italic;
+    }
+
+    /* ─── TWO-COLUMN CONTRAST ─── */
+    .contrast-grid {
+      display: flex; border-bottom: 3px solid var(--navy);
+    }
+    .col {
+      flex: 1; padding: 22px 24px 20px;
+    }
+    .col-left { border-right: 3px solid var(--navy); }
+    .col-right { background: #f8faf8; }
+
+    .col-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      margin-bottom: 6px; padding-bottom: 8px;
+    }
+    .col-left .col-label { color: var(--red2); border-bottom: 3px solid var(--red2); }
+    .col-right .col-label { color: var(--teal); border-bottom: 3px solid var(--teal); }
+
+    .col-sub {
+      font-size: 10.5px; color: #888; margin-bottom: 14px; line-height: 1.4; font-style: italic;
+    }
+    .q {
+      padding: 6px 0 6px 14px; margin-bottom: 10px;
+    }
+    .col-left .q { border-left: 4px solid var(--red2); }
+    .col-right .q { border-left: 4px solid var(--teal); }
+    .q-text {
+      font-size: 13.5px; font-style: italic; line-height: 1.45; color: #222;
+    }
+    .q-attr {
+      font-size: 9.5px; color: #999; margin-top: 4px;
+    }
+
+    .fear-quote {
+      font-family: 'Merriweather', serif;
+      font-size: 28px; font-weight: 900; font-style: italic;
+      color: var(--teal); padding: 12px 0 8px 14px;
+      border-left: 5px solid var(--teal);
+      line-height: 1.1; margin-bottom: 10px;
+    }
+    .fear-context {
+      font-size: 11.5px; color: #555; line-height: 1.6; padding-left: 19px;
+    }
+    .fear-kicker {
+      font-size: 12px; font-weight: 700; color: #222;
+      margin-top: 14px; padding-left: 19px; line-height: 1.4;
+    }
+
+    /* ─── RED DIVIDER BAND ─── */
+    .divider-band {
+      background: var(--red2); padding: 13px 36px;
+    }
+    .divider-band p {
+      font-family: 'Oswald', sans-serif; font-size: 13.5px; font-weight: 600;
+      color: #fff; letter-spacing: 0.3px;
+    }
+    .divider-band em { font-weight: 400; font-style: italic; }
+
+    /* ─── BRIDGE ─── */
+    .bridge {
+      background: #fff8e1; padding: 16px 36px;
+      border-bottom: 3px solid var(--red2);
+    }
+    .bridge p {
+      font-size: 13px; line-height: 1.6; color: #333;
+    }
+    .bridge strong { color: var(--red2); }
+
+    /* ─── ACTIONS (dark) ─── */
+    .actions {
+      background: var(--navy); padding: 28px 36px 30px;
+    }
+    .actions-kicker {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px; font-weight: 600; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold2); margin-bottom: 6px;
+    }
+    .actions-header {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px; font-weight: 700; color: #fff;
+      line-height: 1.3; margin-bottom: 4px;
+    }
+    .actions-sub {
+      font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 22px;
+    }
+
+    .a-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
+    .a-item { display: flex; align-items: flex-start; gap: 14px; }
+    .a-num {
+      background: var(--gold2); color: var(--navy);
+      font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 700;
+      width: 26px; height: 26px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .a-body { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.55; }
+    .a-body strong {
+      font-family: 'Oswald', sans-serif; font-size: 10.5px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: #fff; display: block; margin-bottom: 2px;
+    }
+
+    /* ─── CALLOUT ─── */
+    .saines-callout {
+      background: #0d1a2d; border-top: 2px solid var(--gold2); padding: 15px 36px;
+    }
+    .saines-callout p {
+      font-size: 14px; font-weight: 700; color: var(--gold2);
+      line-height: 1.5; font-style: italic;
+    }
+
+    /* ─── CLOSING ─── */
+    .closing {
+      border-top: 1px solid rgba(255,255,255,.12); padding-top: 18px; margin-top: 4px;
+    }
+    .closing-setup {
+      font-size: 12px; color: rgba(255,255,255,.5);
+      font-style: italic; margin-bottom: 8px; line-height: 1.45;
+    }
+    .closing-punch {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 22px; color: #fff; line-height: 1.2; letter-spacing: 1px;
+    }
+    .closing-punch .y { color: var(--gold2); }
+    .closing-punch .r { color: #ff6b6b; }
+
+    /* ─── POSTER FOOTER ─── */
+    .poster-footer {
+      background: #0d1a2d; padding: 16px 36px; text-align: center;
+    }
+    .poster-footer-label {
+      font-family: 'Oswald', sans-serif; font-weight: 600;
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,.5); margin-bottom: 4px;
+    }
+    .poster-footer-url {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 22px; color: var(--gold2); letter-spacing: 2px;
+    }
+    .poster-footer-url a { color: var(--gold2); text-decoration: none; }
+    .poster-footer-url a:hover { text-decoration: underline; }
+
+    /* ─── SITE FOOTER ─── */
+    footer { background: #0d1a2d; color: rgba(255,255,255,.5); padding: 44px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .footer-brand .logo { font-size: 1rem; display: inline-block; margin-bottom: 10px; }
+    .footer-brand p { font-size: .8rem; line-height: 1.65; }
+    .footer-col h4 { font-size: .72rem; font-weight: 800; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .82rem; transition: color .2s; }
+    .footer-col a:hover { color: var(--gold2); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; text-align: center; font-size: .75rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      nav { display: none; }
+      nav.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--navy); padding: 16px 24px;
+        gap: 16px; border-top: 1px solid rgba(255,255,255,.1); z-index: 300;
+      }
+      .hamburger { display: block; }
+      .contrast-grid { flex-direction: column; }
+      .col-left { border-right: none; border-bottom: 3px solid var(--navy); }
+      .headline-main { font-size: 26px; }
+      .fear-quote { font-size: 22px; }
+      .poster-wrap { padding: 24px 16px 40px; }
+      .headline-bar, .photo-strip, .col, .divider-band, .bridge,
+      .actions, .saines-callout, .poster-footer { padding-left: 24px; padding-right: 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span>United</span>Loudoun</a>
+    <nav id="nav-menu">
+      <a href="the-issue.html">The Issue</a>
+      <a href="the-truth.html">The Truth</a>
+      <a href="press.html">Press</a>
+      <a href="take-action.html" class="btn-nav">Take Action</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- POSTER -->
+<div class="poster-wrap">
+  <div class="poster">
+
+    <!-- HEADLINE -->
+    <div class="headline-bar">
+      <div class="headline-main">Who is Supervisor Saines<br>here <em>for</em>?</div>
+      <div class="headline-sub">
+        Dominion wants to build <strong>185-foot industrial towers less than 50 feet from homes and schools</strong> — to power data centers. Not for reliability. Not for you.
+        This decision is permanent. Once built, these towers stand for generations.
+        What has your supervisor done about it?
+      </div>
+    </div>
+
+    <!-- PHOTO STRIP -->
+    <div class="photo-strip">
+      <div class="photo-box">
+        <img src="Pictures/koran-saines.jpg" alt="Supervisor Koran Saines" onerror="this.parentElement.style.background='var(--navy)'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-name">Supervisor Koran Saines</div>
+        <div class="photo-role">Sterling District &nbsp;·&nbsp; Loudoun County Board of Supervisors</div>
+        <div class="photo-note">Forget leading — he hasn't even shown up. And when he did speak, at the March 17 Board meeting, this is what his constituents heard before they spent the next 90 minutes explaining to him what he could do.</div>
+      </div>
+    </div>
+
+    <!-- TWO-COLUMN CONTRAST -->
+    <div class="contrast-grid">
+
+      <div class="col col-left">
+        <div class="col-label">What he told you</div>
+        <div class="col-sub">Board of Supervisors Meeting &middot; March 17, 2026 &middot; Comments to the gathered community, before public input</div>
+
+        <div class="q">
+          <div class="q-text">"The board has no authority to approve or deny the project."</div>
+        </div>
+        <div class="q">
+          <div class="q-text">"The board has no power over the SCC."</div>
+        </div>
+        <div class="q">
+          <div class="q-text">"We'll wait patiently, see what happens."</div>
+        </div>
+        <div class="q">
+          <div class="q-text">"We're reviewing that"</div>
+          <div class="q-attr">— on HB 1487, a bill to put power lines underground, already passed by the General Assembly and sitting on the Governor's desk</div>
+        </div>
+      </div>
+
+      <div class="col col-right">
+        <div class="col-label">What he said for them</div>
+        <div class="col-sub">When colleagues proposed giving the public more say over data center approvals</div>
+
+        <div class="fear-quote">"Fear-<br>mongering."</div>
+        <div class="fear-context">
+          Supervisor Saines accused his own Board colleagues of fear-mongering for suggesting data centers might leave the county if their automatic approvals were restricted.
+        </div>
+        <div class="fear-kicker">
+          He couldn't find his voice for your neighborhood.<br>
+          He had no trouble finding it for theirs.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RED DIVIDER -->
+    <div class="divider-band">
+      <p>The state is about to approve this project. Permanently. <em>There are four things the Board can do right now — before that happens.</em></p>
+    </div>
+
+    <!-- BRIDGE -->
+    <div class="bridge">
+      <p><strong>The data centers aren't sitting this one out.</strong> &nbsp;The industry whose electricity demand created this project hired lawyers, organized, and has been watching this proceeding from day one. They don't need to fight for their outcome. They just need Supervisor Saines to stay out of the way. He has been obliging.</p>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <div class="actions-kicker">What the Board can do — right now</div>
+      <div class="actions-header">Supervisor Saines says the Board's hands are tied. They aren't.</div>
+      <div class="actions-sub">The Board has the tools. It just hasn't used them.</div>
+
+      <div class="a-list">
+        <div class="a-item">
+          <div class="a-num">1</div>
+          <div class="a-body">
+            <strong>Take the legal steps already in front of them</strong>
+            The Board has options on the table right now that would clear the path for underground power lines — at zero cost to taxpayers. They haven't acted on a single one.
+          </div>
+        </div>
+        <div class="a-item">
+          <div class="a-num">2</div>
+          <div class="a-body">
+            <strong>Enforce the standard the Board set for itself</strong>
+            The Board already said no high-voltage power lines within 500 feet of homes or schools. Now they need to say it again — louder — and mean it.
+          </div>
+        </div>
+        <div class="a-item">
+          <div class="a-num">3</div>
+          <div class="a-body">
+            <strong>Tell the state and Dominion: no overhead lines through our neighborhoods</strong>
+            The Board can file directly with the state commission deciding this case. It has done it before. It should do it now — and make clear it will not support any above-ground high-voltage power lines running through residential communities.
+          </div>
+        </div>
+        <div class="a-item">
+          <div class="a-num">4</div>
+          <div class="a-body">
+            <strong>Back the bill that puts these lines underground — and make the data centers pay for it</strong>
+            HB 1487 would require underground power lines. It's on the Governor's desk right now. The Board can tell the Governor they support it — and signal that the data centers driving this demand should foot the bill, not you.
+          </div>
+        </div>
+      </div>
+
+      <!-- CALLOUT -->
+      <div class="saines-callout">
+        <p>The data centers are the reason these power lines exist. So why doesn't Supervisor Saines want to make them pay for putting the lines underground?</p>
+      </div>
+
+      <div class="closing">
+        <div class="closing-setup">Sterling District was built for the data center industry. Your neighborhood was an afterthought. Act like you know it.</div>
+        <div class="closing-punch">The clock is running out. <span class="y">On you.</span> <span class="r">For them.</span></div>
+      </div>
+    </div>
+
+    <!-- POSTER FOOTER -->
+    <div class="poster-footer">
+      <div class="poster-footer-label">Paid for by United Loudoun</div>
+      <div class="poster-footer-url"><a href="https://unitedloudoun.org">unitedloudoun.org</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><span style="color:var(--gold2)">United</span>Loudoun</a>
+        <p>Loudoun County residents fighting to keep 185-foot industrial transmission towers out of our neighborhoods — and to set the precedent that underground is the standard, not the exception. This started with Loudoun Valley Estates. It affects all of Loudoun.</p>
+        <p style="margin-top:10px; font-size:.8rem;"><strong style="color:rgba(255,255,255,.7);">Contact:</strong> <a href="mailto:contact@unitedloudoun.org" style="color:var(--gold2);">contact@unitedloudoun.org</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="the-issue.html">The Issue</a></li>
+          <li><a href="the-truth.html">The Truth</a></li>
+          <li><a href="press.html">Press Coverage</a></li>
+          <li><a href="take-action.html">Take Action</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Key Facts</h4>
+        <ul>
+          <li><a href="the-issue.html">185-ft towers — taller than Statue of Liberty</a></li>
+          <li><a href="the-issue.html">Less than 50 ft from homes</a></li>
+          <li><a href="the-truth.html">It's a data center project</a></li>
+          <li><a href="the-issue.html">Chino Hills proved underground works</a></li>
+          <li><a href="take-action.html">HB 1487 — Board support needed</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 United Loudoun &mdash; unitedloudoun.org &mdash; Because we ALL live here
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('nav-menu').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
