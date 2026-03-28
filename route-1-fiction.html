@@ -237,7 +237,7 @@
     </div>
     <div class="legend-item">
       <div style="width:20px;height:10px;background:rgba(255,50,100,0.3);border:1px solid #ff3264;border-radius:2px;"></div>
-      <span>150' ROW</span>
+      <span>100' ROW</span>
     </div>
   </div>
 </div>
@@ -245,7 +245,7 @@
 <div id="map"></div>
 
 <div class="row-toggle">
-  <button class="row-btn" id="rowBtn" onclick="toggleROW()">150' ROW ✓</button>
+  <button class="row-btn" id="rowBtn" onclick="toggleROW()">100' ROW ✓</button>
   <button class="measure-btn" id="measureBtn" onclick="toggleMeasure()">📏 Measure</button>
   <div class="measure-result" id="measureResult"></div>
 </div>
@@ -413,7 +413,7 @@ function setBasemap(name) {
   });
 }
 
-// --- 150' Right-of-Way Corridor (75' each side) ---
+// --- 100' Right-of-Way Corridor (50' each side) ---
 
 function bufferLine(coords, feetPerSide) {
   // Convert feet to approximate degrees at this latitude (~39°N)
@@ -462,9 +462,9 @@ const rowStyle = {
   fillOpacity: 0.15
 };
 
-const rowSeg0 = L.polygon(bufferLine(seg0, 75), rowStyle).addTo(map).bindPopup('<b>150\' Right-of-Way Corridor</b><br>75\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
-const rowSeg1 = L.polygon(bufferLine(seg1, 75), rowStyle).addTo(map).bindPopup('<b>150\' Right-of-Way Corridor</b><br>75\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
-const rowSeg2 = L.polygon(bufferLine(seg2, 75), rowStyle).addTo(map).bindPopup('<b>150\' Right-of-Way Corridor</b><br>75\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
+const rowSeg0 = L.polygon(bufferLine(seg0, 50), rowStyle).addTo(map).bindPopup('<b>100\' Right-of-Way Corridor</b><br>50\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
+const rowSeg1 = L.polygon(bufferLine(seg1, 50), rowStyle).addTo(map).bindPopup('<b>100\' Right-of-Way Corridor</b><br>50\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
+const rowSeg2 = L.polygon(bufferLine(seg2, 50), rowStyle).addTo(map).bindPopup('<b>100\' Right-of-Way Corridor</b><br>50\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
 
 const rowGroup = L.layerGroup([rowSeg0, rowSeg1, rowSeg2]);
 
@@ -611,11 +611,11 @@ function toggleROW() {
   const btn = document.getElementById('rowBtn');
   if (rowVisible) {
     map.removeLayer(rowSeg0); map.removeLayer(rowSeg1); map.removeLayer(rowSeg2);
-    btn.textContent = "150' ROW";
+    btn.textContent = "100' ROW";
     btn.classList.add('off');
   } else {
     rowSeg0.addTo(map); rowSeg1.addTo(map); rowSeg2.addTo(map);
-    btn.textContent = "150' ROW ✓";
+    btn.textContent = "100' ROW ✓";
     btn.classList.remove('off');
   }
   rowVisible = !rowVisible;
