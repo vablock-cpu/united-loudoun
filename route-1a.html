@@ -23,60 +23,71 @@
 
   .header {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding: 14px 24px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     flex-shrink: 0;
     z-index: 1000;
+    flex-wrap: wrap;
+    gap: 6px 16px;
   }
 
   .header-left {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
   }
 
   .header h1 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: #fff;
     letter-spacing: -0.3px;
   }
 
-  .header .subtitle {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    font-weight: 400;
-  }
-
   .badge {
     background: rgba(255, 50, 100, 0.15);
     color: #ff3264;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 4px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
 
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    flex-wrap: wrap;
+  }
+
+  .header-meta span { white-space: nowrap; }
+
+  .header-meta .sep {
+    color: rgba(255,255,255,0.15);
+  }
+
   .legend {
     display: flex;
     align-items: center;
-    gap: 20px;
-    font-size: 12px;
+    gap: 14px;
+    font-size: 11px;
   }
 
   .legend-item {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
   }
 
   .legend-line {
-    width: 24px;
+    width: 20px;
     height: 3px;
     border-radius: 2px;
   }
@@ -89,43 +100,9 @@
     width: 100%;
   }
 
-  .info-panel {
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    background: rgba(10, 10, 20, 0.92);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 16px 20px;
-    z-index: 1000;
-    min-width: 260px;
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  .info-panel .label {
-    color: rgba(255,255,255,0.45);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 4px;
-  }
-
-  .info-panel .value {
-    color: #fff;
-    font-weight: 500;
-    font-size: 14px;
-  }
-
-  .info-panel .divider {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    margin: 8px 0;
-  }
-
   .basemap-toggle {
     position: absolute;
-    top: 80px;
+    top: 70px;
     right: 16px;
     z-index: 1000;
     display: flex;
@@ -171,20 +148,26 @@
 
 <div class="header">
   <div class="header-left">
-    <div>
-      <h1>Golden to Mars — Route 1A Centerline</h1>
-      <span class="subtitle">Dominion FOIA — 500/230 kV Overhead Transmission Route · Satellite Imagery: Feb 26, 2026</span>
-    </div>
-    <span class="badge">FOIA Document</span>
+    <h1>Golden to Mars — Route 1A</h1>
+    <span class="badge">FOIA</span>
+  </div>
+  <div class="header-meta">
+    <span>500/230 kV OH · ~10.06 mi</span>
+    <span class="sep">|</span>
+    <span>Route drawn: Jan 12, 2026</span>
+    <span class="sep">|</span>
+    <span>Imagery: Feb 26, 2026</span>
+    <span class="sep">|</span>
+    <span>Source: Dominion Energy FOIA</span>
   </div>
   <div class="legend">
     <div class="legend-item">
       <div class="legend-line main"></div>
-      <span>Main Route (9.37 mi)</span>
+      <span>Main Route</span>
     </div>
     <div class="legend-item">
       <div class="legend-line seg"></div>
-      <span>Connector Segments</span>
+      <span>Connectors</span>
     </div>
   </div>
 </div>
@@ -192,29 +175,9 @@
 <div id="map"></div>
 
 <div class="basemap-toggle">
-  <button class="basemap-btn active" onclick="setBasemap('satellite')">Satellite</button>
-  <button class="basemap-btn" onclick="setBasemap('street')">Street</button>
-  <button class="basemap-btn" onclick="setBasemap('topo')">Topo</button>
-</div>
-
-<div class="info-panel">
-  <div class="label">Route</div>
-  <div class="value">Golden to Mars 500/230 kV — Route 1A</div>
-  <div class="divider"></div>
-  <div class="label">Total Length</div>
-  <div class="value">~10.06 miles (3 segments)</div>
-  <div class="divider"></div>
-  <div class="label">Route Drawing Date</div>
-  <div class="value">January 12, 2026</div>
-  <div class="divider"></div>
-  <div class="label">Satellite Imagery Date</div>
-  <div class="value">February 26, 2026</div>
-  <div class="divider"></div>
-  <div class="label">Route Source</div>
-  <div class="value">Dominion Energy FOIA</div>
-  <div class="divider"></div>
-  <div class="label">Imagery Source</div>
-  <div class="value">ESRI World Imagery</div>
+  <button class="basemap-btn" data-layer="mapbox" onclick="setBasemap('mapbox')">Mapbox</button>
+  <button class="basemap-btn" data-layer="esri" onclick="setBasemap('esri')">ESRI</button>
+  <button class="basemap-btn" data-layer="street" onclick="setBasemap('street')">Street</button>
 </div>
 
 <script>
@@ -330,43 +293,47 @@ const seg2 = [
 const map = L.map('map', {
   center: [38.98, -77.48],
   zoom: 12,
-  zoomControl: true
+  zoomControl: true,
+  maxZoom: 22
 });
 
 // Basemap layers
+const MAPBOX_TOKEN = 'pk.eyJ1IjoibHZlaG9hIiwiYSI6ImNtbmF1M3AweTBwc2wycHB0ajRlb2JrNzYifQ.K7T3yBDesqh_R_xfqBTe_w';
 const basemaps = {
-  satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri',
+  esri: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri | Imagery: Feb 26, 2026',
     maxZoom: 19
+  }),
+  mapbox: L.tileLayer('https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.jpg?access_token=' + MAPBOX_TOKEN, {
+    attribution: '&copy; Mapbox',
+    maxZoom: 22,
+    tileSize: 512,
+    zoomOffset: -1
   }),
   street: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap',
     maxZoom: 19
-  }),
-  topo: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri',
-    maxZoom: 19
   })
 };
 
-// Labels overlay for satellite view
+// Labels overlay for satellite views
 const labels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-  maxZoom: 19,
+  maxZoom: 22,
   pane: 'overlayPane'
 });
 
-let currentBasemap = 'satellite';
-basemaps.satellite.addTo(map);
+let currentBasemap = 'mapbox';
+basemaps.mapbox.addTo(map);
 labels.addTo(map);
 
 function setBasemap(name) {
   Object.values(basemaps).forEach(l => map.removeLayer(l));
   map.removeLayer(labels);
   basemaps[name].addTo(map);
-  if (name === 'satellite') labels.addTo(map);
+  if (name !== 'street') labels.addTo(map);
   currentBasemap = name;
   document.querySelectorAll('.basemap-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.toLowerCase() === name);
+    btn.classList.toggle('active', btn.dataset.layer === name);
   });
 }
 
@@ -426,6 +393,9 @@ L.marker(seg1[seg1.length - 1], { icon: endIcon }).addTo(map).bindPopup('<b>Nort
 const allPoints = [...seg0, ...seg1, ...seg2];
 const bounds = L.latLngBounds(allPoints);
 map.fitBounds(bounds, { padding: [50, 50] });
+
+// Set initial active button
+document.querySelector('[data-layer="mapbox"]').classList.add('active');
 </script>
 </body>
 </html>
