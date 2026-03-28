@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>Golden to Mars - Route 1A Centerline</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+    z-index: 1000;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.3px;
+  }
+
+  .header .subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+  }
+
+  .badge {
+    background: rgba(255, 50, 100, 0.15);
+    color: #ff3264;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 12px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .legend-line {
+    width: 24px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .legend-line.main { background: #ff00c5; }
+  .legend-line.seg { background: #ff6b00; }
+
+  #map {
+    flex: 1;
+    width: 100%;
+  }
+
+  .info-panel {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(10, 10, 20, 0.92);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 16px 20px;
+    z-index: 1000;
+    min-width: 260px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .info-panel .label {
+    color: rgba(255,255,255,0.45);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+  }
+
+  .info-panel .value {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .info-panel .divider {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 8px 0;
+  }
+
+  .basemap-toggle {
+    position: absolute;
+    top: 80px;
+    right: 16px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .basemap-btn {
+    background: rgba(10, 10, 20, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .basemap-btn:hover { background: rgba(30, 30, 50, 0.95); }
+  .basemap-btn.active {
+    background: rgba(255, 0, 197, 0.2);
+    border-color: #ff00c5;
+    color: #ff00c5;
+  }
+
+  .leaflet-control-zoom {
+    border: none !important;
+  }
+  .leaflet-control-zoom a {
+    background: rgba(10,10,20,0.88) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    backdrop-filter: blur(8px);
+  }
+  .leaflet-control-zoom a:hover {
+    background: rgba(30,30,50,0.95) !important;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div>
+      <h1>Golden to Mars — Route 1A Centerline</h1>
+      <span class="subtitle">Dominion FOIA — 500/230 kV Overhead Transmission Route · Satellite Imagery: Feb 26, 2026</span>
+    </div>
+    <span class="badge">FOIA Document</span>
+  </div>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-line main"></div>
+      <span>Main Route (9.37 mi)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-line seg"></div>
+      <span>Connector Segments</span>
+    </div>
+  </div>
+</div>
+
+<div id="map"></div>
+
+<div class="basemap-toggle">
+  <button class="basemap-btn active" onclick="setBasemap('satellite')">Satellite</button>
+  <button class="basemap-btn" onclick="setBasemap('street')">Street</button>
+  <button class="basemap-btn" onclick="setBasemap('topo')">Topo</button>
+</div>
+
+<div class="info-panel">
+  <div class="label">Route</div>
+  <div class="value">Golden to Mars 500/230 kV — Route 1A</div>
+  <div class="divider"></div>
+  <div class="label">Total Length</div>
+  <div class="value">~10.06 miles (3 segments)</div>
+  <div class="divider"></div>
+  <div class="label">Route Drawing Date</div>
+  <div class="value">January 12, 2026</div>
+  <div class="divider"></div>
+  <div class="label">Satellite Imagery Date</div>
+  <div class="value">February 26, 2026</div>
+  <div class="divider"></div>
+  <div class="label">Route Source</div>
+  <div class="value">Dominion Energy FOIA</div>
+  <div class="divider"></div>
+  <div class="label">Imagery Source</div>
+  <div class="value">ESRI World Imagery</div>
+</div>
+
+<script>
+// --- Route data extracted from KMZ ---
+
+// Segment 1 (ID_00000): Short connector ~0.086 mi
+const seg0 = [
+  [39.01212303076342, -77.43487326592904],
+  [39.01213750238377, -77.43486901044554],
+  [39.0132199379584, -77.43455070201838],
+  [39.01333233164114, -77.43451764957474]
+];
+
+// Segment 1 (ID_00001): Main route ~9.365 mi
+const seg1 = [
+  [38.95171780640013, -77.49216719447742],
+  [38.95141001858133, -77.49201285769634],
+  [38.95187349293504, -77.49049940653677],
+  [38.95442457676533, -77.49177880720161],
+  [38.95473056218574, -77.49348546368503],
+  [38.95513724587357, -77.49367843445421],
+  [38.95549352523689, -77.49384735504508],
+  [38.95634267442603, -77.49420005244136],
+  [38.95701717558627, -77.49451839053967],
+  [38.95913112074138, -77.49511169781972],
+  [38.9604928048451, -77.49582004703258],
+  [38.96080040216213, -77.49656389987794],
+  [38.95901895214164, -77.50069376148892],
+  [38.96173618905557, -77.51059103845563],
+  [38.96412933624687, -77.51093510474671],
+  [38.96643667058827, -77.51615757956958],
+  [38.9682030109493, -77.51658486645916],
+  [38.96957049704946, -77.51627196881472],
+  [38.97180325113817, -77.51580496183669],
+  [38.97293512120283, -77.51569514691018],
+  [38.9739278042379, -77.51584267626973],
+  [38.97531296336777, -77.51572869517943],
+  [38.97617071461134, -77.51568781480671],
+  [38.97703488646282, -77.51568002484403],
+  [38.97874390495119, -77.51568099013032],
+  [38.97990485668507, -77.5156263484869],
+  [38.98096932724059, -77.51561306901263],
+  [38.9817537622917, -77.51531990454468],
+  [38.98247422391972, -77.51463989053204],
+  [38.98300423359088, -77.51362528498971],
+  [38.9832020742132, -77.51251974811527],
+  [38.98379499374689, -77.50938980154534],
+  [38.98412104493008, -77.50810878312632],
+  [38.98465274595065, -77.50726671169936],
+  [38.98516756391401, -77.50680208184295],
+  [38.98593963158603, -77.50642561442206],
+  [38.98655530631362, -77.50597655585128],
+  [38.98741280277954, -77.50518913154907],
+  [38.98823586094402, -77.50445445299037],
+  [38.98909427429547, -77.50363291198511],
+  [38.99073946094443, -77.50215186773107],
+  [38.99113269523639, -77.50181221436813],
+  [38.99188092520725, -77.50114080011896],
+  [38.99261950113986, -77.50041561374974],
+  [38.99304024244556, -77.50001543703632],
+  [38.99348027042143, -77.49951185280628],
+  [38.99388651393301, -77.49847831334294],
+  [38.99443349649735, -77.4966135518207],
+  [38.99521793450783, -77.48401692819118],
+  [38.99465932307982, -77.48359082920727],
+  [38.99654189439214, -77.47830623791097],
+  [38.9958960397973, -77.47661130758472],
+  [38.99465499144647, -77.47474467938548],
+  [38.99387376634625, -77.47324964772983],
+  [38.99319287839216, -77.47132400423156],
+  [38.99697343136705, -77.46732693035598],
+  [38.99944691826801, -77.46724421748723],
+  [39.00151141818284, -77.46242637596147],
+  [39.00323634524663, -77.46202801854726],
+  [39.00608736397077, -77.46038433330042],
+  [39.00616301414804, -77.45680066653634],
+  [39.00890139933601, -77.45324252113892],
+  [39.00610204691845, -77.44580775490846],
+  [39.00606547670967, -77.44361021583525],
+  [39.00705273838863, -77.44303048507459],
+  [39.00817089645196, -77.4417954806446],
+  [39.00918720906854, -77.44092549093003],
+  [39.01026428873969, -77.44000247890015],
+  [39.01134618445853, -77.43923945663383],
+  [39.01295583491663, -77.43829628415273],
+  [39.01269217626912, -77.43587765246853],
+  [39.01212303076342, -77.43487326592904],
+  [39.01164345617581, -77.43430494620932],
+  [39.01241486708617, -77.43378382463264],
+  [39.01369410167497, -77.43347895434273],
+  [39.01399770122661, -77.43563732875741]
+];
+
+// Segment 2 (ID_00002): Branch ~0.609 mi
+const seg2 = [
+  [38.95359190404822, -77.4918508125992],
+  [38.95420538403393, -77.49216053909942],
+  [38.95422817553254, -77.4921720457192],
+  [38.95417150041336, -77.4934252221661],
+  [38.95544947221513, -77.49403594075793],
+  [38.95584473995098, -77.49417509625724],
+  [38.95629347839307, -77.4943333100199],
+  [38.95689271105369, -77.49466210021316],
+  [38.95696579365139, -77.49470221477479],
+  [38.95908604666349, -77.49529710704982],
+  [38.9600981156302, -77.49582584342588],
+  [38.96037376090806, -77.4959698516186],
+  [38.96077002159699, -77.49652159801698],
+  [38.96080040216213, -77.49656389987794]
+];
+
+// --- Map setup ---
+const map = L.map('map', {
+  center: [38.98, -77.48],
+  zoom: 12,
+  zoomControl: true
+});
+
+// Basemap layers
+const basemaps = {
+  satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri',
+    maxZoom: 19
+  }),
+  street: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap',
+    maxZoom: 19
+  }),
+  topo: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri',
+    maxZoom: 19
+  })
+};
+
+// Labels overlay for satellite view
+const labels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 19,
+  pane: 'overlayPane'
+});
+
+let currentBasemap = 'satellite';
+basemaps.satellite.addTo(map);
+labels.addTo(map);
+
+function setBasemap(name) {
+  Object.values(basemaps).forEach(l => map.removeLayer(l));
+  map.removeLayer(labels);
+  basemaps[name].addTo(map);
+  if (name === 'satellite') labels.addTo(map);
+  currentBasemap = name;
+  document.querySelectorAll('.basemap-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.toLowerCase() === name);
+  });
+}
+
+// --- Route lines ---
+
+// Main route - magenta/pink with glow effect
+const mainGlow = L.polyline(seg1, {
+  color: '#ff00c5',
+  weight: 10,
+  opacity: 0.25,
+  lineJoin: 'round'
+}).addTo(map);
+
+const mainLine = L.polyline(seg1, {
+  color: '#ff00c5',
+  weight: 4,
+  opacity: 0.95,
+  lineJoin: 'round'
+}).addTo(map).bindPopup('<b>Main Route</b><br>~9.365 miles<br>Golden to Mars OH — Route 1A');
+
+// Connector segments - orange
+const connectorStyle = {
+  color: '#ff6b00',
+  weight: 4,
+  opacity: 0.9,
+  lineJoin: 'round'
+};
+const connectorGlowStyle = {
+  color: '#ff6b00',
+  weight: 10,
+  opacity: 0.2,
+  lineJoin: 'round'
+};
+
+L.polyline(seg0, connectorGlowStyle).addTo(map);
+L.polyline(seg0, connectorStyle).addTo(map).bindPopup('<b>Connector Segment</b><br>~0.086 miles');
+
+L.polyline(seg2, connectorGlowStyle).addTo(map);
+L.polyline(seg2, connectorStyle).addTo(map).bindPopup('<b>Connector Segment</b><br>~0.609 miles');
+
+// Start & end markers
+const startIcon = L.divIcon({
+  html: '<div style="background:#00e676;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 8px rgba(0,230,118,0.6);"></div>',
+  iconSize: [14, 14],
+  iconAnchor: [7, 7]
+});
+const endIcon = L.divIcon({
+  html: '<div style="background:#ff1744;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 8px rgba(255,23,68,0.6);"></div>',
+  iconSize: [14, 14],
+  iconAnchor: [7, 7]
+});
+
+L.marker(seg1[0], { icon: startIcon }).addTo(map).bindPopup('<b>Southern Terminal</b><br>Near Golden Substation');
+L.marker(seg1[seg1.length - 1], { icon: endIcon }).addTo(map).bindPopup('<b>Northern Terminal</b><br>Near Mars Substation area');
+
+// Fit bounds to all segments
+const allPoints = [...seg0, ...seg1, ...seg2];
+const bounds = L.latLngBounds(allPoints);
+map.fitBounds(bounds, { padding: [50, 50] });
+</script>
+</body>
+</html>
