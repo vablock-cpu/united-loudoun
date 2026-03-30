@@ -143,6 +143,28 @@
     .gateway-link::after { content: '→'; transition: transform .2s; }
     .gateway-card:hover .gateway-link::after { transform: translateX(4px); }
 
+    /* ─── MAP SECTION ─── */
+    .map-section { background: #fff; padding: 72px 0; }
+    .map-intro { text-align: center; margin-bottom: 32px; }
+    .map-tag {
+      display: inline-block; background: var(--navy); color: var(--gold2);
+      padding: 4px 13px; border-radius: 4px; font-size: .72rem;
+      font-weight: 800; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .map-intro h2 {
+      font-family: 'Merriweather', serif; font-size: 1.9rem; color: var(--navy);
+      font-weight: 900; margin-bottom: 10px;
+    }
+    .map-intro p { color: var(--gray); font-size: 1rem; max-width: 640px; margin: 0 auto; }
+    .map-embed {
+      border-radius: 12px; overflow: hidden; border: 2px solid var(--light);
+      box-shadow: 0 4px 24px rgba(0,0,0,.1);
+    }
+    .map-embed iframe {
+      width: 100%; height: 520px; border: none; display: block;
+    }
+    .map-cta { text-align: center; margin-top: 20px; }
+
     /* ─── NUMBERS BAR ─── */
     .numbers-bar { background: var(--navy); padding: 48px 0; }
     .numbers-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
@@ -258,7 +280,7 @@
 
 <!-- URGENCY BAR -->
 <div class="urgency-bar">
-  SCC ruling expected any day &mdash; <a href="take-action.html">make your voice heard now &rarr;</a>
+  SCC ruling expected any day &mdash; HB 1487 passed. <a href="take-action.html">Board resolution needed now &rarr;</a>
 </div>
 
 <!-- HEADER -->
@@ -323,7 +345,7 @@
         <div class="gateway-icon">🔍</div>
         <div class="gateway-tag">The Truth</div>
         <h3>This Isn't a Reliability Project. It's a Data Center Project.</h3>
-        <p>PJM's own label. SCC Staff's own finding. Dominion manufactured the urgency, buried the underground alternatives, and used leverage tactics to make overhead seem like the only option. It isn't.</p>
+        <p>PJM's own label. SCC Staff's own finding. FOIA records show Dominion's underground 'infeasibility' claim rests on a single email about open-cut excavation — the standard trenchless method was never proposed. And the Feasibility Study's conclusion was changed from 'feasible' to 'infeasible' by Dominion's own routing engineer, not the engineering firm.</p>
         <span class="gateway-link">See the evidence</span>
       </a>
 
@@ -339,6 +361,23 @@
   </div>
 </section>
 
+<!-- INTERACTIVE MAP -->
+<section class="map-section">
+  <div class="container">
+    <div class="map-intro">
+      <span class="map-tag">INTERACTIVE MAP</span>
+      <h2>See the Proposed Routes</h2>
+      <p>Explore the Golden-to-Mars corridor, proposed tower locations, right-of-way impacts, and affected facilities — including hospitals, schools, and gas stations.</p>
+    </div>
+    <div class="map-embed">
+      <iframe src="route-1-fiction.html" title="Golden to Mars Interactive Route Map" loading="lazy"></iframe>
+    </div>
+    <div class="map-cta">
+      <a href="route-1-fiction.html" target="_blank" rel="noopener" class="btn-primary">Open Full Map &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- NUMBERS BAR -->
 <div class="numbers-bar">
   <div class="container">
@@ -348,6 +387,7 @@
       <div class="nb-stat"><div class="n">13,000+</div><div class="l">Homes Within 2 Miles</div></div>
       <div class="nb-stat"><div class="n">$2.8B</div><div class="l">Assessed Value in Corridor</div></div>
       <div class="nb-stat"><div class="n">Every</div><div class="l">Loudoun Taxpayer Affected</div></div>
+      <div class="nb-stat"><div class="n">HB 1487 / SB 827</div><div class="l">Passed Both Chambers</div></div>
     </div>
   </div>
 </div>
@@ -370,29 +410,29 @@
       <div class="ask-card">
         <div class="ask-num">1</div>
         <div>
-          <h3>Accept the 8th Easement</h3>
-          <p>Accept ALL 8 open space easements from LVE I and II. Zero fiscal impact. This removes the viability barrier for underground/hybrid routes and signals the SCC that the community supports the alternative.</p>
+          <h3>Take the Legal Steps Already on the Table</h3>
+          <p>The Board has options right now that would clear the path for underground power lines — at zero cost to taxpayers. Accepting the open space easements and the additional parcel offered by the community removes viability barriers for underground routes.</p>
         </div>
       </div>
       <div class="ask-card">
         <div class="ask-num">2</div>
         <div>
-          <h3>Do Not Endorse Overhead Routes</h3>
-          <p>Any statement accepting "any Route 3" becomes evidence before the SCC. The Board must not signal that overhead through residential neighborhoods is locally acceptable. Silence is not an option — it is acquiescence.</p>
+          <h3>Enforce the Standard the Board Set for Itself</h3>
+          <p>The Board already said no high-voltage power lines within 500 feet of homes or schools. That resolution needs to be reaffirmed — clearly and on the record — so the SCC knows this community's position has not changed.</p>
         </div>
       </div>
       <div class="ask-card">
         <div class="ask-num">3</div>
         <div>
-          <h3>Pass a Resolution Supporting HB 1487 / SB 827</h3>
-          <p>The underground pilot program passed both chambers bipartisan and specifically names Golden-to-Mars. Board support is a <em>statutory prerequisite</em> for eligibility. Inaction forecloses the legislative pathway.</p>
+          <h3>Tell the State and Dominion: No Overhead Lines Through Our Neighborhoods</h3>
+          <p>The Board can file directly with the SCC. It has done it before. A clear statement that the Board will not support above-ground high-voltage power lines through residential communities carries real weight with the Commission.</p>
         </div>
       </div>
       <div class="ask-card">
         <div class="ask-num">4</div>
         <div>
-          <h3>Continue Active Advocacy for Underground</h3>
-          <p>Direct the County Attorney to continue advocating for underground/hybrid routing. The evidentiary record is closed but the ruling has not issued. This window to influence the Commission is right now.</p>
+          <h3>Back the Bill That Puts These Lines Underground</h3>
+          <p>HB 1487 / SB 827 has passed both chambers and specifically names Golden-to-Mars. A Board resolution supporting it is a <em>statutory prerequisite</em> for the underground pilot program. The cost: $0.99/month per household. The data centers driving this demand should foot the bill — not you.</p>
         </div>
       </div>
     </div>
@@ -410,6 +450,16 @@
       <a href="press.html">View all 25+ articles &rarr;</a>
     </div>
     <div class="news-grid">
+      <div class="news-card">
+        <div class="news-pub">SCC Filing &mdash; Mar 29, 2026</div>
+        <h4>LVE Files Physical Constraints Analysis of Route 1F</h4>
+        <p>Analysis shows Route 1F would place 185-foot towers within 35 feet of the Inova HealthPlex emergency room, obstruct medevac operations, and create fire/explosion hazards adjacent to commercial gas stations.</p>
+      </div>
+      <div class="news-card">
+        <div class="news-pub">SCC Filing &mdash; Mar 29, 2026</div>
+        <h4>LVE Submits Supplemental SCC Filing on VDOT FOIA Findings</h4>
+        <p>FOIA records show Dominion cited VDOT over 40 times in its Feasibility Study but the entire engagement amounts to one meeting and one email. The standard underground method was never proposed.</p>
+      </div>
       <a class="news-card" href="https://www.loudountimes.com/news/politics_and_government/levels_of_government/state/program-to-bury-power-lines-passes-state-legislature/article_b084ee85-6af1-4389-8c49-8d25093822a6.html" target="_blank" rel="noopener">
         <div class="news-pub">Loudoun Times &mdash; Mar 15, 2026</div>
         <h4>Underground Pilot Program Passes Both Chambers</h4>
@@ -468,6 +518,8 @@
           <li><a href="the-truth.html">It's a data center project</a></li>
           <li><a href="the-issue.html">Chino Hills proved underground works</a></li>
           <li><a href="take-action.html">SB 827 / HB 1487 — Board support needed</a></li>
+          <li><a href="take-action.html">HB 1487 / SB 827 passed both chambers — Board resolution needed</a></li>
+          <li><a href="the-truth.html">VDOT FOIA: one email, one meeting, one method tested</a></li>
         </ul>
       </div>
     </div>
