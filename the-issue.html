@@ -22,6 +22,24 @@
     img { display: block; max-width: 100%; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
+    /* ─── BREAKING STRIP ─── */
+    .breaking-strip {
+      background: var(--red2); text-align: center; padding: 10px 24px;
+    }
+    .breaking-strip a {
+      color: #fff; text-decoration: none; font-size: .85rem;
+      font-weight: 600; line-height: 1.5;
+    }
+    .breaking-strip a:hover { text-decoration: underline; }
+    .breaking-strip em { font-style: italic; font-weight: 900; }
+    .breaking-label {
+      display: inline-block; background: #fff; color: var(--red2);
+      font-size: .65rem; font-weight: 900; padding: 2px 8px;
+      border-radius: 3px; letter-spacing: .08em;
+      margin-right: 8px; vertical-align: middle;
+    }
+    .breaking-arrow { color: var(--gold2); font-weight: 800; }
+
     /* ─── HEADER ─── */
     header {
       position: sticky; top: 0; z-index: 200;
@@ -234,6 +252,16 @@
 </head>
 <body>
 
+<!-- BREAKING STRIP -->
+<div class="breaking-strip">
+  <a href="route1f-illegal.html">
+    <span class="breaking-label">BREAKING</span>
+    Route 1F is Fiction &mdash; and <em>illegal.</em>
+    Virginia law prohibits what Dominion proposed.
+    <span class="breaking-arrow">Read more &rarr;</span>
+  </a>
+</div>
+
 <!-- HEADER -->
 <header>
   <div class="header-inner">
@@ -435,19 +463,29 @@
 <section class="section" id="route1f">
   <div class="container">
     <span class="sec-tag red">ROUTE 1F EXPOSED</span>
-    <h2 class="section-h">The Route That Was Never Real — and What It Would <em>Actually Hit</em></h2>
-    <p class="intro-text">Dominion introduced Route 1F at the SCC hearing with no prefiled testimony, no engineering analysis, and no VDOT approval. Their own counsel later admitted it is "not under consideration." It exists on paper as leverage — to pressure the community into accepting Routes 3 and 4. But the physical realities of what Route 1F would actually require are devastating.</p>
+    <h2 class="section-h">Route 1F: A Threat, Not a Plan</h2>
+    <p class="intro-text">Dominion introduced Route 1F at the SCC hearing with no prefiled testimony, no engineering analysis, and no VDOT approval. Their own counsel later admitted it is "not under consideration." It exists on paper as leverage — to pressure the community into accepting Routes 3 and 4.</p>
 
+    <!-- Feasibility Study Detail Box -->
+    <div style="background:var(--navy); color:#fff; border-radius:12px; padding:32px 36px; margin-bottom:32px; border-left:6px solid var(--gold2);">
+      <h3 style="color:var(--gold2); font-size:1.25rem; margin:0 0 12px 0;">Dominion's Own Feasibility Study</h3>
+      <p style="font-size:1.05rem; line-height:1.7; margin:0 0 14px 0;">Dominion commissioned a Feasibility Analysis (v6) for Route 1F along Loudoun County Parkway. Their own study found that underground construction through this stretch is <strong style="color:var(--gold2);">"not constructable"</strong> — the median is too narrow, the utilities too dense, and the disruption too severe.</p>
+      <p style="font-size:1.05rem; line-height:1.7; margin:0 0 14px 0;">But then Dominion proposed <em>overhead</em> routing through the exact same corridor — 185-foot monopoles with 56-foot crossarms in a median that is 16 to 22 feet wide mid-block and narrows to 4 to 6 feet at intersections. The crossarm alone exceeds the median width by a factor of ten at the narrowest points.</p>
+      <p style="font-size:.95rem; line-height:1.7; margin:0; opacity:.85;">If underground won't fit, overhead won't either. The physical constraints don't change based on the type of structure. This route was never engineered to be built — it was engineered to be feared.</p>
+      <p style="font-size:.75rem; color:var(--gold2); font-weight:700; margin-top:14px; margin-bottom:0;">Based on Dominion&rsquo;s own filings and physical site conditions along Loudoun County Parkway.</p>
+    </div>
+
+    <h3 style="font-size:1.1rem; color:var(--navy); margin-bottom:16px; font-weight:700;">What Route 1F Would Actually Hit</h3>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px;">
       <div class="callout teal">
-        <p><strong>The Physical Impossibility</strong></p>
-        <p>Route 1F proposes placing 185-foot monopoles with 56-foot crossarms in Loudoun County Parkway's median — which is 16 to 22 feet wide mid-block and narrows to 4 to 6 feet at intersections. The crossarm alone would exceed the median width by a factor of ten at intersections. Each foundation requires an 8-to-12-foot-diameter caisson drilled 30 to 50 feet deep — into a median full of water, sewer, and fiber utilities that Dominion's own study says would require "significant service disruption and relocations."</p>
-        <p style="font-size:.75rem; color:var(--teal); font-weight:700; margin-top:10px;">Source: Feasibility Analysis v6, Section II. Physical Constraints.</p>
+        <p><strong>Foundation Requirements</strong></p>
+        <p>Each 185-foot monopole requires an 8-to-12-foot-diameter caisson drilled 30 to 50 feet deep — into a median packed with water, sewer, and fiber utilities. Dominion's own study acknowledges this would require "significant service disruption and relocations" to existing infrastructure serving tens of thousands of residents.</p>
+        <p style="font-size:.75rem; color:var(--teal); font-weight:700; margin-top:10px;">Based on Dominion&rsquo;s own structure specifications and VDOT median measurements.</p>
       </div>
       <div class="callout red">
         <p><strong>Inova HealthPlex Emergency Center</strong></p>
-        <p>Route 1F would place 500kV transmission structures within 35 feet of the Inova Ashburn HealthPlex — a hospital emergency room that serves as the primary emergency stabilization point for over 280,000 residents (62% of Loudoun County's population). The facility's CT scanner already operates at 111.72% of state-standard capacity. 500kV lines generate electromagnetic fields that do not attenuate to the 0.5 milligauss threshold required for diagnostic imaging until 700 to 1,000 feet from the conductor centerline. The HealthPlex is 35 feet away. Image artifacts from interference — visual noise or blurring — are capable of masking a brain bleed or clot in a stroke patient who depends on speed and precision for survival.</p>
-        <p style="font-size:.75rem; color:var(--red); font-weight:700; margin-top:10px;">Source: Feasibility Analysis v6, Sections III.A and III.B.</p>
+        <p>Route 1F would place 500kV transmission structures within 35 feet of the Inova Ashburn HealthPlex — an emergency room that serves as the primary emergency stabilization point for over 280,000 residents (62% of Loudoun County's population). The facility's CT scanner already operates at 111.72% of state-standard capacity. 500kV lines generate electromagnetic fields that do not attenuate to the 0.5 milligauss threshold required for diagnostic imaging until 700 to 1,000 feet from the conductor centerline. The HealthPlex is 35 feet away. Image artifacts from interference — visual noise or blurring — are capable of masking a brain bleed or clot in a stroke patient who depends on speed and precision for survival.</p>
+        <p style="font-size:.75rem; color:var(--red); font-weight:700; margin-top:10px;">Based on Inova HealthPlex operational data and EMF attenuation standards for diagnostic imaging.</p>
       </div>
     </div>
 
@@ -455,12 +493,12 @@
       <div class="callout gold">
         <p><strong>Medevac Operations</strong></p>
         <p>The HealthPlex campus includes a ground-level medevac landing zone designated by Loudoun County EMS for emergency helicopter transports. 185-foot structures in the Loudoun County Parkway median would likely be classified as hazards to air navigation under FAA Part 77. Obstruction lighting — high-intensity white strobes during the day, red flashing lights at night — would operate continuously, 24/7, in a residential corridor adjacent to apartment complexes and single-family homes. High-voltage transmission lines are the primary wire-strike hazard for helicopter operations. This could legally necessitate permanent decommissioning of the facility's helicopter access — stripping the county's most populated region of rapid air-bridge access for severe trauma and acute strokes.</p>
-        <p style="font-size:.75rem; color:#7a5f00; font-weight:700; margin-top:10px;">Source: Feasibility Analysis v6, Section III.C.</p>
+        <p style="font-size:.75rem; color:#7a5f00; font-weight:700; margin-top:10px;">Based on FAA Part 77 obstruction standards and Loudoun County EMS medevac designations.</p>
       </div>
       <div class="callout teal">
         <p><strong>Childcare Facilities</strong></p>
         <p>Primrose School of Moorefield Station and Kiddie Academy of Moorefield Station are private childcare centers adjacent to Loudoun County Parkway. Outdoor activity areas would sit directly next to proposed 500kV structures. During the months-long construction phase, heavy crawler cranes and high-voltage conductor stringing would operate directly adjacent to active drop-off zones and outdoor play areas. As private, tuition-based facilities, their viability depends entirely on parental choice. Placement of 500kV lines within feet of classrooms and play areas would effectively destroy these businesses — not through formal taking, but through market reality.</p>
-        <p style="font-size:.75rem; color:var(--teal); font-weight:700; margin-top:10px;">Source: Feasibility Analysis v6, Section III.D.</p>
+        <p style="font-size:.75rem; color:var(--teal); font-weight:700; margin-top:10px;">Based on facility locations and proximity to proposed Route 1F corridor.</p>
       </div>
     </div>
 
@@ -468,18 +506,21 @@
       <div class="callout red">
         <p><strong>Gas Station Fire and Explosion Hazard</strong></p>
         <p>An Exxon station sits directly across Loudoun County Parkway from the HealthPlex. High-voltage lines induce electric currents on large ungrounded metal objects, creating spark-discharge risk during fuel delivery in an environment saturated with volatile compounds. A downed 500kV conductor onto a fuel station with underground storage tanks represents a catastrophic fire and explosion hazard. A second gas station, currently under construction 1.25 miles south at the intersection of Loudoun County Parkway and Ryan Road, faces identical risks. Dominion's Route 5 is drawn literally through this gas station.</p>
-        <p style="font-size:.75rem; color:var(--red); font-weight:700; margin-top:10px;">Source: Feasibility Analysis v6, Section III.E.</p>
+        <p style="font-size:.75rem; color:var(--red); font-weight:700; margin-top:10px;">Based on NESC clearance standards and fuel storage facility proximity.</p>
       </div>
       <div class="callout gold">
         <p><strong>Emergency Access Severing</strong></p>
         <p>In the event of severe weather, ice loading, or structural failure, the collapse of a 185-foot tower or downing of live 500kV wires onto Loudoun County Parkway would sever the primary emergency access route — preventing ambulances from reaching the HealthPlex or transferring patients out. The consequences for the 280,000+ residents who depend on this facility are potentially catastrophic.</p>
-        <p style="font-size:.75rem; color:#7a5f00; font-weight:700; margin-top:10px;">Source: Feasibility Analysis v6, Section III.C.</p>
+        <p style="font-size:.75rem; color:#7a5f00; font-weight:700; margin-top:10px;">Based on structural failure scenarios and emergency access routing.</p>
       </div>
     </div>
 
-    <div class="callout red">
-      <p><strong>Dominion's own Feasibility Study found underground construction through this stretch "not constructable."</strong> Yet overhead routing through the same stretch — within feet of a hospital emergency room, through a parking lot, adjacent to a gas station and childcare centers — was offered as the viable alternative. The question answers itself: Where, precisely, was an overhead route ever going to go?</p>
-      <p style="font-size:.75rem; color:var(--red); font-weight:700; margin-top:10px;">Source: Feasibility Analysis v6, Section VI.</p>
+    <div style="background:var(--red); color:#fff; border-radius:14px; padding:36px 40px; text-align:center; margin-top:8px;">
+      <p style="font-size:1.35rem; font-weight:800; line-height:1.5; margin:0 0 12px 0;">An emergency room. A medevac zone. Two gas stations. Two childcare centers. 280,000 residents' emergency access.</p>
+      <p style="font-size:1.1rem; line-height:1.6; margin:0 0 16px 0; opacity:.95;">Dominion&rsquo;s own study said underground won&rsquo;t fit here. Then they proposed overhead through the same corridor. And now we know: <strong>Virginia law prohibits it entirely.</strong></p>
+      <p style="margin-top: 16px;">
+        <a href="route1f-illegal.html" style="display: inline-block; background: #fff; color: var(--navy); font-weight: 800; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-size: .95rem;">Route 1F Is Illegal &mdash; Read More &rarr;</a>
+      </p>
     </div>
   </div>
 </section>
@@ -642,6 +683,7 @@
           <li><a href="the-truth.html">The Truth</a></li>
           <li><a href="press.html">Press Coverage</a></li>
           <li><a href="take-action.html">Take Action</a></li>
+          <li><a href="route-1f.html">Route 1F: Fiction</a></li>
         </ul>
       </div>
       <div class="footer-col">

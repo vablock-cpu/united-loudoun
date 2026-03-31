@@ -12,6 +12,12 @@
 !saines.html
 !who-is-saines.html
 !route-1-fiction.html
+!route-1f.html
+!route1f-illegal.html
+
+# Allow docs directory
+!docs/
+!docs/**
 
 # Allow image directories used by the site
 !Pictures/

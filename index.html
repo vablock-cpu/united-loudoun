@@ -22,13 +22,24 @@
     img { display: block; max-width: 100%; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-    /* ─── URGENCY BAR ─── */
-    .urgency-bar {
-      background: var(--red2); color: #fff; text-align: center;
-      padding: 10px 24px; font-weight: 700; font-size: .875rem;
+    /* ─── BREAKING STRIP ─── */
+    .breaking-strip {
+      background: var(--red2); text-align: center; padding: 10px 24px;
     }
-    .urgency-bar a { color: var(--gold2); text-decoration: underline; }
-    .urgency-bar a:hover { color: #fff; }
+    .breaking-strip a {
+      color: #fff; text-decoration: none; font-size: .85rem;
+      font-weight: 600; line-height: 1.5;
+    }
+    .breaking-strip a:hover { text-decoration: underline; }
+    .breaking-strip em { font-style: italic; font-weight: 900; }
+    .breaking-label {
+      display: inline-block; background: #fff; color: var(--red2);
+      font-size: .65rem; font-weight: 900; padding: 2px 8px;
+      border-radius: 3px; letter-spacing: .08em;
+      margin-right: 8px; vertical-align: middle;
+    }
+    .breaking-arrow { color: var(--gold2); font-weight: 800; }
+
 
     /* ─── HEADER ─── */
     header {
@@ -278,9 +289,14 @@
 </head>
 <body>
 
-<!-- URGENCY BAR -->
-<div class="urgency-bar">
-  SCC ruling expected any day &mdash; HB 1487 passed. <a href="take-action.html">Board resolution needed now &rarr;</a>
+<!-- BREAKING STRIP -->
+<div class="breaking-strip">
+  <a href="route1f-illegal.html">
+    <span class="breaking-label">BREAKING</span>
+    Route 1F is Fiction &mdash; and <em>illegal.</em>
+    Virginia law prohibits what Dominion proposed.
+    <span class="breaking-arrow">Read more &rarr;</span>
+  </a>
 </div>
 
 <!-- HEADER -->
@@ -367,7 +383,7 @@
     <div class="map-intro">
       <span class="map-tag">INTERACTIVE MAP</span>
       <h2>See the Proposed Routes</h2>
-      <p>Explore the Golden-to-Mars corridor, proposed tower locations, right-of-way impacts, and affected facilities — including hospitals, schools, and gas stations.</p>
+      <p>Explore the Golden-to-Mars corridor, proposed tower locations, right-of-way impacts, and affected facilities — including an emergency room, schools, and gas stations.</p>
     </div>
     <div class="map-embed">
       <iframe src="route-1-fiction.html" title="Golden to Mars Interactive Route Map" loading="lazy"></iframe>
@@ -483,7 +499,7 @@
 <section class="cta-strip">
   <div class="container">
     <h2>The ruling is coming.<br><em>Don't let it happen without your voice.</em></h2>
-    <p>1,800+ Loudoun residents have already shown up. The SCC has noticed. But the precedent this sets goes beyond one corridor — it decides how Loudoun manages growth for a generation.</p>
+    <p>Thousands of Loudoun residents have shown up — at hearings, rallies, online, and on the phone. The SCC, elected officials, the press, and the companies themselves have all taken notice. The precedent this sets goes beyond one corridor — it decides how Loudoun manages growth for a generation.</p>
     <div class="cta-btns">
       <a href="take-action.html" class="btn-primary" style="font-size:1.05rem; padding:16px 32px;">Contact Your Supervisor &rarr;</a>
       <a href="the-issue.html" class="btn-outline" style="font-size:1rem; padding:14px 28px;">Learn What's at Stake</a>
@@ -508,6 +524,7 @@
           <li><a href="the-truth.html">The Truth</a></li>
           <li><a href="press.html">Press Coverage</a></li>
           <li><a href="take-action.html">Take Action</a></li>
+          <li><a href="route-1f.html">Route 1F: Fiction</a></li>
         </ul>
       </div>
       <div class="footer-col">

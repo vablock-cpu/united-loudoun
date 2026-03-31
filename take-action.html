@@ -23,6 +23,24 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     .section { padding: 72px 0; }
 
+    /* ─── BREAKING STRIP ─── */
+    .breaking-strip {
+      background: var(--red2); text-align: center; padding: 10px 24px;
+    }
+    .breaking-strip a {
+      color: #fff; text-decoration: none; font-size: .85rem;
+      font-weight: 600; line-height: 1.5;
+    }
+    .breaking-strip a:hover { text-decoration: underline; }
+    .breaking-strip em { font-style: italic; font-weight: 900; }
+    .breaking-label {
+      display: inline-block; background: #fff; color: var(--red2);
+      font-size: .65rem; font-weight: 900; padding: 2px 8px;
+      border-radius: 3px; letter-spacing: .08em;
+      margin-right: 8px; vertical-align: middle;
+    }
+    .breaking-arrow { color: var(--gold2); font-weight: 800; }
+
     /* ─── HEADER ─── */
     header { position: sticky; top: 0; z-index: 200; background: var(--navy); border-bottom: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,.4); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; max-width: 1100px; margin: 0 auto; }
@@ -206,6 +224,16 @@
 </head>
 <body>
 
+<!-- BREAKING STRIP -->
+<div class="breaking-strip">
+  <a href="route1f-illegal.html">
+    <span class="breaking-label">BREAKING</span>
+    Route 1F is Fiction &mdash; and <em>illegal.</em>
+    Virginia law prohibits what Dominion proposed.
+    <span class="breaking-arrow">Read more &rarr;</span>
+  </a>
+</div>
+
 <!-- HEADER -->
 <header>
   <div class="header-inner">
@@ -226,7 +254,7 @@
     <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Take Action</span></div>
     <div class="urgency-tag">Urgent — SCC ruling expected any day. HB 1487 passed. Board resolution needed now.</div>
     <h1>This Is Bigger Than One Neighborhood. Your Voice Still Matters.</h1>
-    <p>This started with Loudoun Valley Estates. But the precedent the SCC sets here will define how every Loudoun neighborhood is treated when data center demand comes to their doorstep. 1,800+ residents have already shown up — and the SCC has noticed.</p>
+    <p>This started with Loudoun Valley Estates. But the precedent set here will define how every Loudoun neighborhood is treated when data center demand comes to their doorstep. Thousands of residents have shown up — at hearings, at rallies, online, on the phone. The SCC, elected officials, candidates, the press, and the companies themselves have all taken notice. This community isn't anti-tech or anti-growth — it's one of the most tech-forward, entrepreneurial, and diverse in the country. But growth has to work <em>with</em> the community, not bulldoze through it.</p>
     <div class="hero-action-pills">
       <a href="#email">Email Your Supervisor</a>
       <a href="#sign-up">Get Alerts</a>
@@ -308,7 +336,7 @@ I am a Loudoun County resident writing to urge your immediate action on the Gold
 
 FOIA records obtained from VDOT show that Dominion's entire basis for claiming underground is infeasible rests on a single meeting and a single email — objecting only to open-cut excavation. The standard trenchless method for high-traffic corridors was never proposed. And the Company's own Feasibility Study conclusion was changed from 'feasible' to 'infeasible' by Dominion's routing engineer, not the engineering firm. The community's concerns are not speculation — they are documented in the public record.
 
-The community has shown up — 1,800+ residents at public hearings, 1,300+ written testimonies. We are asking our leaders to hold firm.
+Thousands of residents have shown up — at hearings, rallies, online, and on the phone. We are asking our leaders to hold firm.
 
 This issue affects every Loudoun taxpayer — not just the homeowners closest to the lines. Thank you for your leadership.
 
@@ -493,7 +521,7 @@ This issue affects every Loudoun taxpayer — not just the homeowners closest to
         <div class="quote">"This is not a he-said-she-said. This is a documented record. One meeting. One email. One method tested. Eleven alternatives rejected."</div>
       </div>
       <div class="point-card">
-        <h4>Route 1F would put 500kV lines 35 feet from a hospital emergency room.</h4>
+        <h4>Route 1F would put 500kV lines 35 feet from an emergency room.</h4>
         <p>The route Dominion introduced as a 'failsafe' would place industrial transmission structures adjacent to the Inova HealthPlex (serving 280,000+ residents), obstruct medevac helicopter operations, create electromagnetic interference with diagnostic imaging, and put high-voltage lines next to gas stations and childcare facilities. Dominion's own counsel admitted it is 'not under consideration.' It was leverage.</p>
         <div class="quote">"This route was never real. It was designed to make overhead through your backyard seem like the reasonable option."</div>
       </div>
@@ -573,6 +601,7 @@ This issue affects every Loudoun taxpayer — not just the homeowners closest to
           <li><a href="the-truth.html">The Truth</a></li>
           <li><a href="press.html">Press Coverage</a></li>
           <li><a href="take-action.html">Take Action</a></li>
+          <li><a href="route-1f.html">Route 1F: Fiction</a></li>
         </ul>
       </div>
       <div class="footer-col">

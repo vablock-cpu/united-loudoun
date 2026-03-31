@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Route 1F: Fiction — United Loudoun</title>
+  <meta name="description" content="Dominion's Route 1F was never a real plan. Their own feasibility study proves it. An emergency room, medevac zone, gas stations, childcare centers, and a 16-foot median — here's what Route 1F would actually hit." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:  #152744; --navy2: #1b3660;
+      --teal:  #1a6b5e; --teal2: #22856e;
+      --gold:  #c9970a; --gold2: #f0b429;
+      --red:   #b91c1c; --red2:  #dc2626;
+      --off:   #f8f7f4; --gray:  #64748b; --light: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; line-height: 1.6; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--navy); border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; padding: 0 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .logo { font-weight: 900; font-size: 1.15rem; color: #fff; text-decoration: none; }
+    .logo span { color: var(--gold2); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { color: rgba(255,255,255,.82); text-decoration: none; font-size: .875rem; font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--gold2); }
+    .btn-nav { background: var(--gold); color: var(--navy) !important; padding: 8px 18px; border-radius: 6px; font-weight: 700 !important; }
+    .btn-nav:hover { background: var(--gold2) !important; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; }
+
+    /* ─── BREAKING STRIP ─── */
+    .breaking-strip {
+      background: var(--red2); text-align: center; padding: 12px 24px;
+    }
+    .breaking-strip a {
+      color: #fff; text-decoration: none; font-size: .88rem;
+      font-weight: 600; line-height: 1.5;
+    }
+    .breaking-strip a:hover { text-decoration: underline; }
+    .breaking-strip em {
+      font-style: italic; font-weight: 900;
+    }
+    .breaking-label {
+      display: inline-block; background: #fff; color: var(--red2);
+      font-size: .68rem; font-weight: 900; padding: 2px 8px;
+      border-radius: 3px; letter-spacing: .08em;
+      margin-right: 8px; vertical-align: middle;
+    }
+    .breaking-arrow {
+      color: var(--gold2); font-weight: 800;
+    }
+
+    /* ─── HERO ─── */
+    .hero-1f {
+      background: linear-gradient(135deg, #1a0a0a 0%, var(--red) 50%, #7f1d1d 100%);
+      padding: 72px 0 56px; color: #fff; text-align: center;
+    }
+    .hero-1f .breadcrumb {
+      font-size: .78rem; color: rgba(255,255,255,.45); margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .hero-1f .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; }
+    .hero-1f .breadcrumb a:hover { color: var(--gold2); }
+    .fiction-tag {
+      display: inline-block; background: var(--gold2); color: var(--navy);
+      padding: 5px 16px; border-radius: 4px; font-size: .72rem;
+      font-weight: 900; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px;
+    }
+    .hero-1f h1 {
+      font-family: 'Merriweather', serif; font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900; line-height: 1.2; margin-bottom: 16px;
+    }
+    .hero-1f h1 em { font-style: normal; color: var(--gold2); }
+    .hero-1f .hero-sub {
+      font-size: 1.05rem; line-height: 1.7; max-width: 720px; margin: 0 auto 28px;
+      opacity: .92;
+    }
+    .hero-1f .btn-primary {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-weight: 800; padding: 14px 32px; border-radius: 8px; text-decoration: none;
+      font-size: 1rem; transition: background .2s;
+    }
+    .hero-1f .btn-primary:hover { background: var(--gold2); }
+
+    /* ─── ANCHOR NAV ─── */
+    .anchor-nav {
+      background: var(--off); border-bottom: 1px solid var(--light);
+      padding: 14px 0; position: sticky; top: 64px; z-index: 100;
+    }
+    .anchor-nav .container {
+      display: flex; gap: 8px; overflow-x: auto; flex-wrap: wrap; justify-content: center;
+    }
+    .anchor-nav a {
+      background: #fff; border: 1px solid var(--light); padding: 6px 14px;
+      border-radius: 6px; font-size: .78rem; font-weight: 600; color: var(--navy);
+      text-decoration: none; white-space: nowrap; transition: all .2s;
+    }
+    .anchor-nav a:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 64px 0; }
+    .section:nth-child(even) { background: var(--off); }
+    .sec-tag {
+      display: inline-block; padding: 4px 12px; border-radius: 4px;
+      font-size: .7rem; font-weight: 800; letter-spacing: .09em;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    .sec-tag.red { background: #fef2f2; color: var(--red); }
+    .sec-tag.navy { background: #eef2f7; color: var(--navy); }
+    .sec-tag.teal { background: #ecfdf5; color: var(--teal); }
+    .sec-tag.gold { background: #fefce8; color: #92400e; }
+    .section-h {
+      font-family: 'Merriweather', serif; font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900; color: var(--navy); line-height: 1.25; margin-bottom: 16px;
+    }
+    .intro-text { font-size: 1.02rem; color: #475569; line-height: 1.7; max-width: 880px; margin-bottom: 32px; }
+
+    /* ─── STUDY BOX ─── */
+    .study-box {
+      background: var(--navy); color: #fff; border-radius: 12px;
+      padding: 32px 36px; margin-bottom: 40px; border-left: 6px solid var(--gold2);
+    }
+    .study-box h3 { color: var(--gold2); font-size: 1.2rem; margin: 0 0 12px; }
+    .study-box p { font-size: .98rem; line-height: 1.7; margin-bottom: 14px; }
+    .study-box p:last-child { margin-bottom: 0; }
+    .study-box strong { color: var(--gold2); }
+    .study-box .source { font-size: .75rem; color: var(--gold2); font-weight: 700; margin-top: 14px; }
+
+    /* ─── FACILITY CARDS ─── */
+    .facility-card {
+      background: #fff; border-radius: 12px; border: 1px solid var(--light);
+      overflow: hidden; margin-bottom: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .facility-card.red-border { border-left: 5px solid var(--red); }
+    .facility-card.teal-border { border-left: 5px solid var(--teal); }
+    .facility-card.gold-border { border-left: 5px solid var(--gold); }
+    .facility-card.navy-border { border-left: 5px solid var(--navy); }
+    .fc-body { padding: 28px 32px; }
+    .fc-body h3 { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .fc-body p { font-size: .95rem; line-height: 1.7; color: #475569; margin-bottom: 12px; }
+    .fc-body p:last-child { margin-bottom: 0; }
+    .fc-body .source { font-size: .75rem; font-weight: 700; margin-top: 10px; }
+    .fc-body .source.red { color: var(--red); }
+    .fc-body .source.teal { color: var(--teal); }
+    .fc-body .source.gold { color: #7a5f00; }
+    .fc-body .source.navy { color: var(--navy); }
+    .fc-img { width: 100%; }
+    .fc-img img { width: 100%; display: block; }
+    .fc-caption {
+      padding: 8px 16px; font-size: .75rem; color: var(--gray);
+      background: var(--off); border-top: 1px solid var(--light);
+    }
+
+    /* ─── TWO-COL LAYOUT ─── */
+    .two-col {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
+      margin-bottom: 32px;
+    }
+
+    /* ─── KEY NUMBERS ─── */
+    .key-nums {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      margin: 32px 0;
+    }
+    .kn {
+      text-align: center; background: #fff; border-radius: 10px;
+      padding: 24px 16px; border: 1px solid var(--light);
+    }
+    .kn .num { font-size: 2rem; font-weight: 900; color: var(--red); line-height: 1; }
+    .kn .lbl { font-size: .78rem; color: var(--gray); margin-top: 6px; line-height: 1.3; }
+
+    /* ─── RED CALLOUT ─── */
+    .red-callout {
+      background: var(--red); color: #fff; border-radius: 14px;
+      padding: 36px 40px; text-align: center; margin-top: 16px;
+    }
+    .red-callout h3 { font-size: 1.3rem; font-weight: 800; line-height: 1.4; margin-bottom: 12px; }
+    .red-callout p { font-size: 1.05rem; line-height: 1.6; opacity: .95; margin-bottom: 12px; }
+    .red-callout .source { font-size: .8rem; font-weight: 700; opacity: .8; }
+
+    /* ─── MAP SECTION ─── */
+    .map-embed {
+      border-radius: 12px; overflow: hidden; border: 2px solid var(--light);
+      box-shadow: 0 4px 24px rgba(0,0,0,.1); margin: 24px 0;
+    }
+    .map-embed iframe { width: 100%; height: 560px; border: none; display: block; }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: var(--navy); color: #fff; text-align: center; padding: 56px 0;
+    }
+    .cta-strip h2 {
+      font-family: 'Merriweather', serif; font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 900; margin-bottom: 14px; line-height: 1.3;
+    }
+    .cta-strip h2 em { font-style: normal; color: var(--gold2); }
+    .cta-strip p { font-size: .98rem; max-width: 620px; margin: 0 auto 24px; opacity: .8; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-btns .btn-primary {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-weight: 800; padding: 14px 32px; border-radius: 8px; text-decoration: none;
+    }
+    .cta-btns .btn-primary:hover { background: var(--gold2); }
+    .cta-btns .btn-outline {
+      display: inline-block; background: transparent; border: 2px solid rgba(255,255,255,.4);
+      color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; text-decoration: none;
+    }
+    .cta-btns .btn-outline:hover { background: rgba(255,255,255,.1); }
+
+    /* ─── FOOTER ─── */
+    footer { background: #0d1a2d; color: rgba(255,255,255,.5); padding: 44px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 28px; }
+    .footer-brand .logo { font-size: 1rem; display: inline-block; margin-bottom: 10px; }
+    .footer-brand p { font-size: .8rem; line-height: 1.65; }
+    .footer-col h4 { font-size: .72rem; font-weight: 800; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .82rem; }
+    .footer-col a:hover { color: var(--gold2); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; text-align: center; font-size: .75rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .two-col { grid-template-columns: 1fr; }
+      .key-nums { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      nav { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--navy); flex-direction: column; padding: 16px 24px; gap: 12px; border-top: 1px solid rgba(255,255,255,.1); }
+      nav.open { display: flex; }
+      .hamburger { display: block; }
+      .anchor-nav .container { justify-content: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .key-nums { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span>United</span>Loudoun</a>
+    <nav id="nav-menu">
+      <a href="the-issue.html">The Issue</a>
+      <a href="the-truth.html">The Truth</a>
+      <a href="press.html">Press</a>
+      <a href="take-action.html" class="btn-nav">Take Action</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- BREAKING NEWS STRIP -->
+<div class="breaking-strip">
+  <a href="route1f-illegal.html">
+    <span class="breaking-label">BREAKING</span>
+    Route 1F is Fiction &mdash; and now we know it&rsquo;s <em>illegal.</em>
+    Virginia law prohibits what Dominion proposed. <span class="breaking-arrow">Read more &rarr;</span>
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero-1f">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Route 1F</span></div>
+    <div class="fiction-tag">ROUTE 1F EXPOSED</div>
+    <h1>Route 1F Is <em>Fiction</em></h1>
+    <p class="hero-sub">Dominion introduced Route 1F with no engineering, no geotechnical analysis, and no VDOT approval. Their own counsel admitted it is "not under consideration." Their own feasibility study proves it can't be built. It was never a plan &mdash; it was a pressure tactic.</p>
+    <a href="#map" class="btn-primary">See It on the Map &darr;</a>
+  </div>
+</section>
+
+<!-- ANCHOR NAV -->
+<div class="anchor-nav">
+  <div class="container">
+    <a href="#feasibility">The Feasibility Study</a>
+    <a href="#physical">Physical Impossibility</a>
+    <a href="#facilities">Sensitive Facilities</a>
+    <a href="#healthplex">Emergency Room</a>
+    <a href="#aviation">Medevac &amp; Aviation</a>
+    <a href="#childcare">Childcare Centers</a>
+    <a href="#gas">Gas Stations</a>
+    <a href="#development">Growth in the Corridor</a>
+    <a href="#map">Interactive Map</a>
+    <a href="#illegal">It&rsquo;s Against the Law</a>
+    <a href="#conclusion">The Bottom Line</a>
+  </div>
+</div>
+
+<!-- FEASIBILITY STUDY -->
+<section class="section" id="feasibility">
+  <div class="container">
+    <span class="sec-tag red">DOMINION'S OWN STUDY</span>
+    <h2 class="section-h">The Feasibility Study That Defeats Its Own Purpose</h2>
+    <p class="intro-text">Dominion commissioned a Feasibility Analysis for Route 1F along Loudoun County Parkway. The study exhaustively examined underground routing through this stretch and declared it "not constructable." Then Dominion proposed <em>overhead</em> through the exact same corridor &mdash; and never explained how the same constraints disappear when you build above ground instead of below it.</p>
+
+    <div class="study-box">
+      <h3>What Dominion's Study Found</h3>
+      <p>The Underground Feasibility Study identified the following constraints along Loudoun County Parkway as grounds for declaring underground Route R3 "not constructable":</p>
+      <ul style="margin: 8px 0 14px 20px; line-height: 1.8; font-size: .95rem;">
+        <li>VDOT restrictions on use of the roadway</li>
+        <li>VDOT restrictions on lane closures during installation and maintenance</li>
+        <li>The need to acquire permanent easements from private landowners and sensitive facilities</li>
+        <li>Water, sewer, and fiber utilities that cross and run parallel to the road</li>
+      </ul>
+      <p>The study concluded that this infrastructure would require <strong>"significant service disruption and relocations"</strong> and that the route <strong>"has been determined to not be constructable for this project."</strong></p>
+      <p style="opacity:.85; font-size:.92rem;">Yet every one of these constraints applies equally to overhead construction. Installing tower foundations requires augering massive caissons deep into the same earth where those utilities sit. The conflict with existing underground infrastructure does not disappear because the Company proposes to build above ground rather than below it &mdash; it is the same conflict, encountered from above instead of from the side.</p>
+      <p class="source">Source: Feasibility Analysis v6, Sections I and II</p>
+    </div>
+
+    <div class="key-nums">
+      <div class="kn"><div class="num">56 ft</div><div class="lbl">Crossarm width of each tower</div></div>
+      <div class="kn"><div class="num">4&ndash;6 ft</div><div class="lbl">Median width at intersections</div></div>
+      <div class="kn"><div class="num">10x</div><div class="lbl">Crossarm exceeds median width</div></div>
+      <div class="kn"><div class="num">0</div><div class="lbl">Geotechnical studies performed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHYSICAL IMPOSSIBILITY -->
+<section class="section" id="physical">
+  <div class="container">
+    <span class="sec-tag navy">PHYSICAL CONSTRAINTS</span>
+    <h2 class="section-h">It Doesn't Fit</h2>
+    <p class="intro-text">A 185-foot 500kV monopole is not a telephone pole. Dominion's own structure boards specify a crossarm width of 56 feet. The median they want to put it in is 16 to 22 feet wide mid-block &mdash; and narrows to 4 to 6 feet at intersections.</p>
+
+    <div class="facility-card navy-border">
+      <div class="fc-body">
+        <h3>Foundation Requirements</h3>
+        <p>Each structure requires a drilled-pier concrete foundation typically 8 to 12 feet in diameter, extending 30 to 50 feet into the earth. The Company's own feasibility study identified water, sewer, and fiber optic utilities that both cross and run parallel to Loudoun County Parkway &mdash; citing this infrastructure as a constraint requiring "significant service disruption and relocations."</p>
+        <p>At intersections, the foundation alone would not fit within the available space without removing turn lanes and crippling traffic throughput for the 280,000 residents in the service area.</p>
+        <p class="source navy">Source: Feasibility Analysis v6, Section II</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="facility-card navy-border">
+        <div class="fc-body">
+          <h3>VDOT Clear Zone Violations</h3>
+          <p>VDOT regulations require a clear zone &mdash; an unobstructed, traversable roadside area &mdash; of approximately 20 to 30 feet from the edge of the travel lane for a 45&ndash;55 mph arterial. A monopole in a 20-foot median would sit approximately 10 feet from the travel lanes on either side &mdash; a direct violation of these safety standards, creating fatal collision hazards.</p>
+        </div>
+      </div>
+      <div class="facility-card navy-border">
+        <div class="fc-body">
+          <h3>No Room to Expand</h3>
+          <p>Loudoun County Parkway has already been widened to its current configuration. Residential homes, sound barriers, and shared-use paths back up directly to the VDOT right-of-way on both sides. The distance from the right-of-way to residential property lines is at or near zero in many sections. There is nowhere else to go.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SENSITIVE FACILITIES OVERVIEW -->
+<section class="section" id="facilities">
+  <div class="container">
+    <span class="sec-tag red">WHAT'S IN THE PATH</span>
+    <h2 class="section-h">Sensitive Facilities Along Loudoun County Parkway</h2>
+    <p class="intro-text">Because Dominion conducted no diligence whatsoever before floating Route 1F, the community had to do it for them. Here is what any responsible applicant would have discovered before introducing a route into a contested proceeding.</p>
+
+    <div class="facility-card red-border">
+      <div class="fc-img">
+        <img src="Pictures/route1f/image1.png" alt="Aerial view of sensitive facilities along Loudoun County Parkway including Inova HealthPlex, Exxon station, and Kiddie Academy" />
+      </div>
+      <div class="fc-caption">Figure 1: Sensitive facilities along Loudoun County Parkway &mdash; emergency room, gas station, childcare center, and hotels all within the Route 1F corridor</div>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTHPLEX -->
+<section class="section" id="healthplex">
+  <div class="container">
+    <span class="sec-tag red">EMERGENCY MEDICAL CARE</span>
+    <h2 class="section-h">Inova Ashburn HealthPlex Emergency Center</h2>
+    <p class="intro-text">Dominion's feasibility study describes it as "a facility providing emergency care services to the public." What it is: the primary emergency stabilization point for over 280,000 residents &mdash; 62% of Loudoun County's population.</p>
+
+    <div class="facility-card red-border">
+      <div class="fc-img">
+        <img src="Pictures/route1f/image2.png" alt="Aerial showing the rear of Inova HealthPlex emergency room, just 35 feet from the proposed Route 1F right-of-way" />
+      </div>
+      <div class="fc-caption">Figure 2: The rear of the Inova HealthPlex emergency room sits less than 35 feet from the Route 1F right-of-way</div>
+      <div class="fc-body">
+        <h3>35 Feet From an Emergency Room</h3>
+        <p>Route 1F shifts from the median at this point and routes through the HealthPlex parking lot, with the right-of-way beginning less than 35 feet from the building. The facility is a certified Acute Stroke Ready Hospital whose single CT scanner performed 8,267 scans in 2022 &mdash; operating at 111.72% of state-standard capacity.</p>
+        <p>By stabilizing high-acuity patients locally, the HealthPlex prevents the over-saturation of the Level II Trauma Center at Inova Loudoun in Leesburg and ensures life-saving care is available within minutes for the county's most populated area.</p>
+        <p class="source red">Source: Feasibility Analysis v6, Sections III.A and III.B</p>
+      </div>
+    </div>
+
+    <div class="facility-card red-border" id="emf">
+      <div class="fc-body">
+        <h3>Electromagnetic Interference with Diagnostic Equipment</h3>
+        <p>500kV transmission lines generate magnetic fields far exceeding the 0.5 milligauss threshold required for medical imaging. The HealthPlex building is approximately 185 by 150 feet, with the majority of medical facilities and emergency operations &mdash; including the imaging suite &mdash; located in the portion of the building closest to Route 1F.</p>
+        <p>Electromagnetic interference from 500kV lines does not attenuate to the 0.5 milligauss threshold until approximately 700 to 1,000 feet from the centerline. The HealthPlex is 35 feet away. Image artifacts &mdash; visual noise or blurring capable of masking a brain bleed or clot &mdash; would require re-scans and equipment recalibration, introducing life-threatening delays for stroke patients who depend on speed and precision for survival.</p>
+        <p class="source red">Source: Feasibility Analysis v6, Section III.B</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIATION -->
+<section class="section" id="aviation">
+  <div class="container">
+    <span class="sec-tag gold">AVIATION SAFETY</span>
+    <h2 class="section-h">Medevac Operations and Emergency Access</h2>
+
+    <div class="two-col">
+      <div class="facility-card gold-border">
+        <div class="fc-body">
+          <h3>Helicopter Operations at Risk</h3>
+          <p>The Loudoun County EMS Operations Committee has designated the HealthPlex campus for emergency helicopter transports, with a ground-level landing zone used to transfer critically ill patients to Level 1 Trauma Centers.</p>
+          <p>Under FAA Part 77 standards, 185-foot structures in the median would likely be classified as hazards to air navigation and could legally necessitate the permanent decommissioning of the facility's helicopter access &mdash; stripping the county's most populated region of rapid air-bridge access for severe trauma and acute strokes.</p>
+          <p class="source gold">Source: Feasibility Analysis v6, Section III.C</p>
+        </div>
+      </div>
+      <div class="facility-card gold-border">
+        <div class="fc-body">
+          <h3>Obstruction Lighting &amp; Collision Risk</h3>
+          <p>Structures classified as hazards to air navigation would require obstruction lighting &mdash; high-intensity white strobes during the day, red flashing lights at night &mdash; operating continuously, 24/7, adjacent to apartment complexes and single-family homes.</p>
+          <p>High-voltage transmission lines are the primary wire-strike hazard for helicopter operations, creating unacceptable risk during high-stress emergency landings, particularly in low-visibility or night operations.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="facility-card gold-border">
+      <div class="fc-body">
+        <h3>Emergency Access Severing</h3>
+        <p>In the event of severe weather, ice loading, or structural failure, the collapse of a 185-foot tower or downing of live 500kV wires onto Loudoun County Parkway would sever the primary emergency access route &mdash; preventing ambulances from reaching the HealthPlex or transferring patients out, with potentially catastrophic consequences for the 280,000+ residents who depend on this facility.</p>
+        <p class="source gold">Source: Feasibility Analysis v6, Section III.C</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHILDCARE -->
+<section class="section" id="childcare">
+  <div class="container">
+    <span class="sec-tag teal">EDUCATIONAL FACILITIES</span>
+    <h2 class="section-h">Childcare Centers in the Path</h2>
+
+    <div class="two-col">
+      <div class="facility-card teal-border">
+        <div class="fc-img">
+          <img src="Pictures/route1f/image3.png" alt="Primrose School of Moorefield Station adjacent to Route 1F on Loudoun County Parkway" />
+        </div>
+        <div class="fc-caption">Figure 3: Primrose School of Moorefield Station, directly adjacent to Loudoun County Parkway</div>
+        <div class="fc-body">
+          <h3>Primrose School of Moorefield Station</h3>
+          <p>A private early childhood education center serving infants through kindergarteners, located adjacent to Loudoun County Parkway. Outdoor activity areas would sit directly next to proposed 500kV transmission structures.</p>
+        </div>
+      </div>
+      <div class="facility-card teal-border">
+        <div class="fc-img">
+          <img src="Pictures/route1f/image4.png" alt="Kiddie Academy of Moorefield Station with Exxon station, both adjacent to Route 1F" />
+        </div>
+        <div class="fc-caption">Figure 4: Kiddie Academy of Moorefield Station, across from the HealthPlex, in the same plaza as the Exxon station</div>
+        <div class="fc-body">
+          <h3>Kiddie Academy of Moorefield Station</h3>
+          <p>Situated directly across Loudoun County Parkway from the HealthPlex, in the same commercial center as the Exxon gas station. Like Primrose, a private tuition-based facility whose outdoor play areas would be directly adjacent to 500kV structures.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="study-box" style="background: var(--teal);">
+      <h3 style="color: #fff;">The Market Reality</h3>
+      <p>As private tuition-based facilities, their continued operation relies entirely on parental choice. The placement of 500kV lines within feet of classrooms and outdoor play areas would effectively destroy these businesses &mdash; not through a formal taking, but through the market reality that parents will not pay private tuition to place their children in the shadow of high-voltage transmission lines when unaffected alternatives exist.</p>
+      <p style="opacity:.85;">During the months-long construction phase, heavy crawler cranes and the stringing of high-voltage conductors would operate directly adjacent to active drop-off zones and outdoor play areas.</p>
+      <p class="source" style="color: rgba(255,255,255,.7);">Source: Feasibility Analysis v6, Section III.D</p>
+    </div>
+  </div>
+</section>
+
+<!-- GAS STATIONS -->
+<section class="section" id="gas">
+  <div class="container">
+    <span class="sec-tag red">FIRE &amp; EXPLOSION HAZARD</span>
+    <h2 class="section-h">Commercial Fueling Operations</h2>
+
+    <div class="two-col">
+      <div class="facility-card red-border">
+        <div class="fc-body">
+          <h3>Exxon Station &mdash; Flagstaff Plaza</h3>
+          <p>Situated directly across Loudoun County Parkway from the HealthPlex. High-voltage lines can induce electric currents on large ungrounded metal objects, creating a risk of spark discharge during fuel delivery operations in an environment saturated with volatile compounds. A downed 500kV conductor onto a fuel station with underground storage tanks represents a catastrophic fire and explosion hazard.</p>
+          <p>The same commercial center also includes the Hilton Garden Inn and Aloft Dulles Airport North &mdash; two hotels whose guests and staff would be directly exposed to the construction and permanent presence of 500kV structures.</p>
+          <p class="source red">Source: Feasibility Analysis v6, Section III.E</p>
+        </div>
+      </div>
+      <div class="facility-card red-border">
+        <div class="fc-img">
+          <img src="Pictures/route1f/image5.png" alt="Second gas station under construction at Loudoun County Parkway and Ryan Road intersection" />
+        </div>
+        <div class="fc-caption">Figure 5: Gas station under construction at LCP and Ryan Road &mdash; Dominion's Route 5 runs literally through this site</div>
+        <div class="fc-body">
+          <h3>Second Gas Station &mdash; Under Construction</h3>
+          <p>Approximately 1.25 miles south, the intersection of Loudoun County Parkway and Ryan Road includes a second gas station currently under construction, presenting identical hazards. Dominion's proposed Route 5 is drawn literally through this gas station.</p>
+          <p>This project was underway before the SCC proceeding began, yet the Company did not adjust its routing &mdash; consistent with a pattern of not engaging with the actual realities of the corridor.</p>
+          <p class="source red">Source: Feasibility Analysis v6, Section III.E</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPMENT -->
+<section class="section" id="development">
+  <div class="container">
+    <span class="sec-tag navy">GROWTH IN THE CORRIDOR</span>
+    <h2 class="section-h">Thousands of New Residents Who Haven't Been Notified</h2>
+    <p class="intro-text">Major residential communities along this corridor are either recently completed or currently under construction. These residents and developers have not been notified about Route 1F &mdash; because Dominion never intended to build it.</p>
+
+    <div class="two-col">
+      <div class="facility-card navy-border">
+        <div class="fc-img">
+          <img src="Pictures/route1f/image6.png" alt="Moorefield Station development plan showing multiple residential districts adjacent to Loudoun County Parkway" />
+        </div>
+        <div class="fc-caption">Figure 6: Moorefield Station &mdash; a major mixed-use development directly adjacent to the Route 1F corridor</div>
+        <div class="fc-body">
+          <h3>Moorefield Station</h3>
+          <p>A major mixed-use community with multiple residential districts, directly adjacent to Loudoun County Parkway. Thousands of residents who would be directly impacted by Route 1F have had no opportunity to respond.</p>
+        </div>
+      </div>
+      <div class="facility-card navy-border">
+        <div class="fc-img">
+          <img src="Pictures/route1f/image7.png" alt="Silver District West development by Soave Real Estate, adjacent to Route 1F corridor" />
+        </div>
+        <div class="fc-caption">Figure 7: Silver District West by Soave Real Estate &mdash; currently underway adjacent to the corridor</div>
+        <div class="fc-body">
+          <h3>Silver District West</h3>
+          <p>A significant residential development currently underway. Like Moorefield, these future residents have not been notified because Dominion never intended to actually build this route &mdash; they introduced it from a hearing room in Richmond.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="study-box" style="background: var(--navy);">
+      <h3>Why They Haven't Mobilized</h3>
+      <p>Landowners and developers on the opposite side of Loudoun County Parkway have not engaged more heavily in these proceedings precisely because they believe the Company would never actually construct, and Loudoun County would never allow, a 500kV transmission line down the median of a six-lane arterial road.</p>
+      <p>That belief is widespread and reasonable &mdash; which is itself an indictment of the route's credibility. But when they do learn what is actually being proposed, they will not remain idle. The condemnation challenges, years of litigation, and practical delays already unfolding along other proposed routes would apply with equal or greater force here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE MAP -->
+<section class="section" id="map" style="background: var(--off);">
+  <div class="container">
+    <span class="sec-tag red">INTERACTIVE MAP</span>
+    <h2 class="section-h">See Route 1F for Yourself</h2>
+    <p class="intro-text">Explore the Route 1F corridor and compare it against all other proposed routes. Toggle layers to see the emergency room, gas stations, childcare centers, and residential communities in the path.</p>
+    <div class="map-embed">
+      <iframe src="route-1-fiction.html" title="Route 1F Interactive Map" loading="lazy"></iframe>
+    </div>
+    <div style="text-align: center; margin-top: 16px;">
+      <a href="route-1-fiction.html" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block; background:var(--gold); color:var(--navy); font-weight:800; padding:14px 32px; border-radius:8px; text-decoration:none;">Open Full Map &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- IT'S AGAINST THE LAW -->
+<section class="section" id="illegal">
+  <div class="container">
+    <span class="sec-tag red">VIRGINIA LAW</span>
+    <h2 class="section-h">It&rsquo;s Not Just Impractical. It&rsquo;s Against the Law.</h2>
+    <p class="intro-text">Everything above shows why Route 1F can&rsquo;t realistically be built. But Dominion has an even bigger problem: Virginia law explicitly prohibits what they proposed.</p>
+
+    <div class="study-box" style="border-left-color: var(--red2);">
+      <h3 style="color: var(--red2);"><a href="https://law.lis.virginia.gov/admincode/title24/agency30/chapter151/section330/" target="_blank" rel="noopener" style="color: var(--red2); text-decoration: none;">Virginia Administrative Code &sect;24VAC30-151-330(J)</a></h3>
+      <p style="font-family: 'Merriweather', serif; font-size: 1.15rem; font-style: italic;">&ldquo;Longitudinal pole line installation <strong style="color: var(--red2); font-style: normal; text-decoration: underline;">will not be allowed</strong> in the median.&rdquo;</p>
+      <p>That&rsquo;s it. No exceptions. No wiggle room. You cannot run pole lines down the middle of a highway in Virginia. Loudoun County Parkway is a VDOT-maintained highway &mdash; and Route 1F would place 500&nbsp;kV transmission structures right in its median.</p>
+      <p class="source" style="color: var(--red2);">Source: Virginia Administrative Code, Title 24, Chapter 151, Part VI &mdash; Overhead Utility Installations Within Nonlimited Access Highways</p>
+    </div>
+
+    <div class="two-col">
+      <div class="facility-card red-border">
+        <div class="fc-body">
+          <h3>What Dominion Proposed</h3>
+          <p>Route 1F would place 185-foot, 500&nbsp;kV transmission towers longitudinally in the median of Loudoun County Parkway (State Route 607). This isn&rsquo;t a crossing &mdash; it&rsquo;s towers running <em>down the middle of the road</em> for miles.</p>
+          <p>Dominion&rsquo;s own filings confirm this configuration. There is no dispute about what they proposed.</p>
+        </div>
+      </div>
+      <div class="facility-card red-border">
+        <div class="fc-body">
+          <h3>Why They Proposed It</h3>
+          <p>Dominion&rsquo;s preferred routes &mdash; 3, 3A, and 3B &mdash; run through neighborhoods, across school grounds, and through backyards. They introduced Route 1F as the scary alternative: <em>&ldquo;accept towers in your community, or we&rsquo;ll put them somewhere even worse.&rdquo;</em></p>
+          <p>But Route 1F was never a legal option. It was a pressure tactic dressed up as a real route.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="red-callout">
+      <h3>Dominion introduced a route they could never legally build &mdash; and the County, School Board, SCC, and community volunteers all spent time and resources responding to it.</h3>
+      <p>We have asked the State Corporation Commission to find Route 1F prohibited under Virginia law and to reevaluate all remaining routes without it.</p>
+      <p style="margin-top: 16px;">
+        <a href="docs/THT-to-SCC-033026-Route1F-Illegal.pdf" target="_blank" rel="noopener" style="display: inline-block; background: #fff; color: var(--navy); font-weight: 800; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-size: .95rem;">Read the Letter to the SCC (PDF) &rarr;</a>
+      </p>
+      <p class="source">Source: <a href="https://law.lis.virginia.gov/admincode/title24/agency30/chapter151/section330/" target="_blank" rel="noopener" style="color: var(--gold2); text-decoration: underline;">Virginia Administrative Code &sect;24VAC30-151-330(J)</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM LINE -->
+<section class="section" id="conclusion">
+  <div class="container">
+    <span class="sec-tag red">THE BOTTOM LINE</span>
+    <h2 class="section-h">Route 1F Was Never a Plan. It Was Leverage.</h2>
+    <p class="intro-text">Dominion introduced Route 1F into a contested proceeding before the State Corporation Commission with no prefiled testimony, no engineering analysis, and no VDOT approval. Their own counsel later admitted it is "not under consideration." The community had to conduct the analysis the Company never performed.</p>
+
+    <div class="red-callout">
+      <h3>An emergency room. A medevac zone. Two gas stations. Two childcare centers. Two hotels. Thousands of homes. 280,000 residents' emergency access.</h3>
+      <p>Dominion's own study said underground won't fit here. Then they proposed overhead through the same corridor &mdash; and never explained how. Route 1F exists on paper as leverage, to pressure the community into accepting Routes 3 and 4 through their neighborhoods.</p>
+      <p>Where, precisely, was an overhead route ever going to go?</p>
+      <p class="source">Source: Feasibility Analysis v6, Sections II through VI &mdash; Preliminary Physical Constraints Analysis, March 29, 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>This is one route. The whole story is bigger.<br><em>Get the full picture.</em></h2>
+    <p>Route 1F is just one tactic. Understand the full scope of what Dominion is proposing &mdash; and what you can do about it.</p>
+    <div class="cta-btns">
+      <a href="the-issue.html" class="btn-primary">Read the Full Issue &rarr;</a>
+      <a href="take-action.html" class="btn-outline">Take Action Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><span style="color:var(--gold2)">United</span>Loudoun</a>
+        <p>Loudoun County residents fighting to keep 185-foot industrial transmission towers out of our neighborhoods &mdash; and to set the precedent that underground is the standard, not the exception.</p>
+        <p style="margin-top:10px; font-size:.8rem;"><strong style="color:rgba(255,255,255,.7)">Contact:</strong> <a href="mailto:contact@unitedloudoun.org" style="color:var(--gold2)">contact@unitedloudoun.org</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="the-issue.html">The Issue</a></li>
+          <li><a href="the-truth.html">The Truth</a></li>
+          <li><a href="press.html">Press Coverage</a></li>
+          <li><a href="take-action.html">Take Action</a></li>
+          <li><a href="route-1f.html">Route 1F: Fiction</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>On This Page</h4>
+        <ul>
+          <li><a href="#feasibility">The Feasibility Study</a></li>
+          <li><a href="#facilities">Sensitive Facilities</a></li>
+          <li><a href="#healthplex">Emergency Room</a></li>
+          <li><a href="#childcare">Childcare Centers</a></li>
+          <li><a href="#gas">Gas Stations</a></li>
+          <li><a href="#map">Interactive Map</a></li>
+          <li><a href="#illegal">It's Against the Law</a></li>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 United Loudoun &mdash; unitedloudoun.org &mdash; Because we ALL live here</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('nav-menu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
