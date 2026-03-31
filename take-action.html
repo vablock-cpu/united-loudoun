@@ -168,6 +168,21 @@
     }
     .beehiiv-wrap h3 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
     .beehiiv-wrap p { font-size: .82rem; color: var(--gray); margin-bottom: 16px; line-height: 1.6; }
+    .alert-form { display: flex; flex-direction: column; gap: 10px; }
+    .alert-form input, .alert-form select {
+      padding: 12px 14px; border: 1.5px solid var(--light); border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: .9rem; color: #1e293b;
+      background: #fff; width: 100%;
+    }
+    .alert-form input:focus, .alert-form select:focus {
+      outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,151,10,.15);
+    }
+    .alert-form button {
+      background: var(--gold); color: var(--navy); border: none;
+      padding: 14px; border-radius: 8px; font-family: 'Inter', sans-serif;
+      font-size: .95rem; font-weight: 800; cursor: pointer; transition: background .2s;
+    }
+    .alert-form button:hover { background: var(--gold2); }
 
     /* ─── MORE WAYS TO HELP ─── */
     .more-ways { background: var(--off); }
@@ -398,23 +413,30 @@ This issue affects every Loudoun taxpayer — not just the homeowners closest to
         <div class="beehiiv-wrap">
           <h3>Get Alerts &amp; Updates</h3>
           <p>Sign up for urgent alerts on the SCC ruling, Board meetings, and ways to take action. Unsubscribe any time.</p>
-          <!--
-            ============================================================
-            BEEHIIV EMBED — replace YOUR_PUBLICATION_ID with your actual
-            embed URL from: Beehiiv Dashboard → Settings → Newsletter → Embed
-            It looks like: https://embeds.beehiiv.com/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-            ============================================================
-          -->
-          <iframe
-            src="https://embeds.beehiiv.com/YOUR_PUBLICATION_ID"
-            data-test-id="beehiiv-embed"
-            width="100%"
-            height="320"
-            frameborder="0"
-            scrolling="no"
-            style="border-radius:8px; border:2px solid var(--light); background:transparent;">
-          </iframe>
-          <!-- END BEEHIIV EMBED -->
+          <form action="https://formsubmit.co/contact@unitedloudoun.org" method="POST" class="alert-form">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="New Alert Signup from UnitedLoudoun.org" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="hidden" name="_next" value="https://unitedloudoun.org/take-action.html?signed-up=1#sign-up" />
+            <input type="text" name="_honey" style="display:none" />
+
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <select name="neighborhood">
+              <option value="" disabled selected>Your neighborhood (optional)</option>
+              <option value="Loudoun Valley Estates I">Loudoun Valley Estates I</option>
+              <option value="Loudoun Valley Estates II">Loudoun Valley Estates II</option>
+              <option value="Loudoun Valley Estates III">Loudoun Valley Estates III</option>
+              <option value="Moorefield Station">Moorefield Station</option>
+              <option value="Brambleton">Brambleton</option>
+              <option value="Broadlands">Broadlands</option>
+              <option value="Ashburn Farm">Ashburn Farm</option>
+              <option value="Ashburn Village">Ashburn Village</option>
+              <option value="Other Loudoun County">Other Loudoun County</option>
+            </select>
+            <button type="submit">Sign Up &rarr;</button>
+          </form>
+          <p style="font-size:.72rem; color:var(--gray); margin-top:10px;">We&rsquo;ll only email you when something important happens. No spam.</p>
         </div>
       </div>
     </div>
