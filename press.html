@@ -143,6 +143,13 @@
     .pub-badge.facebook     { background: #1877f2; }
     .pub-badge.wapo         { background: #1a1a1a; }
     .pub-badge.powergrid    { background: #b45309; }
+    .pub-badge.nbc4         { background: #0067B9; }
+    .pub-badge.fox5         { background: #003DA5; }
+    .pub-badge.dcnews       { background: #1a3c6e; }
+    .pub-badge.bayjournal   { background: #2d6a4f; }
+    .pub-badge.intl         { background: #7c3aed; }
+    .pub-badge.congress     { background: #374151; }
+    .pub-badge.student      { background: #6b7280; }
     .card-date { font-size: .75rem; color: var(--gray); font-weight: 600; }
     .featured-card h3 {
       font-size: 1.08rem; font-weight: 800; color: var(--navy); line-height: 1.4;
@@ -373,6 +380,9 @@
       <button class="filter-btn" data-filter="va-mercury">Virginia Mercury</button>
       <button class="filter-btn" data-filter="patch">Patch</button>
       <button class="filter-btn" data-filter="official">Official / Gov</button>
+      <button class="filter-btn" data-filter="tv">NBC / TV</button>
+      <button class="filter-btn" data-filter="bayjournal">Bay Journal</button>
+      <button class="filter-btn" data-filter="intl">International</button>
     </div>
   </div>
 </div>
@@ -423,11 +433,35 @@
           </div>
         </a>
 
+        <a class="article-row" href="https://www.loudounnow.com/news/golden-to-mars-the-next-step/article_164ddf31-c449-4640-9fa7-45b9b58d3271.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Mar 2026</div>
+          <div class="art-body">
+            <div class="art-title">Golden to Mars: The Next Step</div>
+            <div class="art-desc">Loudoun Now reports on the latest developments in the Golden to Mars case as the SCC deliberation continues.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
         <a class="article-row" href="https://www.loudountimes.com/news/politics_and_government/levels_of_government/state/program-to-bury-power-lines-passes-state-legislature/article_b084ee85-6af1-4389-8c49-8d25093822a6.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
           <div class="art-date">Mar 15, 2026</div>
           <div class="art-body">
             <div class="art-title">Program to Bury Power Lines Passes State Legislature</div>
             <div class="art-desc">Del. JJ Singh and Sen. Kannan Srinivasan's legislation passes — pilot program now awaits governor's signature and SCC consideration.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-times">Loudoun Times</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudountimes.com/news/politics_and_government/levels_of_government/county/golden-to-mars-where-things-stand/article_bea21157-f65a-4fc1-baf3-84987f233291.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
+          <div class="art-date">Feb 25, 2026</div>
+          <div class="art-body">
+            <div class="art-title">Golden to Mars: Where Things Stand</div>
+            <div class="art-desc">Loudoun Times roundup of the Golden to Mars case status — SCC proceedings, underground pilot legislation, and community advocacy efforts.</div>
           </div>
           <div class="art-pub">
             <span class="pub-badge loudoun-times">Loudoun Times</span><br>
@@ -510,6 +544,38 @@
       </div>
     </div>
 
+    <!-- 2026 — Medium / Opinion -->
+    <div class="year-group" data-year="2026-opinion">
+      <div class="year-label">2026 — Opinion &amp; Analysis</div>
+      <div class="article-list">
+
+        <a class="article-row" href="https://medium.com/@madi.h.tag/the-invisible-effect-of-power-lines-7d7c6572e167" target="_blank" rel="noopener" data-outlet="other">
+          <div class="art-date">Mar 2026</div>
+          <div class="art-body">
+            <div class="art-title">The Invisible Effect of Power Lines</div>
+            <div class="art-desc">Madison Taggart examines the health, environmental, and property value impacts of high-voltage transmission lines on residential communities.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge" style="background:#1a8917;">Medium</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://medium.com/@madi.h.tag/high-voltage-stakes-living-next-to-data-center-alley-ef7942e250f5" target="_blank" rel="noopener" data-outlet="other">
+          <div class="art-date">Feb 2026</div>
+          <div class="art-body">
+            <div class="art-title">High Voltage Stakes &mdash; Living Next to &ldquo;Data Center Alley&rdquo;</div>
+            <div class="art-desc">Madison Taggart reports on the human cost of living adjacent to the world's largest data center corridor and the fight against overhead power lines.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge" style="background:#1a8917;">Medium</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
     <!-- 2025 -->
     <div class="year-group" data-year="2025">
       <div class="year-label">2025</div>
@@ -551,6 +617,30 @@
           </div>
         </a>
 
+        <a class="article-row" href="https://patch.com/virginia/ashburn/nearly-600-sign-golden-mars-power-line-public-hearing" target="_blank" rel="noopener" data-outlet="patch">
+          <div class="art-date">Dec 13, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Nearly 600 Sign Up For Golden To Mars Power Line Public Hearing</div>
+            <div class="art-desc">Massive public interest as nearly 600 residents register to participate in the SCC's Golden to Mars evidentiary hearing.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge patch">Patch</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://ici.radio-canada.ca/nouvelle/2211756/centres-donnees-loudoun-virginie" target="_blank" rel="noopener" data-outlet="intl">
+          <div class="art-date">Dec 9, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Bad Neighbors in America's Data Center Capital</div>
+            <div class="art-desc">Radio-Canada investigates how data center expansion in Loudoun County is transforming neighborhoods and driving infrastructure conflicts. (In French)</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge intl">Radio-Canada</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
         <a class="article-row" href="https://www.loudounnow.com/news/health-security-environmental-impacts-of-data-centers-raised-during-subramanyam-town-hall/article_93cfbedd-285b-4bc8-9663-c3c485ac86e2.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
           <div class="art-date">Dec 7, 2025</div>
           <div class="art-body">
@@ -559,6 +649,18 @@
           </div>
           <div class="art-pub">
             <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.facebook.com/share/p/1ACsyozaC8/" target="_blank" rel="noopener" data-outlet="official">
+          <div class="art-date">Nov 30, 2025</div>
+          <div class="art-body">
+            <div class="art-title">District Dialogues with Congressman Subramanyam: Data Centers, Power Lines, and Higher Electricity Bills</div>
+            <div class="art-desc">Congressman Subramanyam hosts a public forum on data center impacts, power line infrastructure, and rising electricity costs for Loudoun County residents.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge congress">Congressional</span><br>
             <span class="art-link">Read →</span>
           </div>
         </a>
@@ -635,6 +737,18 @@
           </div>
         </a>
 
+        <a class="article-row" href="https://www.nbcwashington.com/video/news/local/inside-virginias-billion-dollar-data-center-boom-whats-next-for-maryland/4000389/" target="_blank" rel="noopener" data-outlet="tv">
+          <div class="art-date">Oct 10, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Inside Virginia's Billion-Dollar Data Center Boom &mdash; and What's Next for Its Maryland Neighbors</div>
+            <div class="art-desc">NBC4 investigates the explosive growth of data centers in Northern Virginia and the ripple effects on neighboring states and communities.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge nbc4">NBC4</span><br>
+            <span class="art-link">Watch →</span>
+          </div>
+        </a>
+
         <a class="article-row" href="https://www.loudountimes.com/0local-or-not/1local/calls-for-an-underground-transmission-line-option-continue-in-ashburn/article_57e5b81a-56bb-40a9-a002-549ffabfc6ed.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
           <div class="art-date">Sep 30, 2025</div>
           <div class="art-body">
@@ -656,6 +770,282 @@
           <div class="art-pub">
             <span class="pub-badge loudoun-now">Loudoun Now</span><br>
             <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://patch.com/virginia/ashburn/mars-golden-power-line-opposition-organized-rock-ridge-high-school-student" target="_blank" rel="noopener" data-outlet="patch">
+          <div class="art-date">Sep 30, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Power Line Opposition Organized By Rock Ridge High School Student</div>
+            <div class="art-desc">A Rock Ridge High School student organizes community opposition to the Golden to Mars transmission line, demonstrating how the issue has galvanized residents of all ages.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge patch">Patch</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://theblazerrhs.com/10399/news/residents-resist-dominion-energys-proposal-as-scc-opens-public-comment/" target="_blank" rel="noopener" data-outlet="other">
+          <div class="art-date">Sep 30, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Residents Resist Dominion Energy's Proposal as SCC Opens Public Comment</div>
+            <div class="art-desc">Rock Ridge High School's student newspaper covers the community's organized resistance to Dominion's transmission line proposal.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge student">The Blazer</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/hundreds-turnout-to-push-for-underground-power-lines-at-scc-hearing/article_2e3f11f2-63b1-41d9-a692-f902645a8b53.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Sep 20, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Hundreds Turnout to Push for Underground Power Lines at SCC Hearing</div>
+            <div class="art-desc">Hundreds of residents pack the first SCC public hearing to demand underground routing for the Golden to Mars transmission line.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://virginiamercury.com/2025/09/19/loudoun-transmission-line-debate-aims-scc-to-respond-to-data-center-needs-resident-concerns/" target="_blank" rel="noopener" data-outlet="va-mercury">
+          <div class="art-date">Sep 20, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Loudoun Transmission Line Debate Tees Up SCC Response to Data Center Needs, Resident Concerns</div>
+            <div class="art-desc">Virginia Mercury examines the tension between data center demand and community opposition as the SCC prepares to weigh in.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge va-mercury">Virginia Mercury</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.nbcwashington.com/video/news/local/northern-virginia/residents-fight-power-line-project-ashburn/3990774/" target="_blank" rel="noopener" data-outlet="tv">
+          <div class="art-date">Sep 19, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Residents Fight Power Line Project in Ashburn</div>
+            <div class="art-desc">NBC4 Washington covers the community rally and SCC hearing as Ashburn residents push back against Dominion's overhead transmission plan.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge nbc4">NBC4</span><br>
+            <span class="art-link">Watch →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.dcnewsnow.com/video/concerns-over-proposed-transmission-lines-in-loudoun-county/11089718/" target="_blank" rel="noopener" data-outlet="tv">
+          <div class="art-date">Sep 19, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Concerns Over Proposed Transmission Lines in Loudoun County</div>
+            <div class="art-desc">DC News Now reports on growing community concerns over Dominion's proposed high-voltage transmission lines through residential neighborhoods.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge dcnews">DC News Now</span><br>
+            <span class="art-link">Watch →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/loudoun/rock-ridge-student-newsroom-explores-the-transmission-line-controversy/article_dd3c7af0-2d89-4c28-b35c-88f65675a0da.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Sep 18, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Rock Ridge Student Newsroom Explores the Transmission Line Controversy</div>
+            <div class="art-desc">Student journalists at Rock Ridge High School investigate the Golden to Mars controversy and its impact on their community.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/community-prepares-for-scc-hearing-on-golden-to-mars-power-line/article_390c9a6a-1ea2-4702-a183-e8168bd2602d.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Sep 17, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Community Prepares for SCC Hearing on Golden to Mars Power Line</div>
+            <div class="art-desc">Loudoun Valley Estates residents organize ahead of the September SCC hearing, coordinating testimony and community outreach efforts.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/subramanyam-joins-calls-for-underground-golden-to-mars-line/article_98af2d5a-6b81-4a3e-a801-7d2e76dc8de4.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Sep 6, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Subramanyam Joins Calls for Underground Golden to Mars Line</div>
+            <div class="art-desc">U.S. Congressman Subramanyam publicly backs the community's demand for underground routing of the Golden to Mars transmission line.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://patch.com/virginia/ashburn/new-transmission-line-project-hearings-approach-loudoun-county-urges-participation" target="_blank" rel="noopener" data-outlet="patch">
+          <div class="art-date">Sep 5, 2025</div>
+          <div class="art-body">
+            <div class="art-title">As New Transmission Line Project Hearings Approach, County Urges Participation</div>
+            <div class="art-desc">Loudoun County encourages residents to participate in the upcoming SCC hearings on the Golden to Mars transmission line.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge patch">Patch</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.fox5dc.com/video/1702598" target="_blank" rel="noopener" data-outlet="tv">
+          <div class="art-date">Sep 4, 2025</div>
+          <div class="art-body">
+            <div class="art-title">VA Residents Push Back on Dominion Energy's Power Line Proposal</div>
+            <div class="art-desc">Fox 5 DC covers the growing pushback from Virginia residents against Dominion Energy's planned overhead transmission lines through Ashburn neighborhoods.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge fox5">Fox 5 DC</span><br>
+            <span class="art-link">Watch →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://subramanyam.house.gov/media/press-releases/congressman-subramanyam-writes-commissioners-scc-about-dominion-energys" target="_blank" rel="noopener" data-outlet="official">
+          <div class="art-date">Sep 4, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Congressman Subramanyam Writes to SCC Commissioners About Dominion Energy's Proposed 500kV/230kV Transmission Line</div>
+            <div class="art-desc">Official letter from Rep. Subramanyam to the SCC urging commissioners to consider community impacts and underground alternatives.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge congress">Congressional</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://virginiamercury.com/briefs/nova-lawmakers-urge-scc-to-find-new-options-for-transmission-lines-that-would-cut-ashburn-community/" target="_blank" rel="noopener" data-outlet="va-mercury">
+          <div class="art-date">Aug 27, 2025</div>
+          <div class="art-body">
+            <div class="art-title">NoVa Lawmakers Urge SCC to Find New Options for Transmission Lines That Would Cut Ashburn Community</div>
+            <div class="art-desc">Northern Virginia state legislators formally ask the SCC to explore alternatives to overhead routing through residential neighborhoods.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge va-mercury">Virginia Mercury</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/news/singh-martinez-srinivasan-call-for-undergrounding-of-golden-to-mars-power-line/article_636c9bee-8ec4-475e-91db-e3e93abc763a.html" target="_blank" rel="noopener" data-outlet="loudoun-now">
+          <div class="art-date">Aug 26, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Singh, Martinez, Srinivasan Call for Undergrounding of Golden to Mars Power Line</div>
+            <div class="art-desc">Delegates JJ Singh and Marty Martinez, and Sen. Kannan Srinivasan, jointly call on the SCC to require underground construction for the Golden to Mars line.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-now">Loudoun Now</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudounnow.com/full-letter-from-delegates-jj-singh-d-26-and-marty-martinez-d-29-and-sen/pdf_18ed6b97-0358-4b1d-bb76-6f7c63c47b79.html" target="_blank" rel="noopener" data-outlet="official">
+          <div class="art-date">Aug 26, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Full Letter from Delegates Singh, Martinez, and Sen. Srinivasan to the SCC</div>
+            <div class="art-desc">The complete text of the bipartisan letter from Northern Virginia legislators to SCC commissioners regarding underground alternatives.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge congress">Legislative</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.dcnewsnow.com/news/local-news/virginia/loudoun-county/loudoun-county-neighbors-push-back-against-proposed-transmission-lines/" target="_blank" rel="noopener" data-outlet="tv">
+          <div class="art-date">Aug 20, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Loudoun County Neighbors Push Back Against Proposed Transmission Lines</div>
+            <div class="art-desc">DC News Now reports on the organized community resistance to Dominion's overhead transmission line proposals through Ashburn neighborhoods.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge dcnews">DC News Now</span><br>
+            <span class="art-link">Watch →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.nbcwashington.com/news/local/northern-virginia/residents-fight-against-dominion-transmission-line-project-in-ashburn/3977249/" target="_blank" rel="noopener" data-outlet="tv">
+          <div class="art-date">Aug 19, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Residents Battle Dominion Transmission Line Project in Ashburn</div>
+            <div class="art-desc">NBC4 Washington covers Ashburn residents organizing against Dominion's plan to build 185-foot transmission towers through their community.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge nbc4">NBC4</span><br>
+            <span class="art-link">Watch →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.bayjournal.com/news/energy/new-power-line-for-data-centers-could-impact-private-land-in-virginia/article_d5c7b160-e2a2-4a21-a1fd-372001f84686.html" target="_blank" rel="noopener" data-outlet="bayjournal">
+          <div class="art-date">Aug 19, 2025</div>
+          <div class="art-body">
+            <div class="art-title">New Power Line for Data Centers Could Impact Private Land in Virginia</div>
+            <div class="art-desc">Bay Journal investigates how Dominion's transmission line expansion for data center demand threatens private property and environmental resources in the Chesapeake Bay watershed.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge bayjournal">Bay Journal</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://virginiamercury.com/2025/08/14/loudoun-county-neighbors-fight-proposed-dominion-transmission-lines-for-data-center-alley/" target="_blank" rel="noopener" data-outlet="va-mercury">
+          <div class="art-date">Aug 14, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Loudoun County Neighbors Fight Proposed Dominion Transmission Lines for Data Center Alley</div>
+            <div class="art-desc">Virginia Mercury's deep dive into how Loudoun County residents are challenging Dominion's plans to build high-voltage lines to power the world's largest concentration of data centers.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge va-mercury">Virginia Mercury</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.loudountimes.com/0local-or-not/1local/school-board-to-participate-in-state-hearings-on-electrical-lines-project/article_c0e64a3c-1b87-45ab-8128-7c6554af0e45.html" target="_blank" rel="noopener" data-outlet="loudoun-times">
+          <div class="art-date">Aug 13, 2025</div>
+          <div class="art-body">
+            <div class="art-title">School Board to Participate in State Hearings on Electrical Lines Project</div>
+            <div class="art-desc">Loudoun County School Board votes to formally participate in the SCC proceedings after community pressure over routes near schools.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge loudoun-times">Loudoun Times</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://www.24heures.ch/centres-de-donnees-une-ville-americaine-paie-le-prix-de-lia-688124091603" target="_blank" rel="noopener" data-outlet="intl">
+          <div class="art-date">Aug 12, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Ashburn: The Secret Internet Capital of the USA</div>
+            <div class="art-desc">Swiss newspaper 24 Heures investigates how Ashburn became the world's data center capital — and how residents are paying the price. (In French)</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge intl">24 Heures</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://patch.com/virginia/ashburn/setting-precedents-ashburn-neighbors-fight-new-power-line-route-proposal" target="_blank" rel="noopener" data-outlet="patch">
+          <div class="art-date">Aug 11, 2025</div>
+          <div class="art-body">
+            <div class="art-title">Setting Precedents: Ashburn Neighbors Fight New Power Line Route Proposal</div>
+            <div class="art-desc">Patch covers how Ashburn residents are organizing to fight Dominion's proposed overhead routing and push for underground alternatives.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge patch">Patch</span><br>
+            <span class="art-link">Read →</span>
+          </div>
+        </a>
+
+        <a class="article-row" href="https://youtu.be/_D5zM_xj8Q4?si=_NjCW9wvo148AvuQ" target="_blank" rel="noopener" data-outlet="other">
+          <div class="art-date">2025</div>
+          <div class="art-body">
+            <div class="art-title">Documentary: The Fight Against Overhead Transmission Lines</div>
+            <div class="art-desc">Pennsylvania Delegate Jamie Walsh produced this documentary examining the nationwide fight against overhead high-voltage transmission lines through residential communities.</div>
+          </div>
+          <div class="art-pub">
+            <span class="pub-badge" style="background:#c02424;">YouTube</span><br>
+            <span class="art-link">Watch →</span>
           </div>
         </a>
 
