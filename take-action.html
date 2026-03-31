@@ -42,7 +42,8 @@
     .breaking-arrow { color: var(--gold2); font-weight: 800; }
 
     /* ─── HEADER ─── */
-    header { position: sticky; top: 0; z-index: 200; background: var(--navy); border-bottom: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,.4); }
+    .sticky-top { position: sticky; top: 0; z-index: 200; }
+    header { background: var(--navy); border-bottom: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,.4); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; max-width: 1100px; margin: 0 auto; }
     .logo { font-weight: 900; font-size: 1.15rem; color: #fff; text-decoration: none; }
     .logo span { color: var(--gold2); }
@@ -239,6 +240,7 @@
 </head>
 <body>
 
+<div class="sticky-top">
 <!-- BREAKING STRIP -->
 <div class="breaking-strip">
   <a href="route1f-illegal.html">
@@ -262,6 +264,7 @@
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
+</div><!-- /sticky-top -->
 
 <!-- PAGE HERO -->
 <section class="page-hero">

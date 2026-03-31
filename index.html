@@ -41,9 +41,13 @@
     .breaking-arrow { color: var(--gold2); font-weight: 800; }
 
 
+    /* ─── STICKY TOP WRAPPER ─── */
+    .sticky-top {
+      position: sticky; top: 0; z-index: 200;
+    }
+
     /* ─── HEADER ─── */
     header {
-      position: sticky; top: 0; z-index: 200;
       background: var(--navy); border-bottom: 3px solid var(--gold);
       box-shadow: 0 2px 12px rgba(0,0,0,.4);
     }
@@ -289,6 +293,7 @@
 </head>
 <body>
 
+<div class="sticky-top">
 <!-- BREAKING STRIP -->
 <div class="breaking-strip">
   <a href="route1f-illegal.html">
@@ -314,6 +319,7 @@
     </button>
   </div>
 </header>
+</div><!-- /sticky-top -->
 
 <!-- HERO -->
 <section class="hero">
