@@ -1,3 +1,7 @@
+# Block specific pages from deploy
+saines.html
+who-is-saines.html
+
 # Ignore all non-website files
 *.pdf
 *.txt
