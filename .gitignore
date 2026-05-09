@@ -25,6 +25,8 @@
 !template-8.html
 !template-9.html
 !route1f-illegal.html
+!terms.html
+!privacy.html
 
 # Allow docs directory
 !docs/
