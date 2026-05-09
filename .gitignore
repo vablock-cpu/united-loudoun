@@ -12,8 +12,18 @@
 ## saines pages removed from public view — kept locally
 ## !saines.html
 ## !who-is-saines.html
-!route-1-fiction.html
+!map.html
 !route-1f.html
+!templates.html
+!template-1.html
+!template-2.html
+!template-3.html
+!template-4.html
+!template-5.html
+!template-6.html
+!template-7.html
+!template-8.html
+!template-9.html
 !route1f-illegal.html
 
 # Allow docs directory

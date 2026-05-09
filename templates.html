@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Templates - United Loudoun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #152744; --teal: #1a6b5e; --teal2: #22856e;
+      --gold: #c9970a; --gold2: #f0b429;
+      --off: #f8f7f4; --gray: #64748b; --light: #e2e8f0;
+    }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; line-height: 1.6; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { background: var(--navy); border-bottom: 3px solid var(--gold); padding: 0 24px; }
+    .header-inner { display: flex; align-items: center; height: 64px; max-width: 800px; margin: 0 auto; }
+    .logo { font-weight: 900; font-size: 1.15rem; color: #fff; text-decoration: none; }
+    .logo span { color: var(--gold2); }
+    .page-hero { background: var(--navy); padding: 48px 0 40px; color: #fff; }
+    .page-hero h1 { font-family: 'Merriweather', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; margin-bottom: 10px; }
+    .page-hero h1 span { color: var(--gold2); }
+    .page-hero p { color: rgba(255,255,255,.8); font-size: .95rem; max-width: 560px; }
+    .back-link { display: inline-block; color: rgba(255,255,255,.6); font-size: .8rem; text-decoration: none; margin-bottom: 18px; }
+    .back-link:hover { color: #fff; }
+    footer { background: var(--navy); padding: 20px 0; text-align: center; }
+    .footer-bottom { font-size: .75rem; color: rgba(255,255,255,.4); }
+    .tpl-grid { padding: 32px 0 80px; display: flex; flex-direction: column; border: 1.5px solid var(--light); border-radius: 10px; overflow: hidden; margin-top: 32px; }
+    .tpl-card { display: flex; align-items: center; gap: 16px; padding: 16px 20px; text-decoration: none; color: var(--navy); border-bottom: 1px solid var(--light); transition: background .15s; }
+    .tpl-card:last-child { border-bottom: none; }
+    .tpl-card:hover { background: var(--off); }
+    .tpl-num { width: 32px; height: 32px; border-radius: 50%; background: var(--navy); color: var(--gold2); display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 900; flex-shrink: 0; }
+    .tpl-info { flex: 1; }
+    .tpl-title { font-size: .95rem; font-weight: 700; color: var(--navy); }
+    .tpl-meta { font-size: .78rem; color: var(--gray); margin-top: 2px; }
+    .arrow { color: var(--teal); font-weight: 700; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span>United</span>Loudoun</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <a class="back-link" href="index.html">&larr; Back to the email tool</a>
+    <h1>Plain-Text <span>Email Templates</span></h1>
+    <p>Choose a template, copy the text, fill in the bracketed placeholders, and email to <a href="mailto:lcsb@lcps.org" style="color:var(--gold2);">lcsb@lcps.org</a>.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="tpl-grid">
+      <a href="template-1.html" class="tpl-card">
+        <div class="tpl-num">1</div>
+        <div class="tpl-info">
+          <div class="tpl-title">Short</div>
+          <div class="tpl-meta">Good all-purpose choice</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a href="template-2.html" class="tpl-card">
+        <div class="tpl-num">2</div>
+        <div class="tpl-info">
+          <div class="tpl-title">Concise</div>
+          <div class="tpl-meta">Quick and direct</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a href="template-3.html" class="tpl-card">
+        <div class="tpl-num">3</div>
+        <div class="tpl-info">
+          <div class="tpl-title">Extended / Public Testimony</div>
+          <div class="tpl-meta">Formal submission or public comment</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a href="template-4.html" class="tpl-card">
+        <div class="tpl-num">4</div>
+        <div class="tpl-info">
+          <div class="tpl-title">Parent / School Family</div>
+          <div class="tpl-meta">For families with kids at Rosa Lee Carter or Rock Ridge</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a href="template-5.html" class="tpl-card">
+        <div class="tpl-num">5</div>
+        <div class="tpl-info">
+          <div class="tpl-title">Longtime Resident / Legacy</div>
+          <div class="tpl-meta">Legacy framing for long-term LVE residents</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a href="template-6.html" class="tpl-card">
+        <div class="tpl-num">6</div>
+        <div class="tpl-info">
+          <div class="tpl-title">Shared Space</div>
+          <div class="tpl-meta">Focuses on the school-neighborhood connection</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a href="template-7.html" class="tpl-card">
+        <div class="tpl-num">7</div>
+        <div class="tpl-info">
+          <div class="tpl-title">Property Values / Preservation</div>
+          <div class="tpl-meta">Homeowner and community investment angle</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a href="template-8.html" class="tpl-card">
+        <div class="tpl-num">8</div>
+        <div class="tpl-info">
+          <div class="tpl-title">Brief</div>
+          <div class="tpl-meta">Shortest option</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a href="template-9.html" class="tpl-card">
+        <div class="tpl-num">9</div>
+        <div class="tpl-info">
+          <div class="tpl-title">Community Unity</div>
+          <div class="tpl-meta">References the 1,300+ voices on record</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">&copy; 2026 United Loudoun - unitedloudoun.org - Because we ALL live here</div>
+  </div>
+</footer>
+</body>
+</html>
