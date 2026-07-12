@@ -295,7 +295,7 @@
   <div class="legend">
     <div class="legend-item">
       <div class="legend-line main"></div>
-      <span>Route 1F <span style="font-size:9px;color:rgba(255,255,255,0.4);letter-spacing:0.3px;">📌 ALWAYS ON</span></span>
+      <span>Route 1F</span>
     </div>
     <div class="legend-item">
       <div style="width:20px;height:10px;background:rgba(255,50,100,0.3);border:1px solid #ff3264;border-radius:2px;"></div>
@@ -323,11 +323,7 @@
 
 <div class="route-panel" id="routePanel">
   <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Compare Routes</div>
-  <div style="display:flex;align-items:center;gap:7px;padding:6px 10px;border-radius:6px;border:1px solid #ff00c5;background:rgba(255,0,197,0.08);margin-bottom:4px;cursor:default;">
-    <div style="width:16px;height:3px;background:#ff00c5;border-radius:2px;flex-shrink:0;"></div>
-    <span style="font-size:12px;color:#ff00c5;font-weight:600;">Route 1F</span>
-    <span style="font-size:10px;color:rgba(255,255,255,0.35);margin-left:auto;">📌 always on</span>
-  </div>
+  <button id="dom-1F" class="route-toggle-btn" style="color:#ff00c5;opacity:1;border-color:#ff00c5;margin-bottom:4px;" onclick="toggle1F()">Route 1F</button>
 </div>
 
 <script>
@@ -546,11 +542,9 @@ const rowStyle = {
   fillOpacity: 0.15
 };
 
-const rowSeg0 = L.polygon(bufferLine(seg0, 50), rowStyle).addTo(map).bindPopup('<b>100\' Right-of-Way Corridor</b><br>50\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
-const rowSeg1 = L.polygon(bufferLine(seg1, 50), rowStyle).addTo(map).bindPopup('<b>100\' Right-of-Way Corridor</b><br>50\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
-const rowSeg2 = L.polygon(bufferLine(seg2, 50), rowStyle).addTo(map).bindPopup('<b>100\' Right-of-Way Corridor</b><br>50\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
-
-const rowGroup = L.layerGroup([rowSeg0, rowSeg1, rowSeg2]);
+const rowSeg0 = L.polygon(bufferLine(seg0, 50), rowStyle).bindPopup('<b>100\' Right-of-Way Corridor</b><br>50\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
+const rowSeg1 = L.polygon(bufferLine(seg1, 50), rowStyle).bindPopup('<b>100\' Right-of-Way Corridor</b><br>50\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
+const rowSeg2 = L.polygon(bufferLine(seg2, 50), rowStyle).bindPopup('<b>100\' Right-of-Way Corridor</b><br>50\' each side of centerline<br><i>Required for 500/230 kV overhead transmission</i>');
 
 // --- Route lines ---
 
@@ -560,14 +554,14 @@ const mainGlow = L.polyline(seg1, {
   weight: 10,
   opacity: 0.25,
   lineJoin: 'round'
-}).addTo(map);
+});
 
 const mainLine = L.polyline(seg1, {
   color: '#ff00c5',
   weight: 4,
   opacity: 0.95,
   lineJoin: 'round'
-}).addTo(map).bindPopup('<b>Route 1F</b><br>~9.365 miles<br>Golden to Mars OH — Route 1F');
+}).bindPopup('<b>Route 1F</b><br>~9.365 miles<br>Golden to Mars OH — Route 1F');
 
 // Connector segments - orange
 const connectorStyle = {
@@ -583,11 +577,13 @@ const connectorGlowStyle = {
   lineJoin: 'round'
 };
 
-L.polyline(seg0, connectorGlowStyle).addTo(map);
-L.polyline(seg0, connectorStyle).addTo(map).bindPopup('<b>Connector Segment</b><br>~0.086 miles');
+const connGlow0 = L.polyline(seg0, connectorGlowStyle);
+const conn0 = L.polyline(seg0, connectorStyle).bindPopup('<b>Connector Segment</b><br>~0.086 miles');
+const connGlow2 = L.polyline(seg2, connectorGlowStyle);
+const conn2 = L.polyline(seg2, connectorStyle).bindPopup('<b>Connector Segment</b><br>~0.609 miles');
 
-L.polyline(seg2, connectorGlowStyle).addTo(map);
-L.polyline(seg2, connectorStyle).addTo(map).bindPopup('<b>Connector Segment</b><br>~0.609 miles');
+const route1fGroup = L.layerGroup([rowSeg0, rowSeg1, rowSeg2, mainGlow, mainLine, connGlow0, conn0, connGlow2, conn2]);
+route1fGroup.addTo(map);
 
 // --- Dominion comparison routes (from northernvaprojects.com) ---
 const domColors = {
@@ -621,6 +617,19 @@ for (const [key, segments] of Object.entries(domData)) {
     }
   });
   domLayers[key] = L.layerGroup(layers);
+}
+
+function toggle1F() {
+  const btn = document.getElementById('dom-1F');
+  if (map.hasLayer(route1fGroup)) {
+    map.removeLayer(route1fGroup);
+    btn.style.opacity = '0.4';
+    btn.style.borderColor = 'rgba(255,255,255,0.12)';
+  } else {
+    route1fGroup.addTo(map);
+    btn.style.opacity = '1';
+    btn.style.borderColor = '#ff00c5';
+  }
 }
 
 function toggleDomRoute(key) {
