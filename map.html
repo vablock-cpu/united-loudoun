@@ -818,8 +818,7 @@ for (const [pin, info] of Object.entries(easementLabels)) {
       weight: 3,
       opacity: 1,
       fillColor: info.color,
-      fillOpacity: 0.18,
-      dashArray: "6,4"
+      fillOpacity: 0.18
     }),
     onEachFeature: (feature, layer) => {
       const p = feature.properties;
@@ -854,12 +853,13 @@ for (const [pin, info] of Object.entries(easementLabels)) {
   btn.id = 'ease-' + pin;
   btn.className = 'easement-toggle-btn';
   btn.style.color = info.color;
-  btn.style.opacity = '0.4';
-  btn.style.borderColor = 'rgba(255,255,255,0.12)';
+  btn.style.opacity = '1';
+  btn.style.borderColor = info.color;
   btn.innerHTML = '<span class="easement-swatch" style="background:' + info.color + ';"></span>' + info.short;
   btn.title = info.name;
   btn.onclick = () => toggleEasement(pin);
   easementPanel.appendChild(btn);
+  easementLayers[pin].addTo(map);
 }
 </script>
 </body>
