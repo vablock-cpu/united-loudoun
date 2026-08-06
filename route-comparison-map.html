@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Route Comparison Map</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+body, html, #map { margin: 0; padding: 0; width: 100%; height: 100vh; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif; }
+#header { position: fixed; top: 0; left: 0; right: 0; background: white; padding: 12px 16px; border-bottom: 1px solid #ddd; z-index: 2000; }
+#header h1 { margin: 0; font-size: 16px; font-weight: 600; color: #1a1a1a; }
+#header p { margin: 4px 0 0 0; font-size: 12px; color: #555; line-height: 1.5; }
+#header a { color: #0066cc; text-decoration: none; }
+#header a:hover { text-decoration: underline; }
+#controls { position: fixed; top: 80px; left: 12px; background: white; border: 1px solid #ddd; padding: 12px; border-radius: 4px; z-index: 1000; font-size: 12px; width: auto; }
+#controls h3 { margin: 0 0 8px 0; font-size: 12px; font-weight: 600; }
+#controls label { display: block; margin: 6px 0; cursor: pointer; }
+#controls input { margin-right: 6px; }
+
+@media print {
+  #controls { display: none !important; visibility: hidden !important; }
+  #header { position: static !important; margin-bottom: 20px; }
+  #header p { font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<div id="header">
+  <h1>Golden to Mars - 606 Corridor NOAA Route</h1>
+  <p>Mars Substation via NOAA to 606 at Ladbrook Rd - follows Westwind Drive extension under construction to proposed routes 3 & 4 and existing 230kV lines<br/><a href="https://www.loudoun.gov/5498/Westwind-Drive" target="_blank">loudoun.gov/5498/Westwind-Drive</a></p>
+</div>
+
+<div id="controls">
+  <h3 style="margin-top:0;">Routes</h3>
+  <div style="font-size:11px;line-height:1.6;">
+    <label style="display:flex;align-items:center;margin:6px 0;"><input type="checkbox" id="proposal" checked style="margin-right:6px;"> <span style="display:inline-block;width:10px;height:10px;background:#FF6B35;border-radius:2px;margin-right:6px;"></span>Proposal</label>
+    <label style="display:flex;align-items:center;margin:6px 0;"><input type="checkbox" id="route3a" checked style="margin-right:6px;"> <span style="display:inline-block;width:10px;height:10px;background:#FF0000;border-radius:2px;margin-right:6px;"></span>Route 3A</label>
+    <label style="display:flex;align-items:center;margin:6px 0;"><input type="checkbox" id="route4" checked style="margin-right:6px;"> <span style="display:inline-block;width:10px;height:10px;background:#0033FF;border-radius:2px;margin-right:6px;"></span>Route 4</label>
+    <label style="display:flex;align-items:center;margin:6px 0;"><input type="checkbox" id="route3" checked style="margin-right:6px;"> <span style="display:inline-block;width:10px;height:10px;background:#22DD22;border-radius:2px;margin-right:6px;"></span>Route 3</label>
+  </div>
+
+  <button onclick="map.zoomIn()" style="display:block;width:100%;padding:10px;margin-top:12px;margin-bottom:6px;background:#000;border:none;color:white;border-radius:4px;cursor:pointer;font-weight:600;font-size:13px;">Zoom In</button>
+  <button onclick="map.zoomOut()" style="display:block;width:100%;padding:10px;background:#000;border:none;color:white;border-radius:4px;cursor:pointer;font-weight:600;font-size:13px;">Zoom Out</button>
+</div>
+
+<div id="map"></div>
+
+<script>
+const map = L.map('map').setView([38.97, -77.48], 12);
+L.tileLayer('https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.jpg?access_token=pk.eyJ1IjoibHZlaG9hIiwiYSI6ImNtbmF1M3AweTBwc2wycHB0ajRlb2JrNzYifQ.K7T3yBDesqh_R_xfqBTe_w', {
+  maxZoom: 22, tileSize: 512, zoomOffset: -1
+}).addTo(map);
+
+// Coalition proposal - adjusted to intersect at 38.9860, -77.4844 then merge with Route 4
+const mergedRoute = [
+  [38.9517,-77.4914],
+  [38.9507,-77.4906],
+  [38.9536,-77.4824],
+  [38.9680,-77.4822],
+  [38.9780,-77.4837],
+  [38.9829,-77.4857],
+  [38.9860,-77.4844],
+  [38.98889,-77.47888],
+  [38.99175,-77.47401],
+  [38.99278,-77.47242],
+  [38.99337,-77.47113],
+  [38.99697,-77.46733],
+  [38.99945,-77.46724],
+  [39.00151,-77.46243],
+  [39.00324,-77.46203],
+  [39.00608,-77.46039],
+  [39.00616,-77.4568],
+  [39.0089,-77.45324],
+  [39.0061,-77.44581],
+  [39.00607,-77.44361],
+  [39.00705,-77.44303],
+  [39.00817,-77.4418],
+  [39.00919,-77.44093],
+  [39.01026,-77.44],
+  [39.01135,-77.43924],
+  [39.01296,-77.4383],
+  [39.01269,-77.43588],
+  [39.01212,-77.43487],
+  [39.01164,-77.4343],
+  [39.01241,-77.43378],
+  [39.01369,-77.43348],
+  [39.014,-77.43564]
+];
+
+const route3 = [[38.95359,-77.49185],[38.95421,-77.49216],[38.95423,-77.49217],[38.95417,-77.49343],[38.95545,-77.49404],[38.95584,-77.49418],[38.95629,-77.49433],[38.95689,-77.49466],[38.95697,-77.4947],[38.95909,-77.4953],[38.9601,-77.49583],[38.96037,-77.49597],[38.96077,-77.49652],[38.9608,-77.49656],[38.95902,-77.50069],[38.95973,-77.50329],[38.96061,-77.50435],[38.96291,-77.50207],[38.96433,-77.50301],[38.96591,-77.50317],[38.96783,-77.50251],[38.97133,-77.50418],[38.97598,-77.50406],[38.97788,-77.50605],[38.97934,-77.50517],[38.98174,-77.50417],[38.98189,-77.50213],[38.98218,-77.49821],[38.98512,-77.49698],[38.9869,-77.49117],[38.98656,-77.48674],[38.98639,-77.48487],[38.98708,-77.48255],[38.98889,-77.47888],[38.99175,-77.47401],[38.99278,-77.47242],[38.99337,-77.47113],[38.99697,-77.46733],[38.99945,-77.46724],[39.00151,-77.46243],[39.00324,-77.46203],[39.00608,-77.46039],[39.00616,-77.4568],[39.0089,-77.45324],[39.0061,-77.44581],[39.00607,-77.44361],[39.00705,-77.44303],[39.00817,-77.4418],[39.00919,-77.44093],[39.01026,-77.44],[39.01135,-77.43924],[39.01296,-77.4383],[39.01269,-77.43588],[39.01212,-77.43487],[39.01164,-77.4343],[39.01241,-77.43378],[39.01369,-77.43348],[39.014,-77.43564]];
+
+const route3a = [[38.95359,-77.49185],[38.95421,-77.49216],[38.95423,-77.49217],[38.95417,-77.49343],[38.95545,-77.49404],[38.95584,-77.49418],[38.95629,-77.49433],[38.95689,-77.49466],[38.95697,-77.4947],[38.95909,-77.4953],[38.9601,-77.49583],[38.96037,-77.49597],[38.96077,-77.49652],[38.9608,-77.49656],[38.95902,-77.50069],[38.95973,-77.50329],[38.96061,-77.50435],[38.96291,-77.50207],[38.96433,-77.50301],[38.96591,-77.50317],[38.96783,-77.50251],[38.97095,-77.504],[38.97251,-77.50475],[38.97473,-77.50475],[38.97691,-77.50503],[38.97802,-77.50603],[38.97996,-77.50489],[38.98182,-77.50344],[38.98408,-77.50358],[38.98435,-77.50274],[38.98304,-77.50095],[38.98301,-77.49979],[38.98454,-77.49891],[38.98519,-77.49678],[38.9858,-77.49481],[38.98641,-77.4928],[38.98691,-77.49118],[38.98674,-77.48892],[38.9866,-77.48708],[38.9864,-77.48488],[38.98708,-77.48256],[38.98796,-77.48077],[38.9889,-77.47889],[38.99176,-77.47402],[38.99278,-77.47242],[38.99337,-77.47113],[38.99697,-77.46733],[38.99945,-77.46724],[39.00151,-77.46243],[39.00324,-77.46203],[39.00609,-77.46038],[39.00616,-77.4568],[39.0089,-77.45324],[39.0061,-77.44581],[39.00607,-77.44361],[39.00705,-77.44303],[39.00817,-77.4418],[39.00919,-77.44093],[39.01026,-77.44],[39.01135,-77.43924],[39.01296,-77.4383],[39.01269,-77.43588],[39.01212,-77.43487],[39.01164,-77.4343],[39.01241,-77.43378],[39.01369,-77.43348],[39.014,-77.43564]];
+
+const route4 = [[38.95359,-77.49185],[38.95421,-77.49216],[38.95423,-77.49217],[38.95417,-77.49343],[38.95545,-77.49404],[38.95584,-77.49418],[38.95629,-77.49433],[38.95689,-77.49466],[38.95697,-77.4947],[38.95909,-77.4953],[38.9601,-77.49583],[38.96037,-77.49597],[38.96077,-77.49652],[38.9608,-77.49656],[38.95902,-77.50069],[38.95973,-77.50329],[38.96061,-77.50435],[38.96291,-77.50207],[38.96433,-77.50301],[38.96591,-77.50317],[38.96783,-77.50251],[38.97133,-77.50418],[38.97598,-77.50406],[38.97619,-77.50218],[38.97647,-77.49749],[38.97652,-77.49612],[38.97801,-77.49626],[38.98111,-77.49761],[38.98218,-77.49821],[38.98512,-77.49698],[38.9869,-77.49117],[38.98656,-77.48674],[38.98639,-77.48487],[38.98708,-77.48255],[38.98889,-77.47888],[38.99175,-77.47401],[38.99278,-77.47242],[38.99337,-77.47113],[38.99697,-77.46733],[38.99945,-77.46724],[39.00151,-77.46243],[39.00324,-77.46203],[39.00608,-77.46039],[39.00616,-77.4568],[39.0089,-77.45324],[39.0061,-77.44581],[39.00607,-77.44361],[39.00705,-77.44303],[39.00817,-77.4418],[39.00919,-77.44093],[39.01026,-77.44],[39.01135,-77.43924],[39.01296,-77.4383],[39.01269,-77.43588],[39.01212,-77.43487],[39.01164,-77.4343],[39.01241,-77.43378],[39.01369,-77.43348],[39.014,-77.43564]];
+
+// Draw routes with offset dash patterns
+const layers = {
+  proposal: L.polyline(mergedRoute, {color:'#FF6B35', weight:5, opacity:0.9}).addTo(map),
+  route3: L.polyline(route3, {color:'#22DD22', weight:3, opacity:0.8, dashArray:'10,5', dashOffset:'0'}).addTo(map),
+  route3a: L.polyline(route3a, {color:'#FF0000', weight:3, opacity:0.8, dashArray:'10,5', dashOffset:'5'}).addTo(map),
+  route4: L.polyline(route4, {color:'#0033FF', weight:3, opacity:0.8, dashArray:'10,5', dashOffset:'10'}).addTo(map)
+};
+
+// Toggle visibility
+document.getElementById('proposal').addEventListener('change', (e) => {
+  if (e.target.checked) map.addLayer(layers.proposal);
+  else map.removeLayer(layers.proposal);
+});
+
+document.getElementById('route3').addEventListener('change', (e) => {
+  if (e.target.checked) map.addLayer(layers.route3);
+  else map.removeLayer(layers.route3);
+});
+
+document.getElementById('route3a').addEventListener('change', (e) => {
+  if (e.target.checked) map.addLayer(layers.route3a);
+  else map.removeLayer(layers.route3a);
+});
+
+document.getElementById('route4').addEventListener('change', (e) => {
+  if (e.target.checked) map.addLayer(layers.route4);
+  else map.removeLayer(layers.route4);
+});
+
+// Fit bounds
+const allCoords = [...mergedRoute, ...route3, ...route3a, ...route4];
+map.fitBounds(L.latLngBounds(allCoords), {padding:[80,80]});
+</script>
+
+</body>
+</html>

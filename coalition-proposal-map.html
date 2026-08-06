@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coalition Proposal Map</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+body, html, #map { margin: 0; padding: 0; width: 100%; height: 100vh; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif; }
+#header { position: fixed; top: 0; left: 0; right: 0; background: white; padding: 12px 16px; border-bottom: 1px solid #ddd; z-index: 2000; }
+#header h1 { margin: 0; font-size: 16px; font-weight: 600; color: #1a1a1a; }
+#header p { margin: 4px 0 0 0; font-size: 12px; color: #555; line-height: 1.5; }
+#header a { color: #0066cc; text-decoration: none; }
+#header a:hover { text-decoration: underline; }
+#controls { position: fixed; top: 80px; left: 12px; background: white; border: 1px solid #ddd; padding: 12px; border-radius: 4px; z-index: 1000; font-size: 12px; width: 120px; }
+#controls h3 { margin: 0 0 8px 0; font-size: 12px; font-weight: 600; }
+#controls label { display: block; margin: 4px 0; }
+#controls input { margin-right: 6px; }
+.zoom-buttons { display: flex; flex-direction: column; gap: 6px; }
+.zoom-buttons button { width: 100%; padding: 8px; border: none; color: white; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 12px; }
+
+@media print {
+  #controls { display: none !important; visibility: hidden !important; }
+  #header { position: static !important; margin-bottom: 20px; }
+  #header p { font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<div id="header">
+  <h1>NOAA Route Map</h1>
+  <p>Mars Substation via NOAA to 606 at Ladbrook Rd - follows Westwind Drive extension under construction to proposed routes 3 & 4 and existing 230kV lines<br/><a href="https://www.loudoun.gov/5498/Westwind-Drive" target="_blank">loudoun.gov/5498/Westwind-Drive</a></p>
+</div>
+
+<div id="controls">
+  <button onclick="map.zoomIn()" style="display:block;width:100%;padding:10px;margin-bottom:6px;background:#000;border:none;color:white;border-radius:4px;cursor:pointer;font-weight:600;font-size:13px;">Zoom In</button>
+  <button onclick="map.zoomOut()" style="display:block;width:100%;padding:10px;background:#000;border:none;color:white;border-radius:4px;cursor:pointer;font-weight:600;font-size:13px;">Zoom Out</button>
+</div>
+
+<div id="map"></div>
+
+<script>
+const map = L.map('map').setView([38.97, -77.48], 12);
+L.tileLayer('https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.jpg?access_token=pk.eyJ1IjoibHZlaG9hIiwiYSI6ImNtbmF1M3AweTBwc2wycHB0ajRlb2JrNzYifQ.K7T3yBDesqh_R_xfqBTe_w', {
+  maxZoom: 22, tileSize: 512, zoomOffset: -1
+}).addTo(map);
+
+// Coalition proposal merged with Route 4
+const mergedRoute = [
+  [38.9517,-77.4914],
+  [38.9507,-77.4906],
+  [38.9536,-77.4824],
+  [38.9680,-77.4822],
+  [38.9780,-77.4837],
+  [38.9829,-77.4857],
+  [38.9860,-77.4844],
+  [38.9866,-77.4819],
+  [38.9935,-77.4715],
+  [38.99697,-77.46733],
+  [38.99945,-77.46724],
+  [39.00151,-77.46243],
+  [39.00324,-77.46203],
+  [39.00608,-77.46039],
+  [39.00616,-77.4568],
+  [39.0089,-77.45324],
+  [39.0061,-77.44581],
+  [39.00607,-77.44361],
+  [39.00705,-77.44303],
+  [39.00817,-77.4418],
+  [39.00919,-77.44093],
+  [39.01026,-77.44],
+  [39.01135,-77.43924],
+  [39.01296,-77.4383],
+  [39.01269,-77.43588],
+  [39.01212,-77.43487],
+  [39.01164,-77.4343],
+  [39.01241,-77.43378],
+  [39.01369,-77.43348],
+  [39.014,-77.43564]
+];
+
+L.polyline(mergedRoute, {color:'#FF6B35', weight:5, opacity:0.9}).addTo(map);
+
+// Fit to merged route
+map.fitBounds(L.latLngBounds(mergedRoute), {padding:[80,80]});
+</script>
+
+</body>
+</html>
